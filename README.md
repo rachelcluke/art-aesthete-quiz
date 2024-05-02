@@ -30,6 +30,8 @@ The last update to this file was: **May 2nd, 2024**
   - [Site Owners Goals](#site-owners-goals)
     - [Requirements](#requirements)
     - [Expectations](#expectations)
+- [UI / Design Choices](#ui-design-choices)
+  - [Moodboard](#moodboard)
 
 # UX
 
@@ -77,3 +79,10 @@ The last update to this file was: **May 2nd, 2024**
 \
 &nbsp;
 
+# UI / Design Choices
+
+## Moodboard
+
+One of the first milestones of this project was to create a moodboard to help envision the overall house style of the webiite and ensure that all of the sections and elements are cohesive. The software I used to create the moodboard for this website is [Mila Note](https://milanote.com/ "Mila Note").
+Below, is the moodboard:
+![Moodboard](docs/moodboard.png)
