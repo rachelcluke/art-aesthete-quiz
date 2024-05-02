@@ -86,3 +86,28 @@ The last update to this file was: **May 2nd, 2024**
 One of the first milestones of this project was to create a moodboard to help envision the overall house style of the webiite and ensure that all of the sections and elements are cohesive. The software I used to create the moodboard for this website is [Mila Note](https://milanote.com/ "Mila Note").
 Below, is the moodboard:
 ![Moodboard](docs/moodboard.png)
+
+## Colours
+
+The colour scheme of the website is inspired by the moodboard (previously depicted). I have used [Coolers](https://coolors.co/ "coolers") to retrieve the desired colour codes and generate the colour palette.
+
+Below, is the color palette:
+![Colour Palette](docs/colour-palette.png)
+
+## Breakpoints
+
+As a starting point, I will be building my website with a mobile first mindset using the iPhone 5/SE (320px) as the smallest screen size for styling to look good on. The screen size breakpoints that I will be using are from [Bootstrap breakpoints](https://getbootstrap.com/docs/5.0/layout/breakpoints/ "Bootstrap").
+
+| Screen Size | Class Infix | Breakpoint |
+| ----------- | ----------- | ---------- |
+| x-small     | none        | <576px     |
+| small       | sm          | => 576px   |
+| medium      | md          | => 768px   |
+| large       | lg          | => 992px   |
+| x-large     | xl          | => 1200px  |
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
