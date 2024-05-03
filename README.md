@@ -111,3 +111,39 @@ As a starting point, I will be building my website with a mobile first mindset u
 [Back to Top](#table-of-contents)
 \
 &nbsp;
+
+## Wireframes
+
+I have used [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq") to develop my wireframes for my website. I initially created the mobile version and then the wireframes and then scaled it up for desktop. The website is a single page that is scrollable and displays/hides sections with logic in lieu of having multiple HTML pages.
+
+The wireframes are below:
+
+[Landing Page - Desktop Wireframe](wireframes/launchView-desktop.png "home desktop wireframe")
+
+[Landing Page - Phone Wireframe](wireframes/launchView-mobile.png "home phone wireframe")
+
+[Quiz Mode Section - Desktop Wireframe](wireframes/quizModeView-desktop.png "mode desktop wireframe")
+
+[Quiz Mode Section - Phone Wireframe](wireframes/quizModeView-mobile.png "mode phone wireframe")
+
+[Quiz Game Section - Desktop Wireframe](wireframes/quizView-desktop.png "quiz desktop wireframe")
+
+[Quiz Game Section - Phone Wireframe](wireframes/quizView-mobile.png "quiz phone wireframe")
+
+[Help Section - Desktop Wireframe](wireframes/helpView-desktop.png "help desktop wireframe")
+
+[Help Section - Phone Wireframe](wireframes/helpView-mobile.png "help phone wireframe")
+
+[Result Section - Desktop Wireframe](wireframes/resultView-desktop.png "result desktop wireframe")
+
+[Result Section - Phone Wireframe](wireframes/resultView-mobile.png "result phone wireframe")
+
+[Footer - Desktop Wireframe](wireframes/footer-desktop.png "footer desktop wireframe")
+
+[Footer - Phone Wireframe](wireframes/footer-mobile.png "footer phone wireframe")
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
