@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Oxygen:wght@300;400;700&family=Petrona:ital,wght@0,100..900;1,100..900&family=Sofia+Sans:ital,wght@0,800;1,800&display=swap');
+
 :root {
     --wildsand: #f6f6f6;
     --caparol: #f1efee;
@@ -6,6 +8,10 @@
     --salmon: #e3726f;
     --cornflower: #6f99ec;
     --midnight: #040406;
+    --font-oxygen: 'Oxygen', sans-serif;
+    --font-sofia: 'Sofia Sans', sans-serif;
+    --font-krub: 'Krub', sans-serif;
+    --font-petrona: 'Petrona', sans-serif;
 }
 
 /* Universal */
