@@ -1,0 +1,22 @@
+:root {
+    --wildsand: #f6f6f6;
+    --caparol: #f1efee;
+    --white: #ffffff;
+    --goldenfizz: #f5f544;
+    --salmon: #e3726f;
+    --cornflower: #6f99ec;
+    --midnight: #040406;
+}
+
+/* Universal */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    font-size: 62.5%;
+}
+
