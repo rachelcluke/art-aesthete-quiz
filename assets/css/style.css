@@ -26,3 +26,62 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    font-size: 1.6rem;
+    font-family: var(--font-krub);
+    font-weight: 200;
+    color: var(--midnight);
+    background-color: var(--wildsand);
+}
+
+/* Header */
+#top-navbar {
+    position: fixed;
+    z-index: 2000;
+}
+
+.nav-bar {
+    flex-direction: row;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: auto;
+    top: 1rem;
+    height: 2.5rem;
+    display: block;
+    width: 100%;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    background-color: var(--wildsand);
+}
+
+.nav-menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    list-style: none;
+    height: auto;
+    width: 100%;
+}
+
+.nav-menu li a {
+    font-family: var(--font-oxygen);
+    font-weight: 700; /* bold */
+    transition: 0.30s ease-in-out;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    font-size: 2rem;
+    color: var(--midnight);
+}
+
+nav a:link {
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--cornflower)
+}
+
