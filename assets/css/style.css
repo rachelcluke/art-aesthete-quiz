@@ -9,7 +9,7 @@
     --cornflower: #6f99ec;
     --midnight: #040406;
     --font-oxygen: 'Oxygen', sans-serif;
-    --font-sofia: 'Sofia Sans', sans-serif;
+    --font-sofia: 'Sofia Sans', sans-serif; /*TO-DO: Check if this is correct */
     --font-krub: 'Krub', sans-serif;
     --font-petrona: 'Petrona', sans-serif;
 }
@@ -49,7 +49,7 @@ body {
     flex-direction: row;
     position: relative;
     left: auto;
-    top: 1rem;
+    top: 1.5rem;
     height: 2.5rem;
     display: block;
     width: 100%;
@@ -72,7 +72,7 @@ body {
     font-weight: 700; /* bold */
     transition: 0.30s ease-in-out;
     padding-bottom: 1rem;
-    padding-left: 2rem;
+    padding-left: 3rem;
     font-size: 2rem;
     color: var(--midnight);
 }
@@ -85,3 +85,26 @@ nav a:hover {
     color: var(--cornflower)
 }
 
+/* Div 01 - Home landing page */
+.art-home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 70vh;
+    margin-top: 0;
+    padding-top: 40%;
+}
+
+.hello-title {
+    font-weight: 800; /* extra bold */
+    font-size: 15rem; 
+    padding: 0;
+    padding-top: 1rem;
+    letter-spacing: 4%;
+    -webkit-text-stroke: 1px var(--midnight);
+    background: url("../img/carpet-texture-bkg.png");
+    background-size: cover;
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
