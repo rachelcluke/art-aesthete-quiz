@@ -85,14 +85,34 @@ nav a:hover {
     color: var(--cornflower)
 }
 
+button[type="text"] {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    background-color: var(--midnight);
+    border-radius: 2rem;
+    font-family: var(--font-oxygen);
+    font-size: 1.6rem;
+    font-weight: 400; /* regular */
+    padding: 1rem;
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
+button:hover {
+    background-color: var(--goldenfizz);
+    color: var(--midnight);
+}
+
 /* Div 01 - Home landing page */
 .art-home {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     min-height: 70vh;
     margin-top: 0;
-    padding-top: 40%;
+    padding-top: 50%;
+    padding-left: 10%;
 }
 
 .hello-title {
@@ -107,4 +127,12 @@ nav a:hover {
     color: #fff;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+}
+
+.art-home-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: auto;
+    padding-bottom: 20%;
 }
