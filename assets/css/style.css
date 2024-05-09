@@ -85,7 +85,7 @@ nav a:hover {
     color: var(--cornflower)
 }
 
-button[type="text"] {
+button {
     margin-top: 1rem;
     margin-bottom: 1rem;
     color: var(--white);
@@ -135,4 +135,71 @@ button:hover {
     justify-content: center;
     margin-top: auto;
     padding-bottom: 20%;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--wildsand);
+    color: var(--midnight);
+    min-height: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+.footer a {
+    font-size: 2rem;
+    padding-right: 1rem;
+}
+
+.footer h5 {
+    font-weight: 400; /* regular */
+    font-family: var(--font-oxygen);
+    font-size: 2rem;
+    /*margin-left: 1.3rem;*/
+    margin-right: 1.3rem;
+    margin-top: 1.3rem;
+    padding-bottom: 1rem;
+}
+
+.footer i p {
+    font-family: var(--font-krub);
+    transition: all 0.3s ease-in-out;
+}
+
+.footer i:hover {
+    color: var(--goldenfizz);
+}
+
+.social ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.contact i {
+    color: var(--cornflower);
+}
+
+/*copyright */
+.contact p:last-child { 
+    font-size: 1rem;
+    font-weight: 300;
+    padding-top: 1.5rem;
+}
+
+button[type="submit"] {
+    border-radius: 2rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    padding-left: 5%;
+    padding-right: 5%;
 }
