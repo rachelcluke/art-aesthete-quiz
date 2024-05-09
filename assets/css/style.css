@@ -32,15 +32,26 @@ body {
     font-weight: 200;
     color: var(--midnight);
     background-color: var(--wildsand);
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 hr {
-    border-top: 0.5rem solid var(--midnight);
+    border-top: 0.1rem solid var(--midnight);
+    opacity: 30%;
+}
+
+h2 {
+    font-family: var(--font-oxygen);
+    font-weight: 400;
+    color: var(--midnight);
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
 }
 
 /* Header */
 #top-navbar {
-    position: fixed;
+    /*position: fixed; */
     z-index: 2000;
 }
 
@@ -96,8 +107,15 @@ button {
     background-color: var(--midnight);
     border-radius: 2rem;
     font-family: var(--font-oxygen);
-    font-size: 1.6rem;
     font-weight: 400; /* regular */
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#start-btn {
+    font-size: 2rem;
     padding: 1rem;
     padding-left: 12%;
     padding-right: 12%;
@@ -142,11 +160,17 @@ button:hover {
 }
 
 /* Quiz Help Info */
+.quiz-help-info {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
 .quiz-help-info p {
     font-family: var(--font-petrona);
     font-size: 1.6rem;
     font-weight: 200;
     color: var(--midnight);
+    padding-bottom: 2rem;
 }
 
 /* Footer */
@@ -172,6 +196,7 @@ button:hover {
     /*margin-left: 1.3rem;*/
     margin-right: 1.3rem;
     margin-top: 1.3rem;
+    padding-top: 2rem;
     padding-bottom: 1rem;
 }
 
