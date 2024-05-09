@@ -34,6 +34,10 @@ body {
     background-color: var(--wildsand);
 }
 
+hr {
+    border-top: 0.5rem solid var(--midnight);
+}
+
 /* Header */
 #top-navbar {
     position: fixed;
@@ -135,6 +139,14 @@ button:hover {
     justify-content: center;
     margin-top: auto;
     padding-bottom: 20%;
+}
+
+/* Quiz Help Info */
+.quiz-help-info p {
+    font-family: var(--font-petrona);
+    font-size: 1.6rem;
+    font-weight: 200;
+    color: var(--midnight);
 }
 
 /* Footer */
