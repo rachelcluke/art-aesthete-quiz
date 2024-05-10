@@ -159,6 +159,26 @@ button:hover {
     padding-bottom: 20%;
 }
 
+/* Quiz Mode */
+.beginner-mode-easy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center; /* TODO - fix to move text bottom middle under img */
+}
+
+.beginner-mode-easy p {
+    font-weight: 500;
+    padding-bottom: 4rem;
+}
+
+.beginner-mode-easy img {
+    width: 30%;
+    height: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
 /* Quiz Help Info */
 .quiz-help-info {
     padding-top: 4rem;
