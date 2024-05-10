@@ -28,7 +28,7 @@ html {
 
 body {
     font-size: 1.6rem;
-    font-family: var(--font-krub);
+    font-family: var(--krub);
     font-weight: 200;
     color: var(--midnight);
     background-color: var(--wildsand);
@@ -159,33 +159,58 @@ button:hover {
     padding-bottom: 20%;
 }
 
-/* Quiz Mode */
-.beginner-mode-easy {
+/* Div 02 - Quiz Mode */
+.quiz-mode{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center; /* TODO - fix to move text bottom middle under img */
 }
 
-.beginner-mode-easy p {
+.quiz-mode p {
     font-weight: 500;
     padding-bottom: 4rem;
+    font-family: var(--font-krub);
 }
 
-.beginner-mode-easy img {
+.quiz-mode-easy img {
     width: 30%;
     height: auto;
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
 
-/* Quiz Help Info */
+/* Div 03 - Quiz Game */
+.quiz-game {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: flex-start;
+    padding-bottom: 4rem;
+}
+
+.quiz-overview-row {
+    padding-top: 2rem;
+}
+
+/* TODO: Space out quiz mc options */ 
+.quiz-question-column {
+    padding-bottom: 2rem;
+} 
+
+label {
+    font-family: var(--font-krub);
+    font-weight: 400;
+  }
+  /* label:after { content: ": " } */
+
+/* Div 04 - Quiz Help Info */
 .quiz-help-info {
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
 
-.quiz-help-info p {
+.quiz-help-info, .quiz-game p {
     font-family: var(--font-petrona);
     font-size: 1.6rem;
     font-weight: 200;
@@ -193,7 +218,9 @@ button:hover {
     padding-bottom: 2rem;
 }
 
-/* Footer */
+/* Div 05 - Results */
+
+/* Div 06 - Footer */
 .footer {
     display: flex;
     justify-content: space-around;
@@ -240,6 +267,7 @@ button:hover {
     flex-direction: column;
     justify-content: space-around;
     list-style-type: none;
+    font-family: var(--font-krub);
 }
 
 .contact i {

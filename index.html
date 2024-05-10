@@ -37,17 +37,45 @@
     </div>
 
     <!-- Quiz Mode View (replaces home/question)-->
-    <div class="quiz-mode">
+    <div class ="quiz-mode">
       <h2 id="quiz-mode-title">Choose Quiz Mode</h2>
-      <div class= "beginner-mode-easy">
+      <div class= "quiz-mode-easy">
         <!-- TODO: img will navigate to quiz -->
         <img src="assets/img/beginner-mode.webp" alt="Black triangle">
         <p>Beginner</p>
       </div>
     </div>
 
+    <hr> <!-- TODO: Remove when sections are displayed/hidden -->
     <!-- Quiz Question View (replaces home/mode/result)-->
-
+    <div class="quiz-game">
+      <!-- TODO: Make Mode and X/X dynamic -->
+      <div class="quiz-overview-row">
+        <p>Art Quiz      -       Mode        -       X/X</p>
+      </div>
+      <!-- TODO: Replace with questions from API -->
+      <h2 id="quiz-mode-title">Question Placeholder</h2> 
+      <div class="quiz-question-column">
+        <!-- Option 1 -->
+        <input type="radio" id="MC1" name="questionX" value="MC1">
+        <label for="MC1">Option 1</label><br>
+        <!-- Option 2 -->
+        <input type="radio" id="MC2" name="questionX" value="MC2">
+        <label for="MC2">Option 2</label><br>
+        <!-- Option 3 -->
+        <input type="radio" id="MC3" name="questionX" value="MC3">
+        <label for="MC3">Option 3</label><br>
+        <!-- Option 4 -->
+        <input type="radio" id="MC4" name="questionX" value="MC4">
+        <label for="MC4">Option 4</label>
+      </div>
+        <!-- TODO: Insert dynamic image -->
+      <div class="quiz-help-button">
+        <!-- TODO: only enable when answer is selected, function goes to next question */ -->
+        <!-- TODO: change text to "Finish" when showing last quiz question -->
+        <button type="text" class="dark-btn">Next</button>
+      </div>
+    </div>
 
     <!-- Help Info View (display under mode/question)-->
     <hr>
