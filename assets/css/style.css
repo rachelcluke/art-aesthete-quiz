@@ -38,8 +38,17 @@ body {
 
 hr {
     border-top: 0.1rem solid var(--midnight);
-    opacity: 30%;
+    opacity: 30%; 
 }
+
+.vl {
+    border-top: 0.1rem solid var(--midnight);
+    opacity: 30%;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+  }
 
 h2 {
     font-family: var(--font-oxygen);
@@ -167,7 +176,7 @@ button:hover {
     align-content: center; /* TODO - fix to move text bottom middle under img */
 }
 
-.quiz-mode p {
+.quiz-mode, .quiz-result-next p {
     font-weight: 500;
     padding-bottom: 4rem;
     font-family: var(--font-krub);
@@ -219,6 +228,45 @@ label {
 }
 
 /* Div 05 - Results */
+.quiz-result-next {
+    display: flex;
+    flex-direction: row;
+    max-width: 100vw;
+    justify-content: space-between;
+    align-content: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.quiz-result-column, .quiz-next-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz-result-column h3 {
+    font-family: var(--font-petrona);
+    font-weight: 200;
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.quiz-result-column p {
+    font-family: var (--font-krub);
+    font-weight: 200;
+    font-size: 1.6rem;
+}
+
+.quiz-next-column img {
+    width: 20%;
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+
+#quiz-next-mode {
+    padding-bottom: 1rem;
+}
 
 /* Div 06 - Footer */
 .footer {
