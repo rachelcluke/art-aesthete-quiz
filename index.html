@@ -26,7 +26,7 @@
     </nav>
 
     <!-- Landing View (display at start/home nav)-->
-    <div class="art-home" id="home">
+    <section class="art-home" id="home">
       <h2 class="hello-title">
           Hello.
       </h2>
@@ -34,21 +34,21 @@
         <!-- TODO: function goes to quiz */ -->
         <button type="submit" class="dark-btn" id="launch-start-btn">Start Quiz</button>
       </div>
-    </div>
+    </section>
 
     <!-- Quiz Mode View (replaces home/question)-->
-    <div class ="quiz-mode">
+    <section class ="quiz-mode">
       <h2 id="quiz-mode-title">Choose Quiz Mode</h2>
       <div class= "quiz-mode-easy">
         <!-- TODO: img will navigate to quiz -->
         <img src="assets/img/beginner-mode.webp" alt="Black triangle">
         <p>Beginner</p>
       </div>
-    </div>
+    </section>
 
     <hr> <!-- TODO: Remove when sections are displayed/hidden -->
     <!-- Quiz Question View (replaces home/mode/result)-->
-    <div class="quiz-game">
+    <section class="quiz-game">
       <!-- TODO: Make Mode and X/X dynamic -->
       <div class="quiz-overview-row">
         <p>Art Quiz      -       Mode        -       X/X</p>
@@ -77,28 +77,28 @@
           <label for="MC4">Option 4</label>
         </div>
       </div>
-        <!-- TODO: Insert dynamic image -->
+        <!-- TODO: Insert dynamic image: unsplashAPI -->
       <div class="quiz-help-button">
         <!-- TODO: only enable when answer is selected, function goes to next question */ -->
         <!-- TODO: change text to "Finish" when showing last quiz question -->
         <button type="submit" class="dark-btn" id="next-question-btn">Next</button>
       </div>
-    </div>
+    </section>
 
     <!-- Help Info View (display under mode/question)-->
     <hr>
-    <div class="quiz-help-info">
+    <section class="quiz-help-info">
       <h2 id="quiz-help-title">How Does This Work?</h2>
       <p>Choose a quiz mode (Beginner, Intermediate, Expert). Once selected, a question will appear with four options. Each quiz has 5 questions. Click on the answer you believe is correct, Each correct answer will add 1 point.<br>At the end of the quiz, your result will appear.</p>
       <div class="quiz-help-button">
         <!-- TODO: function goes back up to quiz div */ -->
         <button type="submit" class="dark-btn" id="scroll-up-btn">Scroll back to quiz</button>
       </div>
-    </div>
+    </section>
 
     <!-- Results View (replaces question)-->
     <hr>
-    <div class="quiz-result-next">
+    <section class="quiz-result-next">
       <div class="quiz-result-column">
         <h2 id="quiz-result-title">Results</h2>
         <!-- TODO: dynamically set score + message depending on result */ -->
@@ -122,7 +122,7 @@
           <button type="submit" class="dark-btn" id="next-quizmode-btn">Start</button>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Footer View (display under home/help/results) -->
     <footer class="container-fluid">
