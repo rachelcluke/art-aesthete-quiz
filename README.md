@@ -118,29 +118,29 @@ I have used [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq") to develop m
 
 The wireframes are below:
 
-[Landing Page - Desktop Wireframe](wireframes/launchView-desktop.png "home desktop wireframe")
+[Landing Page - Desktop Wireframe](docs/wireframes/launchView-desktop.png "home desktop wireframe")
 
-[Landing Page - Phone Wireframe](wireframes/launchView-mobile.png "home phone wireframe")
+[Landing Page - Phone Wireframe](docs/wireframes/launchView-mobile.png "home phone wireframe")
 
-[Quiz Mode Section - Desktop Wireframe](wireframes/quizModeView-desktop.png "mode desktop wireframe")
+[Quiz Mode Section - Desktop Wireframe](docs/wireframes/quizModeView-desktop.png "mode desktop wireframe")
 
-[Quiz Mode Section - Phone Wireframe](wireframes/quizModeView-mobile.png "mode phone wireframe")
+[Quiz Mode Section - Phone Wireframe](docs/wireframes/quizModeView-mobile.png "mode phone wireframe")
 
-[Quiz Game Section - Desktop Wireframe](wireframes/quizView-desktop.png "quiz desktop wireframe")
+[Quiz Game Section - Desktop Wireframe](docs/wireframes/quizView-desktop.png "quiz desktop wireframe")
 
-[Quiz Game Section - Phone Wireframe](wireframes/quizView-mobile.png "quiz phone wireframe")
+[Quiz Game Section - Phone Wireframe](docs/wireframes/quizView-mobile.png "quiz phone wireframe")
 
-[Help Section - Desktop Wireframe](wireframes/helpView-desktop.png "help desktop wireframe")
+[Help Section - Desktop Wireframe](docs/wireframes/helpView-desktop.png "help desktop wireframe")
 
-[Help Section - Phone Wireframe](wireframes/helpView-mobile.png "help phone wireframe")
+[Help Section - Phone Wireframe](docs/wireframes/helpView-mobile.png "help phone wireframe")
 
-[Result Section - Desktop Wireframe](wireframes/resultView-desktop.png "result desktop wireframe")
+[Result Section - Desktop Wireframe](docs/wireframes/resultView-desktop.png "result desktop wireframe")
 
-[Result Section - Phone Wireframe](wireframes/resultView-mobile.png "result phone wireframe")
+[Result Section - Phone Wireframe](docs/wireframes/resultView-mobile.png "result phone wireframe")
 
-[Footer - Desktop Wireframe](wireframes/footer-desktop.png "footer desktop wireframe")
+[Footer - Desktop Wireframe](docs/wireframes/footer-desktop.png "footer desktop wireframe")
 
-[Footer - Phone Wireframe](wireframes/footer-mobile.png "footer phone wireframe")
+[Footer - Phone Wireframe](docs/wireframes/footer-mobile.png "footer phone wireframe")
 
 \
 &nbsp;
