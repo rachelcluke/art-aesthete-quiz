@@ -62,6 +62,11 @@ label {
     font-family: var(--font-krub);
     font-weight: 400;
 }
+
+input[type=radio] {
+    accent-color: var(--cornflower);
+}
+
 /*label:before { content: " " }*/
 
 .dark-btn{
