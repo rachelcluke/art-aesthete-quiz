@@ -41,21 +41,21 @@ hr {
     opacity: 30%; 
 }
 
-.vl {
+.vertical-line {
     border-top: 0.1rem solid var(--midnight);
     opacity: 30%;
     position: absolute;
     left: 50%;
     margin-left: -3px;
     top: 0;
-  }
+}
 
 h2 {
-    font-family: var(--font-oxygen);
-    font-weight: 400;
-    color: var(--midnight);
-    font-size: 2.5rem;
-    padding-bottom: 2rem;
+font-family: var(--font-oxygen);
+font-weight: 400;
+color: var(--midnight);
+font-size: 2.5rem;
+padding-bottom: 2rem;
 }
 
 /* Header */
