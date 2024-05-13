@@ -181,11 +181,19 @@ nav a:hover {
 }
 
 /* Div 02 - Quiz Mode */
-.quiz-mode{
+.quiz-mode {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center; /* TODO - fix to move text bottom middle under img */
+}
+
+/* TODO - mobile: column, desktop: row*/
+.quiz-three-modes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
 }
 
 .quiz-mode, .quiz-result-next p {
@@ -194,7 +202,7 @@ nav a:hover {
     padding-bottom: 4rem;
 }
 
-.quiz-mode-easy img {
+.quiz-three-modes img {
     width: 30%;
     height: auto;
     padding-top: 3rem;
