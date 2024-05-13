@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Oxygen:wght@300;400;700&family=Petrona:ital,wght@0,100..900;1,100..900&family=Sofia+Sans:ital,wght@0,800;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krub:wght@200;400;500&family=Oxygen:wght@400;700&family=Petrona:ital,wght@0,200;1,200&family=Sofia+Sans:wght@800&display=swap');
 
 :root {
     --wildsand: #f6f6f6;
@@ -153,6 +153,7 @@ nav a:hover {
 }
 
 .hello-title {
+    font-family: var(--font-sofia);
     font-weight: 800; /* extra bold */
     font-size: 15rem; 
     padding: 0;
@@ -183,9 +184,9 @@ nav a:hover {
 }
 
 .quiz-mode, .quiz-result-next p {
+    font-family: var(--font-krub);
     font-weight: 500;
     padding-bottom: 4rem;
-    font-family: var(--font-krub);
 }
 
 .quiz-mode-easy img {
@@ -257,7 +258,7 @@ nav a:hover {
 }
 
 .quiz-result-column p {
-    font-family: var (--font-krub);
+    font-family: var(--font-krub);
     font-weight: 200;
     font-size: 1.6rem;
 }
@@ -290,8 +291,8 @@ nav a:hover {
 }
 
 .footer h5 {
-    font-weight: 400; /* regular */
     font-family: var(--font-oxygen);
+    font-weight: 400; /* regular */
     font-size: 2rem;
     /*margin-left: 1.3rem;*/
     margin-right: 1.3rem;
