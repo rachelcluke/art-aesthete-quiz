@@ -8,10 +8,10 @@
     --salmon: #e3726f;
     --cornflower: #6f99ec;
     --midnight: #040406;
-    --font-oxygen: 'Oxygen', sans-serif;
-    --font-sofia: 'Sofia Sans', sans-serif; 
-    --font-krub: 'Krub', sans-serif;
-    --font-petrona: 'Petrona', sans-serif;
+    --font-oxygen: "Oxygen", sans-serif;
+    --font-sofia: "Sofia Sans", sans-serif; 
+    --font-krub: "Krub", sans-serif;
+    --font-petrona: "Petrona", sans-serif;
 }
 
 /* Universal */
@@ -62,7 +62,7 @@ label {
     font-family: var(--font-krub);
     font-weight: 400;
 }
-/* label:after { content: ": " } */
+/*label:before { content: " " }*/
 
 .dark-btn{
     margin-top: 1rem;
@@ -214,9 +214,14 @@ nav a:hover {
     padding-bottom: 2rem;
 } 
 
+.quiz-question-column label {
+    padding-left: 1rem;
+}
+
 .quiz-option-1, .quiz-option-2, .quiz-option-3, .quiz-option-4 {
     display: flex;
     flex-direction: row;
+    padding-bottom: 2rem;
 }
 
 /* Div 04 - Quiz Help Info */
