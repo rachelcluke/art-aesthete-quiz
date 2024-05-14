@@ -205,12 +205,15 @@ nav a:hover {
     padding-bottom: 4rem;
 }
 
-/*TODO - add img hover effect */
 .quiz-three-modes img {
     width: 70%;
     height: auto;
     padding-top: 3rem;
     padding-bottom: 0.5rem;
+}
+
+.quiz-three-modes img:hover  {
+	opacity: 0.5;
 }
 
 /* Div 03 - Quiz Game */
@@ -348,7 +351,7 @@ nav a:hover {
 .contact i {
     color: var(--cornflower);
     font-size: 2rem;
-    padding-top: 0.5rem;
+    padding-top: 1rem;
 }
 
 /*copyright */
