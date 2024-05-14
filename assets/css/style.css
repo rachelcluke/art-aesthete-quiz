@@ -160,7 +160,7 @@ nav a:hover {
     font-family: var(--font-sofia-sans);
     font-weight: 800; 
     font-size: 10rem; 
-    letter-spacing: 4%;
+    letter-spacing: 5%;
     -webkit-text-stroke: 1px var(--midnight);
     background: url("../img/tapestry-fabric-faces.webp");
     opacity: 85%;
@@ -370,6 +370,115 @@ nav a:hover {
     padding-right: 5%;
 }
 
+/* Media Query */
+
 /* Default design - Mobile - 375 x 667 px */
+
 /* Media Query 01 - Tablet - 768 x 959 px */
+@media (min-width: 768px) {
+    body {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+        padding-bottom: 3rem;
+    }
+
+    .dark-btn, .nav-menu li a, .footer h5 {
+        font-size: 2.5rem;
+    }
+
+    .dark-btn {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    /* Div 01 - Home landing page */
+    .art-home {
+        padding-top: 40%;
+        padding-bottom: 10%
+    }
+
+    .hello-title {
+        font-size: 20rem;
+    }
+
+    #launch-start-btn {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    /* Div 02 - Quiz Mode */
+    .quiz-three-modes img {
+        width: 50%;
+    }
+
+    .quiz-mode-beginner, .quiz-mode-intermediate, .quiz-mode-expert {
+        padding-bottom: 3rem;
+    }
+
+    /* Div 03 - Quiz Game */
+    .quiz-game input {
+        -ms-transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+
+    .quiz-option-1, .quiz-option-2, .quiz-option-3, .quiz-option-4  {
+        padding-bottom: 3.5rem;
+    }
+
+    /* Div 04 - Quiz Help Info */
+    .quiz-help-info {
+        max-width: 90%;
+    }
+
+    .quiz-help-info, .quiz-game p {
+        font-size: 2.5rem;
+    }
+
+    .quiz-help-button {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    /* Div 05 - Results */
+    .quiz-result-column h3 {
+        font-size: 5rem;
+    }
+
+    .quiz-result-column, .quiz-next-column p {
+        font-size: 2.5rem;
+    }
+
+    #play-again-btn, #next-quizmode-btn {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    /* Div 06 - Footer */
+    .footer {
+        flex-direction: row;
+    }
+
+    .footer h5{
+        font-size: 3rem;
+    }
+
+    .contact i, .footer {
+        font-size: 3rem;
+    }
+
+    .contact p {
+        font-size: 2.5rem;
+    }
+
+    #emailaddress, #subscribe-btn, .subscribe-form p:last-child {
+        font-size: 2rem;
+    }
+}
+
 /* Media Query 02 - Laptop - 1920 x 1080 px */
+@media (min-width: 992px) {
+}
