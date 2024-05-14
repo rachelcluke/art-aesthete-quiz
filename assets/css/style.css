@@ -20,6 +20,7 @@
     margin: 0;
 }
 
+/*TODO - get rid of horizontal scrolling */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 2rem;
@@ -32,8 +33,8 @@ body {
     font-weight: 200;
     color: var(--midnight);
     background-color: var(--wildsand);
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 hr {
@@ -126,7 +127,7 @@ input[type=radio] {
     font-weight: 700; /* bold */
     transition: 0.30s ease-in-out;
     padding-bottom: 1rem;
-    padding-left: 3rem;
+    padding-left: 1rem;
     font-size: 2rem;
     color: var(--midnight);
 }
@@ -139,33 +140,30 @@ nav a:hover {
     color: var(--cornflower)
 }
 
-#start-btn {
-    font-size: 2rem;
-    padding: 1rem;
-    padding-left: 12%;
-    padding-right: 12%;
-}
-
 /* Div 01 - Home landing page */
 .art-home {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 70vh;
+    min-height: 50vh;
     margin-top: 0;
     padding-top: 50%;
-    padding-left: 10%;
+}
+
+.hello-title-row, .quiz-mode-title-row, .mode-img-row , .mode-label-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .hello-title {
     font-family: var(--font-sofia);
     font-weight: 800; /* extra bold */
-    font-size: 15rem; 
-    padding: 0;
-    padding-top: 1rem;
+    font-size: 10rem; 
     letter-spacing: 4%;
     -webkit-text-stroke: 1px var(--midnight);
-    background: url("../img/carpet-texture-bkg.png");
+    background: url("../img/tapestry-fabric-faces.webp");
+    opacity: 85%;
     background-size: cover;
     color: #fff;
     -webkit-text-fill-color: transparent;
@@ -177,7 +175,11 @@ nav a:hover {
     flex-direction: row;
     justify-content: center;
     margin-top: auto;
-    padding-bottom: 20%;
+    padding-bottom: 4rem;
+}
+
+#launch-start-btn {
+    padding: 1rem 4rem 1rem 4rem;
 }
 
 /* Div 02 - Quiz Mode */
@@ -185,7 +187,8 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center; /* TODO - fix to move text bottom middle under img */
+    align-content: center; 
+    padding-top: 4rem;
 }
 
 /* TODO - mobile: column, desktop: row*/
@@ -202,11 +205,12 @@ nav a:hover {
     padding-bottom: 4rem;
 }
 
+/*TODO - add img hover effect */
 .quiz-three-modes img {
-    width: 30%;
+    width: 70%;
     height: auto;
     padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-bottom: 0.5rem;
 }
 
 /* Div 03 - Quiz Game */
@@ -215,14 +219,10 @@ nav a:hover {
     flex-direction: column;
     justify-content: space-around;
     align-content: flex-start;
+    padding-top:4rem;
     padding-bottom: 4rem;
 }
 
-.quiz-overview-row {
-    padding-top: 2rem;
-}
-
-/* TODO: Space out quiz mc options */ 
 .quiz-question-column {
     padding-bottom: 2rem;
 } 
@@ -241,6 +241,7 @@ nav a:hover {
 .quiz-help-info {
     padding-top: 4rem;
     padding-bottom: 4rem;
+    max-width: 80vw;
 }
 
 .quiz-help-info, .quiz-game p {
@@ -295,6 +296,8 @@ nav a:hover {
 /* Div 06 - Footer */
 .footer {
     display: flex;
+    /* TODO - for bigger screens change column to row */
+    flex-direction: column;
     justify-content: space-around;
     background-color: var(--wildsand);
     color: var(--midnight);
@@ -304,13 +307,13 @@ nav a:hover {
 }
 
 .footer a {
-    font-size: 2rem;
+    font-size: 1.6rem;
     padding-right: 1rem;
 }
 
 .footer h5 {
     font-family: var(--font-oxygen);
-    font-weight: 400; /* regular */
+    font-weight: 400; 
     font-size: 2rem;
     /*margin-left: 1.3rem;*/
     margin-right: 1.3rem;
@@ -344,19 +347,26 @@ nav a:hover {
 
 .contact i {
     color: var(--cornflower);
+    font-size: 2rem;
+    padding-top: 0.5rem;
 }
 
 /*copyright */
-.contact p:last-child { 
-    font-size: 1rem;
+.subscribe-form p:last-child { 
+    font-family: var(--font-krub);
+    font-size: 1.2rem;
     font-weight: 300;
-    padding-top: 1.5rem;
+    padding-top: 2rem;
 }
 
 #subscribe-btn {
     border-radius: 2rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 0.5rem;
     padding-left: 5%;
     padding-right: 5%;
 }
+
+/* Default design - Mobile - 375 x 667 px */
+/* Media Query 01 - Tablet - 768 x 959 px */
+/* Media Query 02 - Laptop - 1920 x 1080 px */

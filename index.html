@@ -27,31 +27,48 @@
 
     <!-- Landing View (display at start/home nav)-->
     <section class="art-home" id="home">
-      <h2 class="hello-title">Hello.</h2>
+      <div class="hello-title-row">
+        <h2 class="hello-title">Hello.</h2>
+      </div>
       <div class="art-home-button">
         <!-- TODO: function goes to quiz */ -->
         <button type="submit" class="dark-btn" id="launch-start-btn">Start Quiz</button>
       </div>
     </section>
 
+    <hr> <!-- TODO: Remove when sections are displayed/hidden -->
     <!-- Quiz Mode View (replaces home/question)-->
     <section class ="quiz-mode">
-      <h2 id="quiz-mode-title">Choose Quiz Mode</h2>
+      <div class="quiz-mode-title-row">
+        <h2 id="quiz-mode-title">Choose Quiz Mode</h2>
+      </div>
       <div class="quiz-three-modes">
         <div class= "quiz-mode-beginner">
           <!-- TODO: img will navigate to quiz -->
-          <img src="assets/img/beginner-mode.webp" alt="Black triangle">
-          <p>Beginner</p>
+          <div class="mode-img-row">
+            <img src="assets/img/beginner-mode.webp" alt="Black triangle">
+          </div>
+          <div class="mode-label-row">
+            <p>Beginner</p>
+          </div>
         </div>
         <div class= "quiz-mode-intermediate">
           <!-- TODO: img will navigate to quiz -->
-          <img src="assets/img/intermediate-mode.avif" alt="Coral painting">
-          <p>Intermediate</p>
+          <div class="mode-img-row">
+            <img src="assets/img/intermediate-mode.avif" alt="Coral painting">
+          </div>
+          <div class="mode-label-row">
+            <p>Intermediate</p>
+          </div>
         </div>
         <div class= "quiz-mode-expert">
           <!-- TODO: img will navigate to quiz -->
-          <img src="assets/img/expert-mode.webp" alt="Multicolour painting">
-          <p>Expert</p>
+          <div class="mode-img-row">
+            <img src="assets/img/expert-mode.webp" alt="Multicolour painting">
+          </div>
+          <div class="mode-label-row">
+            <p>Expert</p>
+          </div>
         </div>
       </div>
     </section>
@@ -157,7 +174,6 @@
               </li>
             </ul>
           </div>
-          <p>© Copyright 2024</p>
         </div>
 
         <!--TODO: create subscribed.html-->
@@ -170,9 +186,10 @@
                 required>
             </div>
             <div class="form-row text-center">
-              <button type="submit" class="dark-btn" id="subcribe-btn">Submit</button>
+              <button type="submit" class="dark-btn" id="subscribe-btn">Submit</button>
             </div>
           </form>
+          <p>© Copyright 2024</p>
         </div>
       </div>
     </footer>
