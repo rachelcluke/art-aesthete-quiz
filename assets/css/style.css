@@ -9,7 +9,7 @@
     --cornflower: #6f99ec;
     --midnight: #040406;
     --font-oxygen: "Oxygen", sans-serif;
-    --font-sofia: "Sofia Sans", sans-serif; 
+    --font-sofia-sans: "Sofia Sans", sans-serif; 
     --font-krub: "Krub", sans-serif;
     --font-petrona: "Petrona", sans-serif;
 }
@@ -33,7 +33,7 @@ body {
     font-weight: 200;
     color: var(--midnight);
     background-color: var(--wildsand);
-    margin-left: 1rem;
+    margin-left: 1.5rem;
     margin-right: 1rem;
 }
 
@@ -150,14 +150,14 @@ nav a:hover {
     padding-top: 50%;
 }
 
-.hello-title-row, .quiz-mode-title-row, .mode-img-row , .mode-label-row {
+.hello-title-row, .quiz-mode-title-row, .mode-img-row , .mode-label-row, .quiz-result-heading-row, .quiz-result-content-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
 .hello-title {
-    font-family: var(--font-sofia);
+    font-family: var(--font-sofia-sans);
     font-weight: 800; 
     font-size: 10rem; 
     letter-spacing: 4%;
@@ -253,12 +253,10 @@ nav a:hover {
 }
 
 /* Div 05 - Results */
-.quiz-result-next {
+.quiz-result-next-section {
     display: flex;
     flex-direction: row;
-    max-width: 100vw;
     justify-content: space-between;
-    align-content: center;
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
@@ -266,6 +264,8 @@ nav a:hover {
 .quiz-result-column, .quiz-next-column {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    max-width: 50%;
 }
 
 .quiz-result-column h3 {
@@ -276,21 +276,22 @@ nav a:hover {
     padding-top: 1rem;
 }
 
-.quiz-result-column p {
+.quiz-result-column, .quiz-next-column p {
     font-family: var(--font-krub);
     font-weight: 200;
     font-size: 1.6rem;
 }
 
 .quiz-next-column img {
-    width: 20%;
+    width: 70%;
     height: auto;
     padding-top: 1rem;
-    padding-bottom: 3rem;
+    padding-bottom: 0.5rem;
 }
 
-#quiz-next-mode {
-    padding-bottom: 1rem;
+#play-again-btn, #next-quizmode-btn {
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 /* Div 06 - Footer */

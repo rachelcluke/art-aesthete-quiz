@@ -125,28 +125,43 @@
 
     <!-- Results View (replaces question)-->
     <hr>
-    <section class="quiz-result-next">
+    <section class="quiz-result-next-section">
       <div class="quiz-result-column">
-        <h2 id="quiz-result-title">Results</h2>
+        <div class="quiz-result-heading-row">
+          <h2 id="quiz-result-title">Results</h2>
+        </div>
         <!-- TODO: dynamically set score + message depending on result */ -->
-        <h3 id="quiz-result-score">X/X</h3>
-        <p>Outcome Description Placeholder</p>
-        <div class="quiz-result-button">
-          <!-- TODO: function to replay same quiz */ -->
-          <button type="submit" class="dark-btn" id="play-again-btn">Play again</button>
+        <div class="quiz-result-content-row">
+          <h3 id="quiz-result-score">X/X</h3>
+        </div>
+        <div class="quiz-result-content-row">
+          <p>Outcome Description Placeholder</p>
+        </div>
+        <div class="quiz-result-content-row">
+          <div class="quiz-result-button">
+            <!-- TODO: function to replay same mode */ -->
+            <button type="submit" class="dark-btn" id="play-again-btn">Retry</button>
+          </div>
         </div>
       </div>
       <!-- TODO: Add vertical line -->
-      <!--<div class="vl"></div>-->
       <div class="quiz-next-column">
-        <h2 id="quiz-next-title">Next Up</h2>
+        <div class="quiz-result-heading-row">
+          <h2 id="quiz-next-title">Next Up</h2>
+        </div>
         <!-- TODO: dynamically set img + message depending on next quiz */ -->
         <!-- TODO: img will navigate to quiz -->
-        <img src="assets/img/next-up-img.jpg" alt="Yellow plate">
-        <p id="quiz-next-mode">Beginner</p>
-        <div class="quiz-next-button">
-          <!-- TODO: function to go to next quiz */ -->
-          <button type="submit" class="dark-btn" id="next-quizmode-btn">Start</button>
+        <div class="quiz-result-content-row">
+          <img src="assets/img/next-up-img.jpg" alt="Yellow plate">
+        </div>
+        <div class="quiz-result-content-row">
+          <p id="quiz-next-mode-label">Beginner</p>
+        </div>
+        <div class="quiz-result-content-row">
+          <div class="quiz-next-button">
+            <!-- TODO: function to go to next quiz */ -->
+            <button type="submit" class="dark-btn" id="next-quizmode-btn">Start</button>
+          </div>
         </div>
       </div>
     </section>
