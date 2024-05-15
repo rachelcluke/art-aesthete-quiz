@@ -20,7 +20,6 @@
     margin: 0;
 }
 
-/*TODO - get rid of horizontal scrolling */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 2rem;
@@ -480,5 +479,108 @@ nav a:hover {
 }
 
 /* Media Query 02 - Laptop - 1920 x 1080 px */
-@media (min-width: 992px) {
+@media (min-width: 1920px) {
+    body {
+        font-size: 6rem;
+    }
+
+    h2 {
+        font-size: 7rem;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    .dark-btn, .nav-menu li a, .footer h5 {
+        font-size: 5rem;
+    }
+
+    /* Div 01 - Home landing page */
+    .art-home {
+        padding-top: 12%;
+        padding-bottom: 10%
+    }
+
+    .hello-title {
+        font-size: 50rem;
+    }
+
+    /* Div 02 - Quiz Mode */
+    .quiz-three-modes {
+        display: flex;
+        flex-direction: row;
+        padding-top: 4rem;
+    }
+
+    .quiz-mode img {
+        width: 80%;
+        height: auto;
+    }
+
+    /* Div 03 - Quiz Game */
+    .quiz-overview-row p {
+        font-size: 4.5rem;
+        padding-top: 8rem;
+        padding-bottom: 5rem;
+    }
+
+    .quiz-game input {
+        -ms-transform: scale(3);
+        -webkit-transform: scale(3);
+        transform: scale(3);
+    }
+
+    .quiz-game label {
+        padding-left: 4rem;
+    }
+
+    .quiz-option-1, .quiz-option-2, .quiz-option-3, .quiz-option-4  {
+        padding-bottom: 3.5rem;
+        padding-left: 2rem;
+    }
+
+    /* Div 04 - Quiz Help Info */
+    .quiz-help-info {
+        max-width: 60%;
+    }
+
+    .quiz-help-info, .quiz-game p {
+        font-size: 4rem;
+    }
+
+    .quiz-help-button {
+        padding-top: 6rem;
+        padding-bottom: 10rem;
+    }
+
+    /* Div 05 - Results */
+    .quiz-result-column h3 {
+        font-size: 12rem;
+    }
+
+    .quiz-result-column, .quiz-next-column p {
+        font-size: 4rem;
+    }
+
+    #play-again-btn, #next-quizmode-btn {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+
+    /* Div 06 - Footer */
+    .footer h5{
+        font-size: 4rem;
+    }
+
+    .contact i, .footer {
+        font-size: 5rem;
+    }
+
+    .contact p {
+        font-size: 4rem;
+    }
+
+    #emailaddress, #subscribe-btn, .subscribe-form p:last-child {
+        font-size: 3rem;
+    }
+
 }
