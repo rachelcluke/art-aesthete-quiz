@@ -17,7 +17,7 @@ let questions = [];
 
 //Retrieving quiz questions & answers from OpenAPI
 fetch(
-    'https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple'
+    'https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple'
 )
     .then((res) => {
         return res.json();
@@ -77,3 +77,5 @@ fetch(
         remainingQuestions.splice(questionIndex, 1);
         acceptingAnswers = true;
     };
+
+    //TODO - add user selecting quiz options events
