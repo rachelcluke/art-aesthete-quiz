@@ -1,8 +1,15 @@
 // TODO - declare this in index.html with a script tag
 
+//Navigation Variables
+const quizStartSection = document.querySelector('.art-home');
+const quizModeSection = document.querySelector('.quiz-mode');
+quizModeSection.style.display = "none";
+
+
+//Quiz Game Variables
 const question = document.getElementById('quiz-question');
 const options = Array.from(document.getElementsByClassName('option-text'));
-const scoreText = document.getElementById('quiz-result-score');
+const scoreText = document.querySelector('#quiz-result-score');
 let currentQuestion = {};
 let correctAnswers = true;
 let quizScore = 0;
@@ -15,6 +22,23 @@ const questions_limit = 5;
 
 let questions = [];
 
+
+//Navigation (hide/display views)
+document.querySelector("#launch-start-btn").onclick = function() {
+
+    if (quizModeSection.style.display === "none") {
+        quizModeSection.style.display = "block";
+        quizStartSection.style.display = "none";
+        console.log("btn is hit")
+    } else {
+        quizModeSection.style.display = "none";
+        quizStartSection.style.display = "block";
+        console.log("hit")
+    }
+};
+
+
+/*
 //Retrieving quiz questions & answers from OpenAPI
 fetch(
     'https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple'
@@ -43,7 +67,8 @@ fetch(
 
             return processedQuestion;
         });
-        //startQuiz();
+        console.log(processedQuestion);
+        startQuiz();
     })
     .catch((error) => {
         console.error(error);
@@ -79,3 +104,5 @@ fetch(
     };
 
     //TODO - add user selecting quiz options events
+
+    */
