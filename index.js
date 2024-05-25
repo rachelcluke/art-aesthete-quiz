@@ -51,6 +51,7 @@ document.querySelector("#beginner-img").onclick = function() {
     quizGameSection.style.display = "block";
     quizModeSection.style.display = "none";
     selectedMode = quizModes[0];
+    document.getElementById("mode-dynamic-text").textContent="Beginner";
     console.log("beginner mode");
 } 
 
@@ -58,6 +59,7 @@ document.querySelector("#intermediate-img").onclick = function() {
     quizGameSection.style.display = "block";
     quizModeSection.style.display = "none";
     selectedMode = quizModes[1];
+    document.getElementById("mode-dynamic-text").textContent="Intermediate";
     console.log("intermediate mode");
 } 
 
@@ -65,6 +67,7 @@ document.querySelector("#expert-img").onclick = function() {
     quizGameSection.style.display = "block";
     quizModeSection.style.display = "none";
     selectedMode = quizModes[2];
+    document.getElementById("mode-dynamic-text").textContent="Expert";
     console.log("expert mode");
 } 
 

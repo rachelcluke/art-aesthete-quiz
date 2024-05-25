@@ -225,6 +225,16 @@ nav a:hover {
     padding-bottom: 4rem;
 }
 
+.quiz-overview-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.quiz-header-dash {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
 .quiz-question-column {
     padding-bottom: 2rem;
 } 
@@ -418,6 +428,11 @@ nav a:hover {
     }
 
     /* Div 03 - Quiz Game */
+    .quiz-header-dash {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
     .quiz-game input {
         -ms-transform: scale(1.5);
         -webkit-transform: scale(1.5);
@@ -517,6 +532,11 @@ nav a:hover {
     }
 
     /* Div 03 - Quiz Game */
+    .quiz-header-dash {
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+
     .quiz-overview-row p {
         font-size: 4.5rem;
         padding-top: 8rem;
