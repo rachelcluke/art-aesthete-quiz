@@ -15,6 +15,8 @@ quizResultSection.style.display = "none";
 const question = document.getElementById('quiz-question');
 const options = Array.from(document.getElementsByClassName('option-text'));
 const scoreText = document.querySelector('#quiz-result-score');
+const quizModes = ["beginner", "intermediate", "expert"];
+let quizMode = quizModes[0];
 let currentQuestion = {};
 let correctAnswers = true;
 let quizScore = 0;
@@ -45,16 +47,31 @@ document.querySelector("#scroll-up-btn").onclick = function() {
     document.documentElement.scrollTop = 0; //For Chrome, Firefox, Internet Explorer and Opera
 }
 
-document.querySelector(".mode-img-row").onclick = function () {
+document.querySelector("#beginner-img").onclick = function() {
     quizGameSection.style.display = "block";
     quizModeSection.style.display = "none";
-    //startQuiz();
-}
+    selectedMode = quizModes[0];
+    console.log("beginner mode");
+} 
+
+document.querySelector("#intermediate-img").onclick = function() {
+    quizGameSection.style.display = "block";
+    quizModeSection.style.display = "none";
+    selectedMode = quizModes[1];
+    console.log("intermediate mode");
+} 
+
+document.querySelector("#expert-img").onclick = function() {
+    quizGameSection.style.display = "block";
+    quizModeSection.style.display = "none";
+    selectedMode = quizModes[2];
+    console.log("expert mode");
+} 
 
 //TODO - add function for play again button (display game section using same mode, hide result section)
 //TODO - add function for start button (add logic for which mode to display/ mode to navigate to)
 
-
+/*
 //Retrieving quiz questions & answers from OpenAPI
 fetch(
     'https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple'
@@ -121,4 +138,4 @@ fetch(
 
     //TODO - add user selecting quiz options events
 
-    
+    */
