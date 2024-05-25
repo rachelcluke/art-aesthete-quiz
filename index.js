@@ -45,6 +45,14 @@ document.querySelector("#scroll-up-btn").onclick = function() {
     document.documentElement.scrollTop = 0; //For Chrome, Firefox, Internet Explorer and Opera
 }
 
+document.querySelector(".mode-img-row").onclick = function () {
+    quizGameSection.style.display = "block";
+    quizModeSection.style.display = "none";
+
+}
+
+//TODO - add function for play again button (display game section using same mode, hide result section)
+//TODO - add function for start button (add logic for which mode to display/ mode to navigate to)
 
 /*
 //Retrieving quiz questions & answers from OpenAPI
