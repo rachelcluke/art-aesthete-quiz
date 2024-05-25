@@ -3,8 +3,13 @@
 //Navigation Variables
 const quizStartSection = document.querySelector('.art-home');
 const quizModeSection = document.querySelector('.quiz-mode');
+const quizGameSection = document.querySelector('.quiz-game');
+const quizHelpSection = document.querySelector('.quiz-help-info');
+const quizResultSection = document.querySelector('.quiz-result-next-section');
 quizModeSection.style.display = "none";
-
+quizGameSection.style.display = "none";
+quizHelpSection.style.display = "none";
+quizResultSection.style.display = "none";
 
 //Quiz Game Variables
 const question = document.getElementById('quiz-question');
@@ -25,17 +30,20 @@ let questions = [];
 
 //Navigation (hide/display views)
 document.querySelector("#launch-start-btn").onclick = function() {
-
     if (quizModeSection.style.display === "none") {
         quizModeSection.style.display = "block";
+        quizHelpSection.style.display = "block";
         quizStartSection.style.display = "none";
-        console.log("btn is hit")
     } else {
         quizModeSection.style.display = "none";
         quizStartSection.style.display = "block";
-        console.log("hit")
     }
 };
+
+document.querySelector("#scroll-up-btn").onclick = function() {
+    document.body.scrollTop = 0; //For Safari
+    document.documentElement.scrollTop = 0; //For Chrome, Firefox, Internet Explorer and Opera
+}
 
 
 /*
