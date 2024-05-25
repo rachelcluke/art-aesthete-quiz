@@ -48,13 +48,13 @@ document.querySelector("#scroll-up-btn").onclick = function() {
 document.querySelector(".mode-img-row").onclick = function () {
     quizGameSection.style.display = "block";
     quizModeSection.style.display = "none";
-
+    //startQuiz();
 }
 
 //TODO - add function for play again button (display game section using same mode, hide result section)
 //TODO - add function for start button (add logic for which mode to display/ mode to navigate to)
 
-/*
+
 //Retrieving quiz questions & answers from OpenAPI
 fetch(
     'https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple'
@@ -93,12 +93,12 @@ fetch(
     startQuiz = () => {
         questionCounter = 0;
         quizScore = 0;
-        availableQuesions = [...questions];
+        remainingQuestions = [...questions];
         getNewQuestion();
     };
 
     getNewQuestion = () => {
-        if (availableQuestions.length === 0 || questionCounter >= questions_limit) {
+        if (remainingQuestions.length === 0 || questionCounter >= questions_limit) {
             localStorage.setItem('latestScore', quizScore);
             //display results view
             document.getElementByClass('quiz-result-next-section').style.display='block'; 
@@ -121,4 +121,4 @@ fetch(
 
     //TODO - add user selecting quiz options events
 
-    */
+    

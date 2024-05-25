@@ -17,7 +17,7 @@ The following are high-level details of this project:
 <!-- - Any external code sources used in the project are clearly identified in the code itself and in this README.md file
 - The final version has been deployed via GitHub Pages. -->
 
-The last update to this file was: **May 15th, 2024**
+The last update to this file was: **May 25th, 2024**
 
 # Table of Contents
 
@@ -161,7 +161,7 @@ The wireframes are below:
   
 - [CSS](https://en.wikipedia.org/wiki/CSS "CSS")
 
-<!--TODO: add Java-->
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript "JavaScript")
 
 ## IDE
 
