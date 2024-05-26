@@ -80,75 +80,14 @@ fetch("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=mul
 })
 .then(downloadedQuestions => {
     console.log(downloadedQuestions.results);
+    downloadedQuestions.results.map(downloadedQuestion => {
+        const processedQuestion = {
+            question: downloadedQuestion.questions
+        };
+    })
 })
 .catch(err => {
     console.error(err);
 });
-/*
-//Retrieving quiz questions & answers from OpenAPI
-fetch(
-    'https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple'
-)
-    .then((res) => {
-        return res.json();
-    })
-    .then((downloadedQuestions) => {
-        //converting array items into a processedQuestion and return to array
-        questions = downloadedQuestions.results.map((downloadedQuestion) => {
-            const processedQuestion = {
-                question: downloadedQuestion.question,
-            };
 
-            const answerOptions = [...downloadedQuestion.incorrect_answers];
-            processedQuestion.answer = Math.floor(Math.random() * 4) + 1;
-            answerOptions.splice(
-                processedQuestion.answer - 1,
-                0,
-                downloadedQuestion.correct_answer
-            );
-
-            answerOptions.forEach((option, index) => {
-                processedQuestion['option' + (index + 1)] = option;
-            });
-
-            return processedQuestion;
-        });
-        console.log(processedQuestion);
-        startQuiz();
-    })
-    .catch((error) => {
-        console.error(error);
-    });
-
-    startQuiz = () => {
-        questionCounter = 0;
-        quizScore = 0;
-        remainingQuestions = [...questions];
-        getNewQuestion();
-    };
-
-    getNewQuestion = () => {
-        if (remainingQuestions.length === 0 || questionCounter >= questions_limit) {
-            localStorage.setItem('latestScore', quizScore);
-            //display results view
-            document.getElementByClass('quiz-result-next-section').style.display='block'; 
-        }
-        questionCounter++;
-        progressText.innerText = `${questionCounter}/${questions_limit}`;
-    
-        const questionIndex = Math.floor(Math.random() * remainingQuestions.length);
-        currentQuestion = remainingQuestions[questionIndex];
-        question.innerText = currentQuestion.question;
-    
-        options.forEach((option) => {
-            const number = choice.dataset['number'];
-            option.innerText = currentQuestion['option' + number];
-        });
-    
-        remainingQuestions.splice(questionIndex, 1);
-        acceptingAnswers = true;
-    };
-
-    //TODO - add user selecting quiz options events
-
-    */
+//TODO - add user selecting quiz options events
