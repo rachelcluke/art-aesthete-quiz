@@ -85,7 +85,7 @@ fetch('https://opentdb.com/api.php?amount=5&category=9&difficulty=difficult&type
             question: downloadedQuestion.question
         };
         //spread operator to copy over incorrect answers
-        const answerOptions = [ ... downloadedQuestion.incorrect_answers];
+        const answerOptions = [ ...downloadedQuestion.incorrect_answers];
         processedQuestion.answer = Math.floor(Math.random() * 3) + 1;
         answerOptions.splice(processedQuestion.answer -1, 0, downloadedQuestion.correct_answer
         );
@@ -96,6 +96,7 @@ fetch('https://opentdb.com/api.php?amount=5&category=9&difficulty=difficult&type
 
         return processedQuestion;
     });
+    startQuiz;
     console.log(processedQuestion);
 })
 .catch(err => {
@@ -103,3 +104,10 @@ fetch('https://opentdb.com/api.php?amount=5&category=9&difficulty=difficult&type
 });
 
 //TODO - add user selecting quiz options events
+
+startQuiz = () => {
+    questionCounter = 0;
+    quizScore = 0;
+    remainingQuestions = [ ...questions]
+    console.log(remainingQuestions);
+}
