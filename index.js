@@ -20,7 +20,7 @@ let quizMode = quizModes[0];
 let currentQuestion = {};
 let quizScore = 0;
 let questionCounter = 0;
-let remainingQuestions = []; //available questions left
+let remainingQuestions = []; //available questions left out of 4
 
 //CONSTANTS
 const correct_points = 1;
@@ -110,4 +110,12 @@ startQuiz = () => {
     quizScore = 0;
     remainingQuestions = [ ...questions]
     console.log(remainingQuestions);
-}
+    getNewQuestion();
+};
+
+getNewQuestion = () => {
+    questionCounter ++;
+    const questionIndex = Math.floor(Math.random()*remainingQuestions.length);
+    currentQuestion = remainingQuestions[questionIndex];
+    question.innerText = currentQuestion.question;
+};
