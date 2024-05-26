@@ -17,6 +17,7 @@ const options = Array.from(document.getElementsByClassName('option-text'));
 const scoreText = document.querySelector('#quiz-result-score');
 const quizModes = ["beginner", "intermediate", "expert"];
 let quizMode = quizModes[0];
+let allowAnswers = false; //validation for user to answer
 let currentQuestion = {};
 let quizScore = 0;
 let questionCounter = 0;
@@ -103,8 +104,6 @@ fetch('https://opentdb.com/api.php?amount=5&category=9&difficulty=difficult&type
     console.error(err);
 });
 
-//TODO - add user selecting quiz options events
-
 startQuiz = () => {
     questionCounter = 0;
     quizScore = 0;
@@ -114,8 +113,25 @@ startQuiz = () => {
 };
 
 getNewQuestion = () => {
+    if (remainingQuestions.length === 0 || questionCounter >= questions_limit) {
+        //if user answers all 5 questions, reveal results and hide other sections
+        quizGameSection.style.display = "none";
+        quizHelpSection.style.display = "none";
+        quizResultSection.style.display = "block";
+    }
+
     questionCounter ++;
     const questionIndex = Math.floor(Math.random()*remainingQuestions.length);
     currentQuestion = remainingQuestions[questionIndex];
     question.innerText = currentQuestion.question;
+
+    options.forEach(option => {
+        const number = option.dataset["number"];
+        option.innerText = currentQuestion["option" + number];
+    });
+
+    remainingQuestions.splice(questionIndex, 1);
+    allowAnswers = true;
 };
+
+//TODO - add user selecting quiz options events
