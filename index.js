@@ -74,6 +74,16 @@ document.querySelector("#expert-img").onclick = function() {
 //TODO - add function for play again button (display game section using same mode, hide result section)
 //TODO - add function for start button (add logic for which mode to display/ mode to navigate to)
 
+fetch("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple") 
+.then(res => {
+    return res.json();
+})
+.then(downloadedQuestions => {
+    console.log(downloadedQuestions.results);
+})
+.catch(err => {
+    console.error(err);
+});
 /*
 //Retrieving quiz questions & answers from OpenAPI
 fetch(
