@@ -18,7 +18,6 @@ const scoreText = document.querySelector('#quiz-result-score');
 const quizModes = ["beginner", "intermediate", "expert"];
 let quizMode = quizModes[0];
 let currentQuestion = {};
-let correctAnswers = true;
 let quizScore = 0;
 let questionCounter = 0;
 let remainingQuestions = []; //available questions left
@@ -74,17 +73,30 @@ document.querySelector("#expert-img").onclick = function() {
 //TODO - add function for play again button (display game section using same mode, hide result section)
 //TODO - add function for start button (add logic for which mode to display/ mode to navigate to)
 
-fetch("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple") 
+//TODO - swap out api link (category =25) with real after testing to avoid 'Error 429'
+fetch('https://opentdb.com/api.php?amount=5&category=9&difficulty=difficult&type=multiple') 
 .then(res => {
     return res.json();
 })
 .then(downloadedQuestions => {
     console.log(downloadedQuestions.results);
-    downloadedQuestions.results.map(downloadedQuestion => {
+    questions = downloadedQuestions.results.map(downloadedQuestion => {
         const processedQuestion = {
-            question: downloadedQuestion.questions
+            question: downloadedQuestion.question
         };
-    })
+        //spread operator to copy over incorrect answers
+        const answerOptions = [ ... downloadedQuestion.incorrect_answers];
+        processedQuestion.answer = Math.floor(Math.random() * 3) + 1;
+        answerOptions.splice(processedQuestion.answer -1, 0, downloadedQuestion.correct_answer
+        );
+
+        answerOptions.forEach((option, index) => {
+            processedQuestion["option" + (index + 1)] = option;
+        });
+
+        return processedQuestion;
+    });
+    console.log(processedQuestion);
 })
 .catch(err => {
     console.error(err);
