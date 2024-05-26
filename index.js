@@ -135,3 +135,13 @@ getNewQuestion = () => {
 };
 
 //TODO - add user selecting quiz options events
+options.forEach(option => {
+    option.addEventListener("click", e => {
+        if (!allowAnswers) return; //validation to allow user to answer question 
+        allowAnswers = false;
+        const selectedOption = e.target;
+        const selectedAnswer = selectedOption.dataset["number"];
+        console.log(selectedAnswer);
+        getNewQuestion();
+    });
+});
