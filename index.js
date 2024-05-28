@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 // TODO - declare this in index.html with a script tag
 
 //Navigation Variables
@@ -28,7 +30,7 @@ const correct_points = 1;
 const questions_limit = 5;
 
 let questions = [];
-
+let processedQuestion;
 
 //Navigation (hide/display views)
 document.querySelector("#launch-start-btn").onclick = function() {
@@ -76,33 +78,34 @@ document.querySelector("#expert-img").onclick = function() {
 
 //TODO - swap out api link (category =25) with real after testing to avoid 'Error 429'
 fetch('https://opentdb.com/api.php?amount=5&category=9&difficulty=difficult&type=multiple') 
-.then(res => {
-    return res.json();
-})
-.then(downloadedQuestions => {
-    console.log(downloadedQuestions.results);
-    questions = downloadedQuestions.results.map(downloadedQuestion => {
-        const processedQuestion = {
-            question: downloadedQuestion.question
-        };
-        //spread operator to copy over incorrect answers
-        const answerOptions = [ ...downloadedQuestion.incorrect_answers];
-        processedQuestion.answer = Math.floor(Math.random() * 3) + 1;
-        answerOptions.splice(processedQuestion.answer -1, 0, downloadedQuestion.correct_answer
-        );
+    .then(res => {
+        return res.json();
+    })
+    .then((downloadedQuestions) => {
+        console.log(downloadedQuestions.results);
+        questions = downloadedQuestions.results.map((downloadedQuestion) => {
+            const processedQuestion = {
+                question: downloadedQuestion.question,
+            };
+            //spread operator to copy over incorrect answers
+            const answerOptions = [...downloadedQuestion.incorrect_answers];
+            console.log(answerOptions);
+            processedQuestion.answer = Math.floor(Math.random() * 3) + 1;
+            answerOptions.splice(processedQuestion.answer -1, 0, downloadedQuestion.correct_answer
+            );
 
-        answerOptions.forEach((option, index) => {
-            processedQuestion["option" + (index + 1)] = option;
+            answerOptions.forEach((option, index) => {
+                processedQuestion['option' + (index + 1)] = option;
+            });
+
+            return processedQuestion;
         });
-
-        return processedQuestion;
+        console.log(processedQuestion);
+        startQuiz();
+    })
+    .catch(err => {
+        console.error(err);
     });
-    startQuiz;
-    console.log(processedQuestion);
-})
-.catch(err => {
-    console.error(err);
-});
 
 startQuiz = () => {
     questionCounter = 0;
