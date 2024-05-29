@@ -110,6 +110,8 @@ fetch('https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=mul
 startQuiz = () => {
     questionCounter = 0;
     quizScore = 0;
+    document.getElementById("score-dynamic-text").textContent = questionCounter;
+    document.getElementById("score-total-questions-text").textContent = questions_limit;
     remainingQuestions = [ ...questions]
     console.log(remainingQuestions);
     getNewQuestion();

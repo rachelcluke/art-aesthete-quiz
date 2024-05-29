@@ -230,6 +230,11 @@ nav a:hover {
     flex-direction: row;
 }
 
+.score-dynamic-row {
+    display: flex;
+    flex-direction: row;
+}
+
 .quiz-header-dash {
     padding-left: 2rem;
     padding-right: 2rem;
