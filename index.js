@@ -18,6 +18,7 @@ quizNextButton.style.display = "none";
 //Quiz Game Variables
 const question = document.getElementById('quiz-question');
 const options = Array.from(document.getElementsByClassName('option-text'));
+const radioBtns = document.querySelector('.radio-button');
 const scoreText = document.querySelector('#quiz-result-score');
 const quizModes = ["beginner", "intermediate", "expert"];
 let quizMode = quizModes[0];
@@ -33,6 +34,7 @@ const questions_limit = 5;
 
 let questions = [];
 let processedQuestion;
+let currentAnswer;
 
 //Navigation (hide/display views)
 document.querySelector("#launch-start-btn").onclick = function() {
@@ -129,6 +131,7 @@ getNewQuestion = () => {
     const questionIndex = Math.floor(Math.random()*remainingQuestions.length);
     currentQuestion = remainingQuestions[questionIndex];
     document.getElementById("quiz-question").textContent = currentQuestion.question ;
+    currentAnswer = currentQuestion.answer;
 
     options.forEach(option => {
         const number = option.dataset["number"];
@@ -144,10 +147,16 @@ options.forEach(option => {
     option.addEventListener("click", e => {
         if (!allowAnswers) return; //validation to allow user to answer question 
         allowAnswers = false;
+        radioBtns.disabled = true;
         const selectedOption = e.target;
         const selectedAnswer = selectedOption.dataset["number"];
-        console.log("user picked" + selectedAnswer);
-        //getNewQuestion();
+        console.log("user picked" + selectedAnswer + "the correct answer is" + currentAnswer);
+        //score handling
+        if (selectedAnswer == currentAnswer) {
+            addScorePoint();
+        } else {
+            keepSameScore();
+        }
         quizNextButton.style.display = "block";
     });
 });
@@ -156,4 +165,15 @@ quizNextButton.onclick = function() {
     quizNextButton.style.display = "none";
     document.getElementById("score-dynamic-text").textContent = questionCounter;
     getNewQuestion();
+    radioBtns.disabled = false;
+}
+
+//if correct answer is selected
+addScorePoint = () => {
+    quizScore ++;
+}
+
+//if incorrect answer is selected
+keepSameScore = () => {
+    
 }
