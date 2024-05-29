@@ -79,9 +79,6 @@ document.querySelector("#expert-img").onclick = function() {
     url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=hard&type=multiple"
 } 
 
-//TODO - add function for play again button (display game section using same mode, hide result section)
-//TODO - add function for start button (add logic for which mode to display/ mode to navigate to)
-
 //This condition is so that it is only triggered after the mode is selected 
 //if url !== null 
 fetch("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple") 
@@ -196,3 +193,16 @@ setResultMessage = () => {
     }
     document.getElementById("quiz-result-message-dynamic").textContent = resultMessage;
 }
+
+//If user wants to play same mode again
+document.querySelector("#play-again-btn").onclick = function() {
+    quizGameSection.style.display = "block";
+    quizModeSection.style.display = "none";
+    quizResultSection.style.display = "none";
+    quizHelpSection.style.display = "block";
+    startQuiz();
+    console.log(selectedMode);
+} 
+
+
+//TODO - add function for start button (add logic for which mode to display/ mode to navigate to)
