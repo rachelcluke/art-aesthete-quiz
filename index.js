@@ -35,7 +35,8 @@ const questions_limit = 5;
 let questions = [];
 let processedQuestion;
 let currentAnswer;
-let url;
+let resultMessage;
+//let url;
 
 //Navigation (hide/display views)
 document.querySelector("#launch-start-btn").onclick = function() {
@@ -179,7 +180,19 @@ endQuiz = () => {
     //if user answers all 5 questions, reveal results and hide other sections
     document.getElementById("quiz-result-score").textContent = quizScore;
     document.getElementById("quiz-result-max").textContent = questions_limit;
+    setResultMessage();
     quizGameSection.style.display = "none";
     quizHelpSection.style.display = "none";
     quizResultSection.style.display = "block";
+}
+
+setResultMessage = () => {
+    if ((quizScore == 0) || (quizScore == 1)) {
+        resultMessage = "Better luck next time!";
+    } else if ((quizScore == 2) || (quizScore == 3)) {
+        resultMessage = "Woah, not bad at all!";
+    } else if ((quizScore == 4) || (quizScore == 5)) {
+        resultMessage = "Well done, you clearly know your stuff!";
+    }
+    document.getElementById("quiz-result-message-dynamic").textContent = resultMessage;
 }
