@@ -111,6 +111,7 @@ fetch("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=mul
     });
 
 startQuiz = () => {
+    //reset
     questionCounter = 0;
     quizScore = 0;
     document.getElementById("score-dynamic-text").textContent = questionCounter;
@@ -194,7 +195,7 @@ setResultMessage = () => {
     document.getElementById("quiz-result-message-dynamic").textContent = resultMessage;
 }
 
-//If user wants to play same mode again
+//if user wants to play same mode again
 document.querySelector("#play-again-btn").onclick = function() {
     quizGameSection.style.display = "block";
     quizModeSection.style.display = "none";
@@ -205,4 +206,25 @@ document.querySelector("#play-again-btn").onclick = function() {
 } 
 
 
-//TODO - add function for start button (add logic for which mode to display/ mode to navigate to)
+// next mode button 
+setNextMode = () => {
+    if (selectedMode == quizModes[0]) {
+        selectedMode = quizModes[1];
+        document.getElementById("mode-dynamic-text").textContent="Intermediate";
+    } else if (selectedMode == quizModes[1]) {
+        selectedMode = quizModes[2];
+        document.getElementById("mode-dynamic-text").textContent="Expert";
+    } else if (selectedMode == quizModes[2]) {
+        selectedMode = quizModes[0];
+        document.getElementById("mode-dynamic-text").textContent="Beginner";
+    }
+}
+
+document.querySelector("#next-quizmode-btn").onclick = function() {
+    quizGameSection.style.display = "block";
+    quizModeSection.style.display = "none";
+    quizResultSection.style.display = "none";
+    quizHelpSection.style.display = "block";
+    setNextMode();
+    startQuiz();
+} 
