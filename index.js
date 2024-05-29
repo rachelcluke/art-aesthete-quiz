@@ -154,5 +154,6 @@ options.forEach(option => {
 
 quizNextButton.onclick = function() {
     quizNextButton.style.display = "none";
+    document.getElementById("score-dynamic-text").textContent = questionCounter;
     getNewQuestion();
 }
