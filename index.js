@@ -147,11 +147,14 @@ options.forEach(option => {
         const selectedOption = e.target;
         const selectedAnswer = selectedOption.dataset["number"];
         console.log("user picked" + selectedAnswer + "the correct answer is" + currentAnswer);
-        //score handling
+        //case - correct answer
         if (selectedAnswer == currentAnswer) {
-            addScorePoint();
+            quizScore++;
+            //TODO - button turn green
+        //case - wrong answer
         } else {
-            keepSameScore();
+            //TODO - correct option radio btn turn green, selected btn turn red
+            
         }
         quizNextButton.style.display = "block";
     });
@@ -162,16 +165,6 @@ quizNextButton.onclick = function() {
     document.getElementById("score-dynamic-text").textContent = questionCounter;
     getNewQuestion();
     radioBtns.disabled = false;
-}
-
-//if correct answer is selected
-addScorePoint = () => {
-    quizScore ++;
-}
-
-//if incorrect answer is selected
-keepSameScore = () => {
-
 }
 
 endQuiz = () => {
@@ -205,8 +198,7 @@ document.querySelector("#play-again-btn").onclick = function() {
     console.log(selectedMode);
 } 
 
-
-// next mode button 
+//next mode button 
 setNextMode = () => {
     if (selectedMode == quizModes[0]) {
         selectedMode = quizModes[1];
