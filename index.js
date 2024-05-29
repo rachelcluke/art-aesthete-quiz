@@ -8,10 +8,12 @@ const quizModeSection = document.querySelector('.quiz-mode');
 const quizGameSection = document.querySelector('.quiz-game');
 const quizHelpSection = document.querySelector('.quiz-help-info');
 const quizResultSection = document.querySelector('.quiz-result-next-section');
+const quizNextButton = document.querySelector('#next-question-btn');
 quizModeSection.style.display = "none";
 quizGameSection.style.display = "none";
 quizHelpSection.style.display = "none";
 quizResultSection.style.display = "none";
+quizNextButton.style.display = "none";
 
 //Quiz Game Variables
 const question = document.getElementById('quiz-question');
@@ -100,7 +102,6 @@ fetch('https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=mul
 
             return processedQuestion;
         });
-        console.log(processedQuestion);
         startQuiz();
     })
     .catch(err => {
@@ -113,7 +114,6 @@ startQuiz = () => {
     document.getElementById("score-dynamic-text").textContent = questionCounter;
     document.getElementById("score-total-questions-text").textContent = questions_limit;
     remainingQuestions = [ ...questions]
-    console.log(remainingQuestions);
     getNewQuestion();
 };
 
@@ -146,7 +146,13 @@ options.forEach(option => {
         allowAnswers = false;
         const selectedOption = e.target;
         const selectedAnswer = selectedOption.dataset["number"];
-        console.log(selectedAnswer);
-        getNewQuestion();
+        console.log("user picked" + selectedAnswer);
+        //getNewQuestion();
+        quizNextButton.style.display = "block";
     });
 });
+
+quizNextButton.onclick = function() {
+    quizNextButton.style.display = "none";
+    getNewQuestion();
+}
