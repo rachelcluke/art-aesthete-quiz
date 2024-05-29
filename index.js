@@ -77,7 +77,7 @@ document.querySelector("#expert-img").onclick = function() {
 //TODO - add function for start button (add logic for which mode to display/ mode to navigate to)
 
 //TODO - swap out api link (category =25) with real after testing to avoid 'Error 429'
-fetch('https://opentdb.com/api.php?amount=5&category=9&difficulty=difficult&type=multiple') 
+fetch('https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple') 
     .then(res => {
         return res.json();
     })
@@ -126,7 +126,7 @@ getNewQuestion = () => {
     questionCounter ++;
     const questionIndex = Math.floor(Math.random()*remainingQuestions.length);
     currentQuestion = remainingQuestions[questionIndex];
-    question.innerText = currentQuestion.question;
+    document.getElementById("quiz-question").textContent = currentQuestion.question ;
 
     options.forEach(option => {
         const number = option.dataset["number"];
