@@ -123,10 +123,7 @@ startQuiz = () => {
 
 getNewQuestion = () => {
     if (remainingQuestions.length === 0 || questionCounter >= questions_limit) {
-        //if user answers all 5 questions, reveal results and hide other sections
-        quizGameSection.style.display = "none";
-        quizHelpSection.style.display = "none";
-        quizResultSection.style.display = "block";
+        endQuiz();
     }
 
     questionCounter ++;
@@ -176,4 +173,13 @@ addScorePoint = () => {
 //if incorrect answer is selected
 keepSameScore = () => {
 
+}
+
+endQuiz = () => {
+    //if user answers all 5 questions, reveal results and hide other sections
+    document.getElementById("quiz-result-score").textContent = quizScore;
+    document.getElementById("quiz-result-max").textContent = questions_limit;
+    quizGameSection.style.display = "none";
+    quizHelpSection.style.display = "none";
+    quizResultSection.style.display = "block";
 }

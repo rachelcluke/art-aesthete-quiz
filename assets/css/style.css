@@ -225,12 +225,7 @@ nav a:hover {
     padding-bottom: 4rem;
 }
 
-.quiz-overview-row {
-    display: flex;
-    flex-direction: row;
-}
-
-.score-dynamic-row {
+.quiz-overview-row, .score-dynamic-row, .quiz-result-text-row {
     display: flex;
     flex-direction: row;
 }
