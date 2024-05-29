@@ -35,6 +35,7 @@ const questions_limit = 5;
 let questions = [];
 let processedQuestion;
 let currentAnswer;
+let url;
 
 //Navigation (hide/display views)
 document.querySelector("#launch-start-btn").onclick = function() {
@@ -58,7 +59,7 @@ document.querySelector("#beginner-img").onclick = function() {
     quizModeSection.style.display = "none";
     selectedMode = quizModes[0];
     document.getElementById("mode-dynamic-text").textContent="Beginner";
-    console.log("beginner mode");
+    url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple"
 } 
 
 document.querySelector("#intermediate-img").onclick = function() {
@@ -66,7 +67,7 @@ document.querySelector("#intermediate-img").onclick = function() {
     quizModeSection.style.display = "none";
     selectedMode = quizModes[1];
     document.getElementById("mode-dynamic-text").textContent="Intermediate";
-    console.log("intermediate mode");
+    url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=medium&type=multiple"
 } 
 
 document.querySelector("#expert-img").onclick = function() {
@@ -74,14 +75,15 @@ document.querySelector("#expert-img").onclick = function() {
     quizModeSection.style.display = "none";
     selectedMode = quizModes[2];
     document.getElementById("mode-dynamic-text").textContent="Expert";
-    console.log("expert mode");
+    url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=hard&type=multiple"
 } 
 
 //TODO - add function for play again button (display game section using same mode, hide result section)
 //TODO - add function for start button (add logic for which mode to display/ mode to navigate to)
 
-//TODO - swap out api link (category =25) with real after testing to avoid 'Error 429'
-fetch('https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple') 
+//This condition is so that it is only triggered after the mode is selected 
+//if url !== null 
+fetch("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple") 
     .then(res => {
         return res.json();
     })
@@ -142,12 +144,10 @@ getNewQuestion = () => {
     allowAnswers = true;
 };
 
-//TODO - add user selecting quiz options events
 options.forEach(option => {
     option.addEventListener("click", e => {
-        if (!allowAnswers) return; //validation to allow user to answer question 
-        allowAnswers = false;
-        radioBtns.disabled = true;
+        //if (!allowAnswers) return; //validation to allow user to answer question 
+        //allowAnswers = false;
         const selectedOption = e.target;
         const selectedAnswer = selectedOption.dataset["number"];
         console.log("user picked" + selectedAnswer + "the correct answer is" + currentAnswer);
@@ -175,5 +175,5 @@ addScorePoint = () => {
 
 //if incorrect answer is selected
 keepSameScore = () => {
-    
+
 }
