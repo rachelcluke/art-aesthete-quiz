@@ -270,10 +270,10 @@ nav a:hover {
 }
 
 /* Div 05 - Results */
-.quiz-result-next-section {
+.quiz-result-next-row {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
