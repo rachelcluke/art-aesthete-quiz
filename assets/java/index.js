@@ -26,8 +26,8 @@ let questionCounter = 0;
 let remainingQuestions = []; //available questions left out of 4
 
 //CONSTANTS
-const correct_points = 1;
-const questions_limit = 5;
+const CORRECT_POINTS = 1;
+const QUESTIONS_LIMIT = 5;
 
 let questions = [];
 let processedQuestion;
@@ -111,13 +111,13 @@ startQuiz = () => {
     questionCounter = 0;
     quizScore = 0;
     document.getElementById("score-dynamic-text").textContent = questionCounter;
-    document.getElementById("score-total-questions-text").textContent = questions_limit;
+    document.getElementById("score-total-questions-text").textContent = QUESTIONS_LIMIT;
     remainingQuestions = [ ...questions]
     getNewQuestion();
 };
 
 getNewQuestion = () => {
-    if (remainingQuestions.length === 0 || questionCounter >= questions_limit) {
+    if (remainingQuestions.length === 0 || questionCounter >= QUESTIONS_LIMIT) {
         endQuiz();
     }
 
@@ -166,7 +166,7 @@ quizNextBtnRef.onclick = function() {
 endQuiz = () => {
     //if user answers all 5 questions, reveal results and hide other sections
     document.getElementById("quiz-result-score").textContent = quizScore;
-    document.getElementById("quiz-result-max").textContent = questions_limit;
+    document.getElementById("quiz-result-max").textContent = QUESTIONS_LIMIT;
     setResultMessage();
     quizGameRef.style.display = "none";
     quizHelpRef.style.display = "none";
