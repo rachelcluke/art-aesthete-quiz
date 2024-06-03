@@ -133,7 +133,7 @@ getNewQuestion = () => {
 
     options.forEach(option => {
         const number = option.dataset["number"];
-        option.innerText = currentQuestion["option" + number];
+        option.innerHTML = currentQuestion["option" + number];
     });
 
     remainingQuestions.splice(questionIndex, 1);
