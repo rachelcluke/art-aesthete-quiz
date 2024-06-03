@@ -1,25 +1,22 @@
 /*jshint esversion: 6 */
 
-// TODO - declare this in index.html with a script tag
-
-//Navigation Variables
-const quizStartSection = document.querySelector('.art-home');
-const quizModeSection = document.querySelector('.quiz-mode');
-const quizGameSection = document.querySelector('.quiz-game');
-const quizHelpSection = document.querySelector('.quiz-help-info');
-const quizResultSection = document.querySelector('.quiz-result-next-section');
-const quizNextButton = document.querySelector('#next-question-btn');
-quizModeSection.style.display = "none";
-quizGameSection.style.display = "none";
-quizHelpSection.style.display = "none";
-quizResultSection.style.display = "none";
-quizNextButton.style.display = "none";
+const quizStartRef = document.querySelector('.art-home');
+const quizModeRef = document.querySelector('.quiz-mode');
+const quizGameRef = document.querySelector('.quiz-game');
+const quizHelpRef = document.querySelector('.quiz-help-info');
+const quizResultRef = document.querySelector('.quiz-result-next-section');
+const quizNextBtnRef = document.querySelector('#next-question-btn');
+const questionRef = document.querySelector('#quiz-question');
+const optionsRef = Array.from(document.querySelectorAll('.option-text'));
+const radioBtnsRef = document.querySelector('.radio-button');
+const scoreTextRef = document.querySelector('#quiz-result-score');
+quizModeRef.style.display = "none";
+quizGameRef.style.display = "none";
+quizHelpRef.style.display = "none";
+quizResultRef.style.display = "none";
+quizNextBtnRef.style.display = "none";
 
 //Quiz Game Variables
-const question = document.getElementById('quiz-question');
-const options = Array.from(document.getElementsByClassName('option-text'));
-const radioBtns = document.querySelector('.radio-button');
-const scoreText = document.querySelector('#quiz-result-score');
 const quizModes = ["beginner", "intermediate", "expert"];
 let quizMode = quizModes[0];
 let allowAnswers = false; //validation for user to answer
@@ -36,17 +33,16 @@ let questions = [];
 let processedQuestion;
 let currentAnswer;
 let resultMessage;
-//let url;
 
 //Navigation (hide/display views)
 document.querySelector("#launch-start-btn").onclick = function() {
-    if (quizModeSection.style.display === "none") {
-        quizModeSection.style.display = "block";
-        quizHelpSection.style.display = "block";
-        quizStartSection.style.display = "none";
+    if (quizModeRef.style.display === "none") {
+        quizModeRef.style.display = "block";
+        quizHelpRef.style.display = "block";
+        quizStartRef.style.display = "none";
     } else {
-        quizModeSection.style.display = "none";
-        quizStartSection.style.display = "block";
+        quizModeRef.style.display = "none";
+        quizStartRef.style.display = "block";
     }
 };
 
@@ -56,24 +52,24 @@ document.querySelector("#scroll-up-btn").onclick = function() {
 }
 
 document.querySelector("#beginner-img").onclick = function() {
-    quizGameSection.style.display = "block";
-    quizModeSection.style.display = "none";
+    quizGameRef.style.display = "block";
+    quizModeRef.style.display = "none";
     selectedMode = quizModes[0];
     document.getElementById("mode-dynamic-text").textContent="Beginner";
     url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple"
 } 
 
 document.querySelector("#intermediate-img").onclick = function() {
-    quizGameSection.style.display = "block";
-    quizModeSection.style.display = "none";
+    quizGameRef.style.display = "block";
+    quizModeRef.style.display = "none";
     selectedMode = quizModes[1];
     document.getElementById("mode-dynamic-text").textContent="Intermediate";
     url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=medium&type=multiple"
 } 
 
 document.querySelector("#expert-img").onclick = function() {
-    quizGameSection.style.display = "block";
-    quizModeSection.style.display = "none";
+    quizGameRef.style.display = "block";
+    quizModeRef.style.display = "none";
     selectedMode = quizModes[2];
     document.getElementById("mode-dynamic-text").textContent="Expert";
     url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=hard&type=multiple"
@@ -131,7 +127,7 @@ getNewQuestion = () => {
     document.getElementById("quiz-question").textContent = currentQuestion.question ;
     currentAnswer = currentQuestion.answer;
 
-    options.forEach(option => {
+    optionsRef.forEach(option => {
         const number = option.dataset["number"];
         option.innerHTML = currentQuestion["option" + number];
     });
@@ -140,7 +136,7 @@ getNewQuestion = () => {
     allowAnswers = true;
 };
 
-options.forEach(option => {
+optionsRef.forEach(option => {
     option.addEventListener("click", e => {
         //if (!allowAnswers) return; //validation to allow user to answer question 
         //allowAnswers = false;
@@ -156,15 +152,15 @@ options.forEach(option => {
             //TODO - correct option radio btn turn green, selected btn turn red
             
         }
-        quizNextButton.style.display = "block";
+        quizNextBtnRef.style.display = "block";
     });
 });
 
-quizNextButton.onclick = function() {
-    quizNextButton.style.display = "none";
+quizNextBtnRef.onclick = function() {
+    quizNextBtnRef.style.display = "none";
     document.getElementById("score-dynamic-text").textContent = questionCounter;
     getNewQuestion();
-    radioBtns.disabled = false;
+    radioBtnsRef.disabled = false;
 }
 
 endQuiz = () => {
@@ -172,9 +168,9 @@ endQuiz = () => {
     document.getElementById("quiz-result-score").textContent = quizScore;
     document.getElementById("quiz-result-max").textContent = questions_limit;
     setResultMessage();
-    quizGameSection.style.display = "none";
-    quizHelpSection.style.display = "none";
-    quizResultSection.style.display = "block";
+    quizGameRef.style.display = "none";
+    quizHelpRef.style.display = "none";
+    quizResultRef.style.display = "block";
 }
 
 setResultMessage = () => {
@@ -190,10 +186,10 @@ setResultMessage = () => {
 
 //if user wants to play same mode again
 document.querySelector("#play-again-btn").onclick = function() {
-    quizGameSection.style.display = "block";
-    quizModeSection.style.display = "none";
-    quizResultSection.style.display = "none";
-    quizHelpSection.style.display = "block";
+    quizGameRef.style.display = "block";
+    quizModeRef.style.display = "none";
+    quizResultRef.style.display = "none";
+    quizHelpRef.style.display = "block";
     startQuiz();
     console.log(selectedMode);
 } 
@@ -213,10 +209,10 @@ setNextMode = () => {
 }
 
 document.querySelector("#next-quizmode-btn").onclick = function() {
-    quizGameSection.style.display = "block";
-    quizModeSection.style.display = "none";
-    quizResultSection.style.display = "none";
-    quizHelpSection.style.display = "block";
+    quizGameRef.style.display = "block";
+    quizModeRef.style.display = "none";
+    quizResultRef.style.display = "none";
+    quizHelpRef.style.display = "block";
     setNextMode();
     startQuiz();
 } 
