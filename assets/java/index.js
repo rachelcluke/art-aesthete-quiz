@@ -47,7 +47,8 @@ let quizMode = quizModes[0];
 let remainingQuestions = []; //available questions left out of 4
 let questions = [];
 let currentQuestion = {};
-let allowAnswers = false; //validation for user to answer
+let allowAnswers = false;
+let difficulty;
 let processedQuestion;
 let currentAnswer;
 let resultMessage;
@@ -96,7 +97,6 @@ const setResultMessage = () => {
 }
 
 const endQuiz = () => {
-    //if user answers all 5 questions, reveal results and hide other sections
     quizResultScoreRef.textContent = quizScore;
     quizResultMaxRef.textContent = QUESTIONS_LIMIT;
     setResultMessage();
@@ -140,7 +140,7 @@ beginnerImgRef.addEventListener ("click", function() {
     quizModeRef.style.display = "none";
     selectedMode = quizModes[0];
     quizCurrentModeRef.textContent="Beginner";
-    url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple"
+    getQuizAPIData("easy");
 }) 
 
 intermediateImgRef.addEventListener ("click", function() {
@@ -148,7 +148,7 @@ intermediateImgRef.addEventListener ("click", function() {
     quizModeRef.style.display = "none";
     selectedMode = quizModes[1];
     quizCurrentModeRef.textContent="Intermediate";
-    url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=medium&type=multiple"
+    getQuizAPIData("medium");
 }) 
 
 expertImgRef.addEventListener ("click", function() {
@@ -156,12 +156,11 @@ expertImgRef.addEventListener ("click", function() {
     quizModeRef.style.display = "none";
     selectedMode = quizModes[2];
     quizCurrentModeRef.textContent="Expert";
-    url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=hard&type=multiple"
+    getQuizAPIData("hard");
 }) 
 
-//This condition is so that it is only triggered after the mode is selected 
-//if url !== null 
-fetch("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple") 
+const getQuizAPIData = (difficulty) => {
+fetch(`https://opentdb.com/api.php?amount=5&category=25&difficulty=${difficulty}&type=multiple`) 
     .then(res => {
         return res.json();
     })
@@ -171,7 +170,6 @@ fetch("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=mul
             const processedQuestion = {
                 question: downloadedQuestion.question,
             };
-            //spread operator to copy over incorrect answers
             const answerOptions = [...downloadedQuestion.incorrect_answers];
             console.log(answerOptions);
             processedQuestion.answer = Math.floor(Math.random() * 3) + 1;
@@ -185,10 +183,13 @@ fetch("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=mul
             return processedQuestion;
         });
         startQuiz();
+        console.log(difficulty);
     })
     .catch(err => {
         console.error(err);
     });
+
+}
 
 optionsRef.forEach(option => {
     option.addEventListener("click", e => {
@@ -218,7 +219,6 @@ quizNextBtnRef.addEventListener ("click", function() {
     radioBtnsRef.disabled = false;
 })
 
-//if user wants to play same mode again
 playAgainBtnRef.addEventListener ("click", function() {
     quizGameRef.style.display = "block";
     quizModeRef.style.display = "none";
