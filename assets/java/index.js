@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 
+//Query Selectors
 const quizStartRef = document.querySelector('.art-home');
 const quizModeRef = document.querySelector('.quiz-mode');
 const quizGameRef = document.querySelector('.quiz-game');
@@ -16,23 +17,23 @@ quizHelpRef.style.display = "none";
 quizResultRef.style.display = "none";
 quizNextBtnRef.style.display = "none";
 
-//Quiz Game Variables
-const quizModes = ["beginner", "intermediate", "expert"];
-let quizMode = quizModes[0];
-let allowAnswers = false; //validation for user to answer
-let currentQuestion = {};
-let quizScore = 0;
-let questionCounter = 0;
-let remainingQuestions = []; //available questions left out of 4
-
 //CONSTANTS
 const CORRECT_POINTS = 1;
 const QUESTIONS_LIMIT = 5;
 
+
+//Variables
+const quizModes = ["beginner", "intermediate", "expert"];
+let quizMode = quizModes[0];
+let remainingQuestions = []; //available questions left out of 4
 let questions = [];
+let currentQuestion = {};
+let allowAnswers = false; //validation for user to answer
 let processedQuestion;
 let currentAnswer;
 let resultMessage;
+let quizScore = 0;
+let questionCounter = 0;
 
 //Functions
 const startQuiz = () => {
