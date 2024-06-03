@@ -34,7 +34,71 @@ let processedQuestion;
 let currentAnswer;
 let resultMessage;
 
-//Navigation (hide/display views)
+//Functions
+const startQuiz = () => {
+    questionCounter = 0; 
+    quizScore = 0;
+    document.getElementById("score-dynamic-text").textContent = questionCounter;
+    document.getElementById("score-total-questions-text").textContent = QUESTIONS_LIMIT;
+    remainingQuestions = [ ...questions]
+    getNewQuestion();
+};
+
+const getNewQuestion = () => {
+    if (remainingQuestions.length === 0 || questionCounter >= QUESTIONS_LIMIT) {
+        endQuiz();
+    }
+
+    questionCounter ++;
+    const questionIndex = Math.floor(Math.random()*remainingQuestions.length);
+    currentQuestion = remainingQuestions[questionIndex];
+    document.getElementById("quiz-question").textContent = currentQuestion.question ;
+    currentAnswer = currentQuestion.answer;
+
+    optionsRef.forEach(option => {
+        const number = option.dataset["number"];
+        option.innerHTML = currentQuestion["option" + number];
+    });
+
+    remainingQuestions.splice(questionIndex, 1);
+    allowAnswers = true;
+};
+
+const endQuiz = () => {
+    //if user answers all 5 questions, reveal results and hide other sections
+    document.getElementById("quiz-result-score").textContent = quizScore;
+    document.getElementById("quiz-result-max").textContent = QUESTIONS_LIMIT;
+    setResultMessage();
+    quizGameRef.style.display = "none";
+    quizHelpRef.style.display = "none";
+    quizResultRef.style.display = "block";
+}
+
+const setResultMessage = () => {
+    if ((quizScore == 0) || (quizScore == 1)) {
+        resultMessage = "Better luck next time!";
+    } else if ((quizScore == 2) || (quizScore == 3)) {
+        resultMessage = "Woah, not bad at all!";
+    } else if ((quizScore == 4) || (quizScore == 5)) {
+        resultMessage = "Well done, you clearly know your stuff!";
+    }
+    document.getElementById("quiz-result-message-dynamic").textContent = resultMessage;
+}
+
+const setNextMode = () => {
+    if (selectedMode == quizModes[0]) {
+        selectedMode = quizModes[1];
+        document.getElementById("mode-dynamic-text").textContent="Intermediate";
+    } else if (selectedMode == quizModes[1]) {
+        selectedMode = quizModes[2];
+        document.getElementById("mode-dynamic-text").textContent="Expert";
+    } else if (selectedMode == quizModes[2]) {
+        selectedMode = quizModes[0];
+        document.getElementById("mode-dynamic-text").textContent="Beginner";
+    }
+}
+
+//Event Click
 document.querySelector("#launch-start-btn").onclick = function() {
     if (quizModeRef.style.display === "none") {
         quizModeRef.style.display = "block";
@@ -106,36 +170,6 @@ fetch("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=mul
         console.error(err);
     });
 
-startQuiz = () => {
-    //reset
-    questionCounter = 0;
-    quizScore = 0;
-    document.getElementById("score-dynamic-text").textContent = questionCounter;
-    document.getElementById("score-total-questions-text").textContent = QUESTIONS_LIMIT;
-    remainingQuestions = [ ...questions]
-    getNewQuestion();
-};
-
-getNewQuestion = () => {
-    if (remainingQuestions.length === 0 || questionCounter >= QUESTIONS_LIMIT) {
-        endQuiz();
-    }
-
-    questionCounter ++;
-    const questionIndex = Math.floor(Math.random()*remainingQuestions.length);
-    currentQuestion = remainingQuestions[questionIndex];
-    document.getElementById("quiz-question").textContent = currentQuestion.question ;
-    currentAnswer = currentQuestion.answer;
-
-    optionsRef.forEach(option => {
-        const number = option.dataset["number"];
-        option.innerHTML = currentQuestion["option" + number];
-    });
-
-    remainingQuestions.splice(questionIndex, 1);
-    allowAnswers = true;
-};
-
 optionsRef.forEach(option => {
     option.addEventListener("click", e => {
         //if (!allowAnswers) return; //validation to allow user to answer question 
@@ -163,27 +197,6 @@ quizNextBtnRef.onclick = function() {
     radioBtnsRef.disabled = false;
 }
 
-endQuiz = () => {
-    //if user answers all 5 questions, reveal results and hide other sections
-    document.getElementById("quiz-result-score").textContent = quizScore;
-    document.getElementById("quiz-result-max").textContent = QUESTIONS_LIMIT;
-    setResultMessage();
-    quizGameRef.style.display = "none";
-    quizHelpRef.style.display = "none";
-    quizResultRef.style.display = "block";
-}
-
-setResultMessage = () => {
-    if ((quizScore == 0) || (quizScore == 1)) {
-        resultMessage = "Better luck next time!";
-    } else if ((quizScore == 2) || (quizScore == 3)) {
-        resultMessage = "Woah, not bad at all!";
-    } else if ((quizScore == 4) || (quizScore == 5)) {
-        resultMessage = "Well done, you clearly know your stuff!";
-    }
-    document.getElementById("quiz-result-message-dynamic").textContent = resultMessage;
-}
-
 //if user wants to play same mode again
 document.querySelector("#play-again-btn").onclick = function() {
     quizGameRef.style.display = "block";
@@ -193,20 +206,6 @@ document.querySelector("#play-again-btn").onclick = function() {
     startQuiz();
     console.log(selectedMode);
 } 
-
-//next mode button 
-setNextMode = () => {
-    if (selectedMode == quizModes[0]) {
-        selectedMode = quizModes[1];
-        document.getElementById("mode-dynamic-text").textContent="Intermediate";
-    } else if (selectedMode == quizModes[1]) {
-        selectedMode = quizModes[2];
-        document.getElementById("mode-dynamic-text").textContent="Expert";
-    } else if (selectedMode == quizModes[2]) {
-        selectedMode = quizModes[0];
-        document.getElementById("mode-dynamic-text").textContent="Beginner";
-    }
-}
 
 document.querySelector("#next-quizmode-btn").onclick = function() {
     quizGameRef.style.display = "block";
