@@ -159,6 +159,9 @@ expertImgRef.addEventListener ("click", function() {
     getQuizAPIData("hard");
 }) 
 
+/**
+ * @param {"easy" | "medium" | "hard"} difficulty
+ */
 const getQuizAPIData = (difficulty) => {
 fetch(`https://opentdb.com/api.php?amount=5&category=25&difficulty=${difficulty}&type=multiple`) 
     .then(res => {
