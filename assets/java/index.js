@@ -115,7 +115,7 @@ const setNextMode = () => {
 }
 
 //Event Click
-startBtnRef.onclick = function() {
+startBtnRef.addEventListener ("click", function() {
     if (quizModeRef.style.display === "none") {
         quizModeRef.style.display = "block";
         quizHelpRef.style.display = "block";
@@ -124,36 +124,36 @@ startBtnRef.onclick = function() {
         quizModeRef.style.display = "none";
         quizStartRef.style.display = "block";
     }
-};
+});
 
-scrollupBtnRef.onclick = function() {
+scrollupBtnRef.addEventListener ("click", function() {
     document.body.scrollTop = 0; //For Safari
     document.documentElement.scrollTop = 0; //For Chrome, Firefox, Internet Explorer and Opera
-}
+})
 
-beginnerImgRef.onclick = function() {
+beginnerImgRef.addEventListener ("click", function() {
     quizGameRef.style.display = "block";
     quizModeRef.style.display = "none";
     selectedMode = quizModes[0];
     quizCurrentModeRef.textContent="Beginner";
     url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple"
-} 
+}) 
 
-intermediateImgRef.onclick = function() {
+intermediateImgRef.addEventListener ("click", function() {
     quizGameRef.style.display = "block";
     quizModeRef.style.display = "none";
     selectedMode = quizModes[1];
     quizCurrentModeRef.textContent="Intermediate";
     url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=medium&type=multiple"
-} 
+}) 
 
-expertImgRef.onclick = function() {
+expertImgRef.addEventListener ("click", function() {
     quizGameRef.style.display = "block";
     quizModeRef.style.display = "none";
     selectedMode = quizModes[2];
     quizCurrentModeRef.textContent="Expert";
     url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=hard&type=multiple"
-} 
+}) 
 
 //This condition is so that it is only triggered after the mode is selected 
 //if url !== null 
@@ -206,28 +206,28 @@ optionsRef.forEach(option => {
     });
 });
 
-quizNextBtnRef.onclick = function() {
+quizNextBtnRef.addEventListener ("click", function() {
     quizNextBtnRef.style.display = "none";
     currentQuestionNoRef.textContent = questionCounter;
     getNewQuestion();
     radioBtnsRef.disabled = false;
-}
+})
 
 //if user wants to play same mode again
-playAgainBtnRef.onclick = function() {
+playAgainBtnRef.addEventListener ("click", function() {
     quizGameRef.style.display = "block";
     quizModeRef.style.display = "none";
     quizResultRef.style.display = "none";
     quizHelpRef.style.display = "block";
     startQuiz();
     console.log(selectedMode);
-} 
+}) 
 
-nextQuizBtnRef.onclick = function() {
+nextQuizBtnRef.addEventListener ("click", function() {
     quizGameRef.style.display = "block";
     quizModeRef.style.display = "none";
     quizResultRef.style.display = "none";
     quizHelpRef.style.display = "block";
     setNextMode();
     startQuiz();
-} 
+}) 
