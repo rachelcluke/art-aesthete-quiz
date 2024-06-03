@@ -9,6 +9,7 @@ const quizResultRef = document.querySelector('.quiz-result-next-section');
 const quizNextBtnRef = document.querySelector('#next-question-btn');
 const questionRef = document.querySelector('#quiz-question');
 const optionsRef = Array.from(document.querySelectorAll('.option-text'));
+const optionBtnsRef = Array.from(document.querySelectorAll('.radio-button'));
 const radioBtnsRef = document.querySelector('.radio-button');
 const scoreTextRef = document.querySelector('#quiz-result-score');
 const startBtnRef = document.querySelector("#launch-start-btn");
@@ -33,12 +34,15 @@ quizResultRef.style.display = "none";
 quizNextBtnRef.style.display = "none";
 
 //CONSTANTS
+const quizModes = ["beginner", "intermediate", "expert"];
+const midnightColour = '#040406';
+const greenColour = '#2AAA8A';
+const redColour = '#C70039';
 const CORRECT_POINTS = 1;
 const QUESTIONS_LIMIT = 5;
 
 
 //Variables
-const quizModes = ["beginner", "intermediate", "expert"];
 let quizMode = quizModes[0];
 let remainingQuestions = []; //available questions left out of 4
 let questions = [];
@@ -188,21 +192,22 @@ fetch("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=mul
 
 optionsRef.forEach(option => {
     option.addEventListener("click", e => {
-        //if (!allowAnswers) return; //validation to allow user to answer question 
-        //allowAnswers = false;
         const selectedOption = e.target;
         const selectedAnswer = selectedOption.dataset["number"];
         console.log("user picked" + selectedAnswer + "the correct answer is" + currentAnswer);
+        //optionBtnsRef.isEnabled() = false;
         //case - correct answer
         if (selectedAnswer == currentAnswer) {
             quizScore++;
-            //TODO - button turn green
+            selectedOption.style.color = greenColour; 
         //case - wrong answer
         } else {
             //TODO - correct option radio btn turn green, selected btn turn red
+            selectedOption.style.color = redColour;
             
         }
         quizNextBtnRef.style.display = "block";
+        optionsRef.style.color = midnightColour;
     });
 });
 
