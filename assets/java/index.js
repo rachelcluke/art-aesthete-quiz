@@ -11,6 +11,21 @@ const questionRef = document.querySelector('#quiz-question');
 const optionsRef = Array.from(document.querySelectorAll('.option-text'));
 const radioBtnsRef = document.querySelector('.radio-button');
 const scoreTextRef = document.querySelector('#quiz-result-score');
+const startBtnRef = document.querySelector("#launch-start-btn");
+const scrollupBtnRef = document.querySelector("#scroll-up-btn");
+const beginnerImgRef = document.querySelector("#beginner-img");
+const intermediateImgRef = document.querySelector("#intermediate-img");
+const expertImgRef = document.querySelector("#expert-img");
+const playAgainBtnRef = document.querySelector("#play-again-btn");
+const nextQuizBtnRef = document.querySelector("#next-quizmode-btn");
+const currentQuestionNoRef = document.querySelector("#score-dynamic-text");
+const totalQuestionNoRef = document.querySelector("#score-total-questions-text");
+const quizQuestionTextRef = document.querySelector("#quiz-question");
+const quizResultScoreRef = document.querySelector("#quiz-result-score");
+const quizResultMaxRef = document.querySelector("#quiz-result-max");
+const quizResultMessageRef = document.querySelector("#quiz-result-message-dynamic");
+const quizCurrentModeRef = document.querySelector("#mode-dynamic-text");
+
 quizModeRef.style.display = "none";
 quizGameRef.style.display = "none";
 quizHelpRef.style.display = "none";
@@ -39,8 +54,8 @@ let questionCounter = 0;
 const startQuiz = () => {
     questionCounter = 0; 
     quizScore = 0;
-    document.getElementById("score-dynamic-text").textContent = questionCounter;
-    document.getElementById("score-total-questions-text").textContent = QUESTIONS_LIMIT;
+    currentQuestionNoRef.textContent = questionCounter;
+    totalQuestionNoRef.textContent = QUESTIONS_LIMIT;
     remainingQuestions = [ ...questions]
     getNewQuestion();
 };
@@ -53,7 +68,7 @@ const getNewQuestion = () => {
     questionCounter ++;
     const questionIndex = Math.floor(Math.random()*remainingQuestions.length);
     currentQuestion = remainingQuestions[questionIndex];
-    document.getElementById("quiz-question").textContent = currentQuestion.question ;
+    quizQuestionTextRef.textContent = currentQuestion.question ;
     currentAnswer = currentQuestion.answer;
 
     optionsRef.forEach(option => {
@@ -65,16 +80,6 @@ const getNewQuestion = () => {
     allowAnswers = true;
 };
 
-const endQuiz = () => {
-    //if user answers all 5 questions, reveal results and hide other sections
-    document.getElementById("quiz-result-score").textContent = quizScore;
-    document.getElementById("quiz-result-max").textContent = QUESTIONS_LIMIT;
-    setResultMessage();
-    quizGameRef.style.display = "none";
-    quizHelpRef.style.display = "none";
-    quizResultRef.style.display = "block";
-}
-
 const setResultMessage = () => {
     if ((quizScore == 0) || (quizScore == 1)) {
         resultMessage = "Better luck next time!";
@@ -83,24 +88,34 @@ const setResultMessage = () => {
     } else if ((quizScore == 4) || (quizScore == 5)) {
         resultMessage = "Well done, you clearly know your stuff!";
     }
-    document.getElementById("quiz-result-message-dynamic").textContent = resultMessage;
+    quizResultMessageRef.textContent = resultMessage;
+}
+
+const endQuiz = () => {
+    //if user answers all 5 questions, reveal results and hide other sections
+    quizResultScoreRef.textContent = quizScore;
+    quizResultMaxRef.textContent = QUESTIONS_LIMIT;
+    setResultMessage();
+    quizGameRef.style.display = "none";
+    quizHelpRef.style.display = "none";
+    quizResultRef.style.display = "block";
 }
 
 const setNextMode = () => {
     if (selectedMode == quizModes[0]) {
         selectedMode = quizModes[1];
-        document.getElementById("mode-dynamic-text").textContent="Intermediate";
+        quizCurrentModeRef.textContent="Intermediate";
     } else if (selectedMode == quizModes[1]) {
         selectedMode = quizModes[2];
-        document.getElementById("mode-dynamic-text").textContent="Expert";
+        quizCurrentModeRef.textContent="Expert";
     } else if (selectedMode == quizModes[2]) {
         selectedMode = quizModes[0];
-        document.getElementById("mode-dynamic-text").textContent="Beginner";
+        quizCurrentModeRef.textContent="Beginner";
     }
 }
 
 //Event Click
-document.querySelector("#launch-start-btn").onclick = function() {
+startBtnRef.onclick = function() {
     if (quizModeRef.style.display === "none") {
         quizModeRef.style.display = "block";
         quizHelpRef.style.display = "block";
@@ -111,32 +126,32 @@ document.querySelector("#launch-start-btn").onclick = function() {
     }
 };
 
-document.querySelector("#scroll-up-btn").onclick = function() {
+scrollupBtnRef.onclick = function() {
     document.body.scrollTop = 0; //For Safari
     document.documentElement.scrollTop = 0; //For Chrome, Firefox, Internet Explorer and Opera
 }
 
-document.querySelector("#beginner-img").onclick = function() {
+beginnerImgRef.onclick = function() {
     quizGameRef.style.display = "block";
     quizModeRef.style.display = "none";
     selectedMode = quizModes[0];
-    document.getElementById("mode-dynamic-text").textContent="Beginner";
+    quizCurrentModeRef.textContent="Beginner";
     url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple"
 } 
 
-document.querySelector("#intermediate-img").onclick = function() {
+intermediateImgRef.onclick = function() {
     quizGameRef.style.display = "block";
     quizModeRef.style.display = "none";
     selectedMode = quizModes[1];
-    document.getElementById("mode-dynamic-text").textContent="Intermediate";
+    quizCurrentModeRef.textContent="Intermediate";
     url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=medium&type=multiple"
 } 
 
-document.querySelector("#expert-img").onclick = function() {
+expertImgRef.onclick = function() {
     quizGameRef.style.display = "block";
     quizModeRef.style.display = "none";
     selectedMode = quizModes[2];
-    document.getElementById("mode-dynamic-text").textContent="Expert";
+    quizCurrentModeRef.textContent="Expert";
     url = "https://opentdb.com/api.php?amount=5&category=25&difficulty=hard&type=multiple"
 } 
 
@@ -193,13 +208,13 @@ optionsRef.forEach(option => {
 
 quizNextBtnRef.onclick = function() {
     quizNextBtnRef.style.display = "none";
-    document.getElementById("score-dynamic-text").textContent = questionCounter;
+    currentQuestionNoRef.textContent = questionCounter;
     getNewQuestion();
     radioBtnsRef.disabled = false;
 }
 
 //if user wants to play same mode again
-document.querySelector("#play-again-btn").onclick = function() {
+playAgainBtnRef.onclick = function() {
     quizGameRef.style.display = "block";
     quizModeRef.style.display = "none";
     quizResultRef.style.display = "none";
@@ -208,7 +223,7 @@ document.querySelector("#play-again-btn").onclick = function() {
     console.log(selectedMode);
 } 
 
-document.querySelector("#next-quizmode-btn").onclick = function() {
+nextQuizBtnRef.onclick = function() {
     quizGameRef.style.display = "block";
     quizModeRef.style.display = "none";
     quizResultRef.style.display = "none";
