@@ -379,6 +379,43 @@ nav a:hover {
     padding-right: 5%;
 }
 
+/* subscribed.html */
+#confirmation-page {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--wildsand);
+    background-image: url("../img/close-up-drink.jpg");
+    opacity: 90%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+#confirmation-box {
+    background-color: var(--caparol);
+    color: var(--midnight);
+    font-size: 4rem;
+    padding: 4rem;
+}
+
+#confirmation-box h3 p i {
+    padding-top: 2rem;
+}
+
+#confirmation-page i {
+    color: var(--cornflower);
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+#confirmation-page i:hover{
+    color: var(--goldenfizz);
+}
+
+
 /* Media Query */
 
 /* Default design - Mobile - 375 x 667 px */
