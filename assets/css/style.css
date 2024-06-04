@@ -290,25 +290,10 @@ dialog p {
       var(--wildsand)
       var(--caparol)
     );
-    opacity: 0.75;
+    opacity: 0.90;
   }
 
-/* Div 04 - Quiz Help Info */
-.quiz-help-info {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    max-width: 80vw;
-}
-
-.quiz-help-info, .quiz-game p {
-    font-family: var(--font-petrona);
-    font-size: 1.6rem;
-    font-weight: 200;
-    color: var(--midnight);
-    padding-bottom: 2rem;
-}
-
-/* Div 05 - Results */
+/* Div 04 - Results */
 .quiz-result-next-row {
     display: flex;
     flex-direction: row;
@@ -350,7 +335,7 @@ dialog p {
     padding-right: 2rem;
 }
 
-/* Div 06 - Footer */
+/* Div 05 - Footer */
 .footer {
     display: flex;
     /* TODO - for bigger screens change column to row */
@@ -523,22 +508,8 @@ dialog p {
     .quiz-option-1, .quiz-option-2, .quiz-option-3, .quiz-option-4  {
         padding-bottom: 3.5rem;
     }
-
-    /* Div 04 - Quiz Help Info */
-    .quiz-help-info {
-        max-width: 90%;
-    }
-
-    .quiz-help-info, .quiz-game p {
-        font-size: 2.5rem;
-    }
-
-    .quiz-help-button {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-    }
     
-    /* Div 05 - Results */
+    /* Div 04 - Results */
     .quiz-result-column h3 {
         font-size: 5rem;
     }
@@ -552,7 +523,7 @@ dialog p {
         padding-right: 3rem;
     }
 
-    /* Div 06 - Footer */
+    /* Div 05 - Footer */
     .footer {
         flex-direction: row;
     }
@@ -639,21 +610,7 @@ dialog p {
         padding-left: 2rem;
     }
 
-    /* Div 04 - Quiz Help Info */
-    .quiz-help-info {
-        max-width: 60%;
-    }
-
-    .quiz-help-info, .quiz-game p {
-        font-size: 4rem;
-    }
-
-    .quiz-help-button {
-        padding-top: 6rem;
-        padding-bottom: 10rem;
-    }
-
-    /* Div 05 - Results */
+    /* Div 04 - Results */
     .quiz-result-column h3 {
         font-size: 12rem;
     }
@@ -667,7 +624,7 @@ dialog p {
         padding-right: 6rem;
     }
 
-    /* Div 06 - Footer */
+    /* Div 05 - Footer */
     .footer h5{
         font-size: 4rem;
     }

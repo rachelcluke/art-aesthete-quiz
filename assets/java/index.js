@@ -4,7 +4,6 @@
 const quizStartRef = document.querySelector('.art-home');
 const quizModeRef = document.querySelector('.quiz-mode');
 const quizGameRef = document.querySelector('.quiz-game');
-const quizHelpRef = document.querySelector('.quiz-help-info');
 const quizResultRef = document.querySelector('.quiz-result-next-section');
 const quizNextBtnRef = document.querySelector('#next-question-btn');
 const questionRef = document.querySelector('#quiz-question');
@@ -13,10 +12,12 @@ const optionBtnsRef = Array.from(document.querySelectorAll('.radio-button'));
 const radioBtnsRef = document.querySelector('.radio-button');
 const scoreTextRef = document.querySelector('#quiz-result-score');
 const startBtnRef = document.querySelector("#launch-start-btn");
-const scrollupBtnRef = document.querySelector("#scroll-up-btn");
 const beginnerImgRef = document.querySelector("#beginner-img");
 const intermediateImgRef = document.querySelector("#intermediate-img");
 const expertImgRef = document.querySelector("#expert-img");
+const dialogRef = document.querySelector("dialog");
+const showDialogBtnRef = document.querySelector("#open-dialog-btn");
+const closeDialogBtnRef = document.querySelector("dialog button");
 const playAgainBtnRef = document.querySelector("#play-again-btn");
 const nextQuizBtnRef = document.querySelector("#next-quizmode-btn");
 const currentQuestionNoRef = document.querySelector("#score-dynamic-text");
@@ -29,7 +30,6 @@ const quizCurrentModeRef = document.querySelector("#mode-dynamic-text");
 
 quizModeRef.style.display = "none";
 quizGameRef.style.display = "none";
-quizHelpRef.style.display = "none";
 quizResultRef.style.display = "none";
 quizNextBtnRef.style.display = "none";
 
@@ -141,7 +141,6 @@ const endQuiz = () => {
     quizResultMaxRef.textContent = QUESTIONS_LIMIT;
     setResultMessage();
     quizGameRef.style.display = "none";
-    quizHelpRef.style.display = "none";
     quizResultRef.style.display = "block";
 }
 
@@ -162,18 +161,12 @@ const setNextMode = () => {
 startBtnRef.addEventListener ("click", function() {
     if (quizModeRef.style.display === "none") {
         quizModeRef.style.display = "block";
-        quizHelpRef.style.display = "block";
         quizStartRef.style.display = "none";
     } else {
         quizModeRef.style.display = "none";
         quizStartRef.style.display = "block";
     }
 });
-
-scrollupBtnRef.addEventListener ("click", function() {
-    document.body.scrollTop = 0; //For Safari
-    document.documentElement.scrollTop = 0; //For Chrome, Firefox, Internet Explorer and Opera
-})
 
 beginnerImgRef.addEventListener ("click", function() {
     quizGameRef.style.display = "block";
@@ -198,6 +191,14 @@ expertImgRef.addEventListener ("click", function() {
     quizCurrentModeRef.textContent="Expert";
     getQuizAPIData("hard");
 }) 
+
+showDialogBtnRef.addEventListener("click", () => {
+    dialogRef.showModal();
+});
+
+closeDialogBtnRef.addEventListener("click", () => {
+    dialogRef.close();
+  });
 
 optionsRef.forEach(option => {
     option.addEventListener("click", e => {
@@ -230,7 +231,6 @@ playAgainBtnRef.addEventListener ("click", function() {
     quizGameRef.style.display = "block";
     quizModeRef.style.display = "none";
     quizResultRef.style.display = "none";
-    quizHelpRef.style.display = "block";
     startQuiz();
     console.log(selectedMode);
 }) 
@@ -239,7 +239,6 @@ nextQuizBtnRef.addEventListener ("click", function() {
     quizGameRef.style.display = "block";
     quizModeRef.style.display = "none";
     quizResultRef.style.display = "none";
-    quizHelpRef.style.display = "block";
     setNextMode();
     startQuiz();
 }) 
