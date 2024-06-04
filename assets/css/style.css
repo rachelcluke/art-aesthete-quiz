@@ -680,6 +680,17 @@ dialog p {
         padding-bottom: 5rem;
     }
 
+    dialog button {
+        font-size: 4rem;
+    }
+
+    #open-dialog-btn {
+        font-size: 4rem;
+        height: 4rem;
+        line-height: 4rem;  
+        width: 4rem; 
+    }
+
     /* Div 04 - Results */
     .quiz-result-column h3 {
         font-size: 12rem;
@@ -692,6 +703,15 @@ dialog p {
     #play-again-btn, #next-quizmode-btn {
         padding-left: 6rem;
         padding-right: 6rem;
+    }
+
+    .quiz-result-next-section {
+        margin-bottom: -10%;
+    }
+
+    .quiz-result-next-section img {
+        width: 50%;
+        height: auto;
     }
 
     /* Div 05 - Footer */
