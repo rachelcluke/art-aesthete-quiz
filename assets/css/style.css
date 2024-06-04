@@ -228,6 +228,10 @@ nav a:hover {
     padding-top: 4rem;
 }
 
+.quiz-overview-row {
+    padding-top: 1rem;
+}
+
 .quiz-overview-row, .score-dynamic-row, .quiz-result-text-row {
     display: flex;
     flex-direction: row;
@@ -237,10 +241,6 @@ nav a:hover {
     padding-left: 2rem;
     padding-right: 2rem;
 }
-
-.quiz-question-column {
-    padding-bottom: 2rem;
-} 
 
 .quiz-question-column label {
     padding-left: 1rem;
@@ -272,6 +272,11 @@ nav a:hover {
     text-align: center;
 }
 
+#close-dialog-btn-div {
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
 #open-dialog-btn:hover {
     background-color: var(--goldenfizz);
     color: var(--midnight);
@@ -280,6 +285,10 @@ nav a:hover {
 dialog button:hover {
     background-color: var(--goldenfizz);
     color: var(--midnight);
+}
+
+dialog {
+    padding-bottom:2rem;
 }
 
 dialog p {
@@ -339,6 +348,7 @@ dialog p {
     padding-left: 2rem;
     padding-right: 2rem;
 }
+
 
 /* Div 05 - Footer */
 .footer {
@@ -401,7 +411,7 @@ dialog p {
     font-family: var(--font-krub);
     font-size: 1.2rem;
     font-weight: 300;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 #subscribe-btn {
@@ -581,18 +591,21 @@ dialog p {
         padding-bottom: 6rem;
     }
 
+    .hr {
+        padding-top: 1rem;
+    }
+
     .dark-btn, .nav-menu li a, .footer h5 {
         font-size: 5rem;
     }
 
     /* Div 01 - Home landing page */
     .art-home {
-        padding-top: 12%;
-        padding-bottom: 10%
+        padding-bottom: 20%
     }
 
     .hello-title {
-        font-size: 50rem;
+        font-size: 35rem;
     }
 
     /* Div 02 - Quiz Mode */
