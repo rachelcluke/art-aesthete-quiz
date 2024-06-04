@@ -506,6 +506,10 @@ dialog p {
     }
 
     /* Div 03 - Quiz Game */
+    .quiz-game {
+        padding-bottom: 20%;
+    }
+
     .quiz-header-dash {
         padding-left: 3rem;
         padding-right: 3rem;
@@ -529,6 +533,14 @@ dialog p {
         height: 3rem;
         line-height: 3rem;  
         width: 3rem;  
+    } 
+
+    dialog p{
+        font-size: 3rem;
+    }
+
+    dialog button {
+        font-size: 2rem;
     }
     
     /* Div 04 - Results */
@@ -573,8 +585,7 @@ dialog p {
 
     /* subscribed.html */
     #confirmation-box {
-        font-size: 2rem;
-        padding: 2rem;
+        font-size: 5rem;
     }
     
 }

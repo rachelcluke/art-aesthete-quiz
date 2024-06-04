@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 
 //Query Selectors
+const websiteTitleRef = document.querySelector('.website-name');
 const quizStartRef = document.querySelector('.art-home');
 const quizModeRef = document.querySelector('.quiz-mode');
 const quizGameRef = document.querySelector('.quiz-game');
@@ -158,6 +159,13 @@ const setNextMode = () => {
 }
 
 //Event Click
+websiteTitleRef.addEventListener ("click", function() {
+    quizStartRef.style.display = "block";
+    quizGameRef.style.display = "none";
+    quizModeRef.style.display = "none";
+    quizResultRef.style.display = "none";
+}) 
+
 startBtnRef.addEventListener ("click", function() {
     if (quizModeRef.style.display === "none") {
         quizModeRef.style.display = "block";
