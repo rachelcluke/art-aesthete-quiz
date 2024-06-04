@@ -338,7 +338,6 @@ dialog p {
 /* Div 05 - Footer */
 .footer {
     display: flex;
-    /* TODO - for bigger screens change column to row */
     flex-direction: column;
     justify-content: space-around;
     background-color: var(--wildsand);
@@ -413,7 +412,6 @@ dialog p {
     height: 100vh;
     width: 100vw;
     background-color: var(--wildsand);
-    background-image: url("../img/close-up-drink.jpg");
     opacity: 90%;
     background-size: cover;
     display: flex;
@@ -446,7 +444,6 @@ dialog p {
 
 
 /* Media Query */
-
 /* Default design - Mobile - 375 x 667 px */
 
 /* Media Query 01 - Tablet - 768 x 959 px */
@@ -472,7 +469,7 @@ dialog p {
     /* Div 01 - Home landing page */
     .art-home {
         padding-top: 40%;
-        padding-bottom: 10%
+        padding-bottom: 20%
     }
 
     .hello-title {
@@ -497,6 +494,7 @@ dialog p {
     .quiz-header-dash {
         padding-left: 3rem;
         padding-right: 3rem;
+        padding-bottom: 4rem;
     }
 
     .quiz-game input {
@@ -508,8 +506,23 @@ dialog p {
     .quiz-option-1, .quiz-option-2, .quiz-option-3, .quiz-option-4  {
         padding-bottom: 3.5rem;
     }
+
+    #open-dialog-btn, dialog {
+        font-size: 2rem;
+    }
+
+    #open-dialog-btn {
+        height: 3rem;
+        line-height: 3rem;  
+        width: 3rem;  
+    }
     
     /* Div 04 - Results */
+    .quiz-result-next-section {
+        padding-top: 10%;
+        padding-bottom: 20%;
+    }
+
     .quiz-result-column h3 {
         font-size: 5rem;
     }
@@ -543,6 +556,13 @@ dialog p {
     #emailaddress, #subscribe-btn, .subscribe-form p:last-child {
         font-size: 2rem;
     }
+
+    /* subscribed.html */
+    #confirmation-box {
+        font-size: 2rem;
+        padding: 2rem;
+    }
+    
 }
 
 /* Media Query 02 - Laptop - 1920 x 1080 px */
