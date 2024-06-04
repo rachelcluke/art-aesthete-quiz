@@ -669,12 +669,15 @@ dialog p {
     .quiz-question-column {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-around;
     }
 
     .quiz-option-1, .quiz-option-2, .quiz-option-3, .quiz-option-4  {
         display: flex;
+        flex-direction: row;
         width: 50%;
+        padding-bottom: 5rem;
     }
 
     /* Div 04 - Results */
