@@ -62,6 +62,7 @@ const startQuiz = () => {
     currentQuestionNoRef.textContent = questionCounter;
     totalQuestionNoRef.textContent = QUESTIONS_LIMIT;
     remainingQuestions = [ ...questions]
+    quizNextBtnRef.textContent = "Next";
     getNewQuestion();
 };
 
@@ -103,6 +104,10 @@ const getQuizAPIData = (difficulty) => {
 const getNewQuestion = () => {
     if (remainingQuestions.length === 0 || questionCounter >= QUESTIONS_LIMIT) {
         endQuiz();
+    }
+
+    if (remainingQuestions.length === 1) {
+        quizNextBtnRef.textContent = "Finish";
     }
 
     questionCounter ++;
@@ -211,7 +216,6 @@ optionsRef.forEach(option => {
             
         }
         quizNextBtnRef.style.display = "block";
-        optionsRef.style.color = midnightColour;
     });
 });
 
