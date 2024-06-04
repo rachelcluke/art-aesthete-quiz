@@ -598,12 +598,7 @@ dialog p {
 
     h2 {
         font-size: 7rem;
-        padding-top: 6rem;
         padding-bottom: 6rem;
-    }
-
-    .hr {
-        padding-top: 1rem;
     }
 
     .dark-btn, .nav-menu li a, .footer h5 {
@@ -611,23 +606,41 @@ dialog p {
     }
 
     /* Div 01 - Home landing page */
+    #home {
+        margin-top: -25%;
+    }
+
     .art-home {
         padding-bottom: 20%
     }
 
     .hello-title {
-        font-size: 35rem;
+        font-size: 40rem;
     }
 
     /* Div 02 - Quiz Mode */
+    .quiz-mode {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+
+    #quiz-mode-title {
+        padding-top: 4rem;
+    }
+
     .quiz-three-modes {
         display: flex;
         flex-direction: row;
         padding-top: 4rem;
     }
 
-    .quiz-mode img {
+    #beginner-img, #expert-img  {
         width: 80%;
+        height: auto;
+    }
+
+    #intermediate-img {
+        width: 30%;
         height: auto;
     }
 
@@ -653,9 +666,15 @@ dialog p {
         padding-left: 4rem;
     }
 
+    .quiz-question-column {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
     .quiz-option-1, .quiz-option-2, .quiz-option-3, .quiz-option-4  {
-        padding-bottom: 3.5rem;
-        padding-left: 2rem;
+        display: flex;
+        width: 50%;
     }
 
     /* Div 04 - Results */
