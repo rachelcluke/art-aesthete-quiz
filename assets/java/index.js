@@ -28,6 +28,7 @@ const quizResultScoreRef = document.querySelector("#quiz-result-score");
 const quizResultMaxRef = document.querySelector("#quiz-result-max");
 const quizResultMessageRef = document.querySelector("#quiz-result-message-dynamic");
 const quizCurrentModeRef = document.querySelector("#mode-dynamic-text");
+const quizNextQuizModeRef = document.querySelector('#quiz-next-mode-label');
 
 quizModeRef.style.display = "none";
 quizGameRef.style.display = "none";
@@ -181,6 +182,7 @@ beginnerImgRef.addEventListener ("click", function() {
     quizModeRef.style.display = "none";
     selectedMode = quizModes[0];
     quizCurrentModeRef.textContent="Beginner";
+    quizNextQuizModeRef.textContent ="Intermediate";
     getQuizAPIData("easy");
 }) 
 
@@ -189,6 +191,7 @@ intermediateImgRef.addEventListener ("click", function() {
     quizModeRef.style.display = "none";
     selectedMode = quizModes[1];
     quizCurrentModeRef.textContent="Intermediate";
+    quizNextQuizModeRef.textContent ="Expert";
     getQuizAPIData("medium");
 }) 
 
@@ -197,6 +200,7 @@ expertImgRef.addEventListener ("click", function() {
     quizModeRef.style.display = "none";
     selectedMode = quizModes[2];
     quizCurrentModeRef.textContent="Expert";
+    quizNextQuizModeRef.textContent ="Beginner";
     getQuizAPIData("hard");
 }) 
 

@@ -734,3 +734,158 @@ dialog p {
 }
 
 /* Media Query 03 - iMacs - 2560 x 1440 px */
+@media (min-width: 2560px) {
+    body {
+        font-size: 10rem;
+    }
+
+    h2 {
+        font-size: 12rem;
+        padding-bottom: 6rem;
+    }
+
+    .dark-btn, .nav-menu li a, .footer h5 {
+        font-size: 8rem;
+    }
+
+    /* Div 01 - Home landing page */
+    #home {
+        margin-top: -25%;
+    }
+
+    .art-home {
+        padding-bottom: 20%
+    }
+
+    .hello-title {
+        font-size: 60rem;
+    }
+
+    /* Div 02 - Quiz Mode */
+    .quiz-mode {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+
+    #quiz-mode-title {
+        padding-top: 6rem;
+    }
+
+    .quiz-three-modes {
+        display: flex;
+        flex-direction: row;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    #beginner-img, #expert-img  {
+        width: 90%;
+        height: auto;
+    }
+
+    #intermediate-img {
+        width: 40%;
+        height: auto;
+    }
+
+    /* Div 03 - Quiz Game */
+    .quiz-game {
+        margin-top: 6rem;
+    }
+
+    .quiz-header-dash {
+        padding-left: 15rem;
+        padding-right: 15rem;
+    }
+
+    .quiz-overview-row p {
+        font-size: 7rem;
+        padding-top: 8rem;
+        padding-bottom: 5rem;
+    }
+
+    .quiz-game input {
+        -ms-transform: scale(3);
+        -webkit-transform: scale(3);
+        transform: scale(3);
+    }
+
+    .quiz-game label {
+        padding-left: 4rem;
+    }
+
+    .quiz-question-column {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .quiz-option-1, .quiz-option-2, .quiz-option-3, .quiz-option-4  {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        padding-bottom: 5rem;
+    }
+
+    dialog button {
+        font-size: 7rem;
+    }
+
+    #open-dialog-btn {
+        font-size: 7rem;
+        height: 7rem;
+        line-height: 7rem;  
+        width: 7rem; 
+    }
+
+    /* Div 04 - Results */
+    .quiz-result-column h3 {
+        font-size: 12rem;
+    }
+
+    .quiz-result-column, .quiz-next-column p {
+        font-size: 4rem;
+    }
+
+    #play-again-btn, #next-quizmode-btn {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+
+    .quiz-result-next-section {
+        margin-bottom: -10%;
+    }
+
+    .quiz-result-next-section img {
+        width: 40%;
+        height: auto;
+    }
+
+    .quiz-result-text-row h3 {
+        font-size: 20rem;
+    }
+
+    #quiz-result-message-dynamic, #quiz-next-mode-label {
+        font-size: 8rem;
+        padding-bottom: 10%;
+    }
+
+    /* Div 05 - Footer */
+    .footer h5{
+        font-size: 6rem;
+    }
+
+    .contact i, .footer {
+        font-size: 6rem;
+    }
+
+    .contact p {
+        font-size: 6rem;
+    }
+
+    #emailaddress, #subscribe-btn, .subscribe-form p:last-child {
+        font-size: 4.5rem;
+    }
+
+}
