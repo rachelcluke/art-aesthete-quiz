@@ -42,15 +42,6 @@ hr {
     opacity: 30%; 
 }
 
-.vertical-line {
-    border-top: 0.1rem solid var(--midnight);
-    opacity: 30%;
-    position: absolute;
-    left: 50%;
-    margin-left: -3px;
-    top: 0;
-}
-
 h2 {
 font-family: var(--font-oxygen);
 font-weight: 400;
@@ -67,8 +58,6 @@ label {
 input[type=radio] {
     accent-color: var(--cornflower);
 }
-
-/*label:before { content: " " }*/
 
 .dark-btn{
     margin-top: 1rem;
@@ -362,7 +351,6 @@ dialog p {
     padding-right: 2rem;
 }
 
-
 /* Div 05 - Footer */
 .footer {
     display: flex;
@@ -469,7 +457,6 @@ dialog p {
 #confirmation-page i:hover{
     color: var(--goldenfizz);
 }
-
 
 /* Media Query */
 /* Default design - Mobile - 375 x 667 px */
@@ -743,7 +730,6 @@ dialog p {
     #emailaddress, #subscribe-btn, .subscribe-form p:last-child {
         font-size: 3rem;
     }
-
 }
 
 /* Media Query 03 - iMacs - 2560 x 1440 px */
@@ -900,5 +886,4 @@ dialog p {
     #emailaddress, #subscribe-btn, .subscribe-form p:last-child {
         font-size: 4.5rem;
     }
-
 }
