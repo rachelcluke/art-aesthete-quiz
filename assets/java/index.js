@@ -10,7 +10,7 @@ const quizNextBtnRef = document.querySelector('#next-question-btn');
 const questionRef = document.querySelector('#quiz-question');
 const optionsRef = Array.from(document.querySelectorAll('.option-text'));
 const optionBtnsRef = Array.from(document.querySelectorAll('.radio-button'));
-const radioBtnsRef = document.querySelector('.radio-button');
+const radioBtnsRef = document.querySelectorAll('.radio-button');
 const scoreTextRef = document.querySelector('#quiz-result-score');
 const startBtnRef = document.querySelector("#launch-start-btn");
 const beginnerImgRef = document.querySelector("#beginner-img");
@@ -88,7 +88,6 @@ const getQuizAPIData = (difficulty) => {
                 answerOptions.forEach((option, index) => {
                     processedQuestion['option' + (index + 1)] = option;
                 });
-    
                 return processedQuestion;
             });
             startQuiz();
@@ -217,6 +216,7 @@ optionsRef.forEach(option => {
         const classToApply = 
             selectedAnswer == currentAnswer ? "correct-option" : "incorrect-option";
         selectedOption.parentElement.classList.add(classToApply);
+        radioBtnsRef.disabled = true;
         if (selectedAnswer == currentAnswer) {
             quizScore++;
         }
@@ -226,6 +226,7 @@ optionsRef.forEach(option => {
         } else {
             setTimeout(() => {
                 selectedOption.parentElement.classList.remove(classToApply);
+                radioBtnsRef.disabled = false;
                 getNewQuestion();
             }, 1000);
         }
