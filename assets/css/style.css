@@ -37,6 +37,10 @@ body {
     margin-right: 1rem;
 }
 
+.hidden {
+    display: none !important;
+}
+
 hr {
     border-top: 0.1rem solid var(--midnight);
     opacity: 30%; 
@@ -172,7 +176,7 @@ nav a:hover {
 }
 
 /* Div 02 - Quiz Mode */
-.quiz-mode {
+#quiz-mode {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -187,7 +191,7 @@ nav a:hover {
     align-content: center;
 }
 
-.quiz-mode, .quiz-result-next p {
+#quiz-mode, .quiz-result-next p {
     font-family: var(--font-krub);
     font-weight: 500;
     padding-bottom: 4rem;
@@ -619,7 +623,7 @@ dialog p {
     }
 
     /* Div 02 - Quiz Mode */
-    .quiz-mode {
+    #quiz-mode {
         padding-top: 10rem;
         padding-bottom: 10rem;
     }
@@ -761,7 +765,7 @@ dialog p {
     }
 
     /* Div 02 - Quiz Mode */
-    .quiz-mode {
+    #quiz-mode {
         padding-top: 10rem;
         padding-bottom: 10rem;
     }

@@ -3,7 +3,7 @@
 //Query Selectors
 const websiteTitleRef = document.querySelector('.website-name');
 const quizStartRef = document.querySelector('.art-home');
-const quizModeRef = document.querySelector('.quiz-mode');
+const quizModeRef = document.querySelector('#quiz-mode');
 const quizGameRef = document.querySelector('.quiz-game');
 const quizResultRef = document.querySelector('.quiz-result-next-section');
 const quizNextBtnRef = document.querySelector('#next-question-btn');
@@ -29,11 +29,6 @@ const quizResultMaxRef = document.querySelector("#quiz-result-max");
 const quizResultMessageRef = document.querySelector("#quiz-result-message-dynamic");
 const quizCurrentModeRef = document.querySelector("#mode-dynamic-text");
 const quizNextQuizModeRef = document.querySelector('#quiz-next-mode-label');
-
-quizModeRef.style.display = "none";
-quizGameRef.style.display = "none";
-quizResultRef.style.display = "none";
-quizNextBtnRef.style.display = "none";
 
 //CONSTANTS
 const quizModes = ["beginner", "intermediate", "expert"];
@@ -138,8 +133,8 @@ const endQuiz = () => {
     quizResultScoreRef.textContent = quizScore;
     quizResultMaxRef.textContent = QUESTIONS_LIMIT;
     setResultMessage();
-    quizGameRef.style.display = "none";
-    quizResultRef.style.display = "block";
+    quizGameRef.classList.add("hidden");
+    quizResultRef.classList.remove("hidden");
 }
 
 const setNextMode = () => {
@@ -157,25 +152,20 @@ const setNextMode = () => {
 
 //Event Click
 websiteTitleRef.addEventListener ("click", function() {
-    quizStartRef.style.display = "block";
-    quizGameRef.style.display = "none";
-    quizModeRef.style.display = "none";
-    quizResultRef.style.display = "none";
+    quizStartRef.classList.remove("hidden");
+    quizGameRef.classList.add("hidden");
+    quizModeRef.classList.add("hidden");
+    quizResultRef.classList.add("hidden");
 }) 
 
 startBtnRef.addEventListener ("click", function() {
-    if (quizModeRef.style.display === "none") {
-        quizModeRef.style.display = "block";
-        quizStartRef.style.display = "none";
-    } else {
-        quizModeRef.style.display = "none";
-        quizStartRef.style.display = "block";
-    }
+    quizModeRef.classList.remove("hidden");
+    quizStartRef.classList.add("hidden");
 });
 
 beginnerImgRef.addEventListener ("click", function() {
-    quizGameRef.style.display = "block";
-    quizModeRef.style.display = "none";
+    quizGameRef.classList.remove("hidden");
+    quizModeRef.classList.add("hidden");
     selectedMode = quizModes[0];
     quizCurrentModeRef.textContent="Beginner";
     quizNextQuizModeRef.textContent ="Intermediate";
@@ -183,8 +173,8 @@ beginnerImgRef.addEventListener ("click", function() {
 }) 
 
 intermediateImgRef.addEventListener ("click", function() {
-    quizGameRef.style.display = "block";
-    quizModeRef.style.display = "none";
+    quizGameRef.classList.remove("hidden");
+    quizModeRef.classList.add("hidden");
     selectedMode = quizModes[1];
     quizCurrentModeRef.textContent="Intermediate";
     quizNextQuizModeRef.textContent ="Expert";
@@ -192,8 +182,8 @@ intermediateImgRef.addEventListener ("click", function() {
 }) 
 
 expertImgRef.addEventListener ("click", function() {
-    quizGameRef.style.display = "block";
-    quizModeRef.style.display = "none";
+    quizGameRef.classList.remove("hidden");
+    quizModeRef.classList.add("hidden");
     selectedMode = quizModes[2];
     quizCurrentModeRef.textContent="Expert";
     quizNextQuizModeRef.textContent ="Beginner";
@@ -222,7 +212,7 @@ optionsRef.forEach(option => {
         }
         //only display finish button on final question
         if (remainingQuestions.length === 0) {
-            quizNextBtnRef.style.display = "block";
+            quizNextBtnRef.classList.remove("hidden");
         } else {
             setTimeout(() => {
                 selectedOption.parentElement.classList.remove(classToApply);
@@ -234,7 +224,7 @@ optionsRef.forEach(option => {
 });
 
 quizNextBtnRef.addEventListener ("click", function() {
-    quizNextBtnRef.style.display = "none";
+    quizNextBtnRef.classList.add("hidden");
     currentQuestionNoRef.textContent = questionCounter;
     getNewQuestion();
     radioBtnsRef.disabled = false;
@@ -242,16 +232,17 @@ quizNextBtnRef.addEventListener ("click", function() {
 
 playAgainBtnRef.addEventListener ("click", function() {
     quizGameRef.style.display = "block";
-    quizModeRef.style.display = "none";
-    quizResultRef.style.display = "none";
+    quizGameRef.classList.remove("hidden");
+    quizModeRef.classList.add("hidden");
+    quizResultRef.classList.add("hidden");
     startQuiz();
     console.log(selectedMode);
 }) 
 
 nextQuizBtnRef.addEventListener ("click", function() {
-    quizGameRef.style.display = "block";
-    quizModeRef.style.display = "none";
-    quizResultRef.style.display = "none";
+    quizGameRef.classList.remove("hidden");
+    quizModeRef.classList.add("hidden");
+    quizResultRef.classList.add("hidden");
     setNextMode();
     startQuiz();
 }) 
