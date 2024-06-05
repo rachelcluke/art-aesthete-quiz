@@ -32,6 +32,11 @@ The last update to this file was: **May 25th, 2024**
     - [Expectations](#expectations)
 - [UI / Design Choices](#ui-design-choices)
   - [Moodboard](#moodboard)
+  - [Fonts](#fonts)
+  - [Icons](#icons)
+  - [Colours](#colours)
+  - [Media Queries](#media-queries)
+  - [Wireframes](#wireframes)
 - [Technologies used](#technologies-used)
   - [Languages](#languages)
   - [IDE](#ide)
@@ -92,6 +97,23 @@ One of the first milestones of this project was to create a moodboard to help en
 Below, is the moodboard:
 ![Moodboard](docs/moodboard.png)
 
+## Fonts
+
+In order to move away from the basic fonts available, I have used
+[Google Fonts](https://fonts.google.com/ "Google Fonts") to find a text that best suits the feel of the website. For the launch page title "Hello.", which is the very first element the users' attention is drawn to, I have chosen [Sofia Sans](https://fonts.google.com/specimen/Sofia+Sans "Sofia Sans font"). The background-fill of the text is a busy, vibrant image and this font was clear and easy to read. The main text I have chosen [Krub](https://fonts.google.com/specimen/krub "Krub font") as I feel it suits the contemporary art aesthetic and it is clear to read. To make the headers stand out, I decided to use [Oxygen](https://fonts.google.com/specimen/Oxygen?query=oxygen "Oxygen font"). This font is complimentary to the Krub font, and will help be distinctive as the main navigation link/ logo in the header. An additional font [Petrona](https://fonts.google.com/?query=petrona "Petrona font") is used to contrast against the modern, sans serif text. 
+
+Additional Notes:
+
+- I have intentionally imported the fonts in the css file and not index.html as it saved some space in the html file and as this is a static website, the slightly longer loading time is not critical.
+  
+- Backup fonts (sans-serif) have been put in place as a safety net, in case the custom fonts used are not available.
+
+- There is a 'double reset' in the css file. It simplifies calculate rem unit as I no longer need to think in scale factor of 1.6 but 10 instead.
+
+## Icons
+
+I have incorporated icons for my website from the [Font Awesome library](https://fontawesome.com/ "Font Awesome"). These icons are used as the social media links in the footer and also in the subscribed.html file. All icons used are styled within the overall website theme.
+
 ## Colours
 
 The colour scheme of the website is inspired by the moodboard (previously depicted). I have used [Coolers](https://coolors.co/ "coolers") to retrieve the desired colour codes and generate the colour palette.
@@ -99,17 +121,16 @@ The colour scheme of the website is inspired by the moodboard (previously depict
 Below, is the color palette:
 ![Colour Palette](docs/colour-palette.png)
 
-## Breakpoints
+## Media Queries
 
-As a starting point, I will be building my website with a mobile first mindset using the iPhone 5/SE (320px) as the smallest screen size for styling to look good on. The screen size breakpoints that I will be using are from [Bootstrap breakpoints](https://getbootstrap.com/docs/5.0/layout/breakpoints/ "Bootstrap").
+As a starting point, I have designed this website with a mobile first mindset using the iPhone 5/SE (320px) as the smallest screen size for styling to look good on. Then I created 3 additional media queries for largers devices listed below.
 
-| Screen Size | Class Infix | Breakpoint |
-| ----------- | ----------- | ---------- |
-| x-small     | none        | <576px     |
-| small       | sm          | => 576px   |
-| medium      | md          | => 768px   |
-| large       | lg          | => 992px   |
-| x-large     | xl          | => 1200px  |
+| Screen Size |  Breakpoint |
+| ----------- | ----------- | 
+| mobile      |  <320px     |
+| tablet      |  => 768px   |
+| laptop      |  => 1920px  |
+| desktop     |  => 2560px  |
 
 \
 &nbsp;
@@ -191,6 +212,23 @@ The wireframes are below:
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS")
 
 TODO Add Java validation Service -->
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Deployment
+
+This project was deployed using GitHub Pages through the following steps:
+
+1. Navigated to the repository on github and click **Settings**.
+2. Selected **Pages** on the side navigation.
+3. Selected the **None** dropdown, and then clicking 'main'.
+4. Clicked on the **Save** button.
+5. Now the website was live on [The Art Aesthete Quiz Website](https://rachelcluke.github.io/art-aesthete-quiz/ "Art Aesthete Quiz")
+6. If any changes were required, they could be done, commited and pushed to GitHub and the changes would be updated.
 
 \
 &nbsp;
