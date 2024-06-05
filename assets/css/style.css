@@ -6,6 +6,7 @@
     --white: #ffffff;
     --goldenfizz: #f5f544;
     --salmon: #e3726f;
+    --junglegreen: #2AAA8A;
     --cornflower: #6f99ec;
     --midnight: #040406;
     --font-oxygen: "Oxygen", sans-serif;
@@ -254,6 +255,14 @@ nav a:hover {
 
 .quiz-option-1:hover, .quiz-option-2:hover, .quiz-option-3:hover, .quiz-option-4:hover {
     opacity: 50%;
+}
+
+.correct-option {
+    color: var(--junglegreen);
+}
+
+.incorrect-option {
+    color: var(--salmon);
 }
 
 #dialog-btn-div {

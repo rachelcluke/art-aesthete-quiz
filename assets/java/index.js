@@ -37,9 +37,6 @@ quizNextBtnRef.style.display = "none";
 
 //CONSTANTS
 const quizModes = ["beginner", "intermediate", "expert"];
-const midnightColour = '#040406';
-const greenColour = '#2AAA8A';
-const redColour = '#C70039';
 const CORRECT_POINTS = 1;
 const QUESTIONS_LIMIT = 5;
 
@@ -217,18 +214,21 @@ optionsRef.forEach(option => {
         const selectedOption = e.target;
         const selectedAnswer = selectedOption.dataset["number"];
         console.log("user picked" + selectedAnswer + "the correct answer is" + currentAnswer);
-        //optionBtnsRef.isEnabled() = false;
-        //case - correct answer
+        const classToApply = 
+            selectedAnswer == currentAnswer ? "correct-option" : "incorrect-option";
+        selectedOption.parentElement.classList.add(classToApply);
         if (selectedAnswer == currentAnswer) {
             quizScore++;
-            selectedOption.style.color = greenColour; 
-        //case - wrong answer
-        } else {
-            //TODO - correct option radio btn turn green, selected btn turn red
-            selectedOption.style.color = redColour;
-            
         }
-        quizNextBtnRef.style.display = "block";
+        //only display finish button on final question
+        if (remainingQuestions.length === 0) {
+            quizNextBtnRef.style.display = "block";
+        } else {
+            setTimeout(() => {
+                selectedOption.parentElement.classList.remove(classToApply);
+                getNewQuestion();
+            }, 1000);
+        }
     });
 });
 
