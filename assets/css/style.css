@@ -252,6 +252,10 @@ nav a:hover {
     padding-bottom: 2rem;
 }
 
+.quiz-option-1:hover, .quiz-option-2:hover, .quiz-option-3:hover, .quiz-option-4:hover {
+    opacity: 50%;
+}
+
 #dialog-btn-div {
     display: flex;
     flex-direction: row;
