@@ -7,7 +7,6 @@ const quizModeRef = document.querySelector('#quiz-mode');
 const quizGameRef = document.querySelector('.quiz-game');
 const quizResultRef = document.querySelector('.quiz-result-next-section');
 const quizNextBtnRef = document.querySelector('#next-question-btn');
-const questionRef = document.querySelector('#quiz-question');
 const optionsRef = Array.from(document.querySelectorAll('.option-text'));
 const optionBtnsRef = Array.from(document.querySelectorAll('.radio-button'));
 const radioBtnsRef = document.querySelectorAll('.radio-button');
