@@ -57,7 +57,8 @@ const startQuiz = () => {
     totalQuestionNoRef.textContent = QUESTIONS_LIMIT;
     remainingQuestions = [ ...questions]
     quizNextBtnRef.textContent = "Next";
-    getNewQuestion();
+    //getNewQuestion();
+    // replace with getQuizAPIData();
 };
 
 /**
@@ -85,7 +86,8 @@ const getQuizAPIData = (difficulty) => {
                 });
                 return processedQuestion;
             });
-            startQuiz();
+            //startQuiz();
+            //replace with getNewQuestion();
             console.log(difficulty);
         })
         .catch(err => {
@@ -210,6 +212,8 @@ optionsRef.forEach(option => {
         if (selectedAnswer == currentAnswer) {
             quizScore++;
         }
+        //currentQuestionNoRef.textContent = questionCounter;
+        
         //only display finish button on final question
         if (remainingQuestions.length === 0) {
             quizNextBtnRef.classList.remove("hidden");

@@ -14,8 +14,8 @@ The following are high-level details of this project:
 - The project demonstrates interactive front end web design.
 - A top navigation bar and footer is established for structured layout.
 - Git & GitHub are used for version control.
-<!-- - Any external code sources used in the project are clearly identified in the code itself and in this README.md file
-- The final version has been deployed via GitHub Pages. -->
+- Any external code sources used in the project are clearly identified in the code itself and in this README.md file
+- The final version has been deployed via GitHub Pages. 
 
 The last update to this file was: **May 25th, 2024**
 
