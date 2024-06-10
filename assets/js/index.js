@@ -105,7 +105,7 @@ const getNewQuestion = () => {
         quizNextBtnRef.textContent = "Finish";
     }
 
-    questionCounter ++;
+    questionCounter++;
     const questionIndex = Math.floor(Math.random()*remainingQuestions.length);
     currentQuestion = remainingQuestions[questionIndex];
     quizQuestionTextRef.textContent = currentQuestion.question ;
