@@ -201,6 +201,7 @@ closeDialogBtnRef.addEventListener("click", () => {
 
 optionsRef.forEach(option => {
     option.addEventListener("click", e => {
+        e.preventDefault(); 
         const selectedOption = e.target;
         const selectedAnswer = selectedOption.dataset["number"];
         console.log("user picked" + selectedAnswer + "the correct answer is" + currentAnswer);
