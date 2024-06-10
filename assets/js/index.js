@@ -56,7 +56,7 @@ const startQuiz = () => {
     totalQuestionNoRef.textContent = QUESTIONS_LIMIT;
     remainingQuestions = [ ...questions]
     quizNextBtnRef.textContent = "Next";
-    //getNewQuestion();
+    getNewQuestion();
     // replace with getQuizAPIData();
 };
 
@@ -85,7 +85,7 @@ const getQuizAPIData = (difficulty) => {
                 });
                 return processedQuestion;
             });
-            //startQuiz();
+            startQuiz();
             //replace with getNewQuestion();
             console.log(difficulty);
         })
@@ -201,7 +201,7 @@ closeDialogBtnRef.addEventListener("click", () => {
 
 optionsRef.forEach(option => {
     option.addEventListener("click", e => {
-        e.preventDefault(); 
+        //e.preventDefault(); 
         const selectedOption = e.target;
         const selectedAnswer = selectedOption.dataset["number"];
         console.log("user picked" + selectedAnswer + "the correct answer is" + currentAnswer);

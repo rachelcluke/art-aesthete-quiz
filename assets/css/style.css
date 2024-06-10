@@ -258,6 +258,28 @@ nav a:hover {
     color: var(--salmon);
 }
 
+dialog {
+    max-height: 35%;
+    border-width: 0.1rem;
+}
+
+dialog p {
+    font-family: var(--font-petrona);
+    font-size: 1.6rem;
+    font-weight: 200;
+    color: var(--midnight); 
+    padding: 0rem 2rem 2rem 2rem;
+}
+
+::backdrop {
+    background-image: linear-gradient(
+      var(--junglegreen),
+      var(--goldenfizz)
+    );
+    opacity: 0.75;
+  }
+
+
 #dialog-btn-div {
     display: flex;
     flex-direction: row;
@@ -294,26 +316,6 @@ dialog button:hover {
     background-color: var(--goldenfizz);
     color: var(--midnight);
 }
-
-dialog {
-    padding-bottom:2rem;
-}
-
-dialog p {
-    font-family: var(--font-petrona);
-    font-size: 1.6rem;
-    font-weight: 200;
-    color: var(--midnight); 
-    padding: 2rem;
-}
-
-::backdrop {
-    background-image: linear-gradient(
-      var(--wildsand)
-      var(--caparol)
-    );
-    opacity: 0.90;
-  }
 
 /* Div 04 - Results */
 .quiz-result-next-row {
@@ -474,7 +476,7 @@ dialog p {
     }
 
     h2 {
-        font-size: 4rem;
+        font-size: 3.5rem;
         padding-bottom: 3rem;
     }
 
