@@ -120,11 +120,11 @@ const getNewQuestion = () => {
 };
 
 const setResultMessage = () => {
-    if ((quizScore == 0) || (quizScore == 1)) {
+    if ((quizScore === 0) || (quizScore === 1)) {
         resultMessage = "Better luck next time!";
-    } else if ((quizScore == 2) || (quizScore == 3)) {
+    } else if ((quizScore === 2) || (quizScore === 3)) {
         resultMessage = "Woah, not bad at all!";
-    } else if ((quizScore == 4) || (quizScore == 5)) {
+    } else if ((quizScore === 4) || (quizScore === 5)) {
         resultMessage = "Well done, you clearly know your stuff!";
     }
     quizResultMessageRef.textContent = resultMessage;
@@ -139,13 +139,13 @@ const endQuiz = () => {
 }
 
 const setNextMode = () => {
-    if (selectedMode == quizModes[0]) {
+    if (selectedMode === quizModes[0]) {
         selectedMode = quizModes[1];
         quizCurrentModeRef.textContent="Intermediate";
-    } else if (selectedMode == quizModes[1]) {
+    } else if (selectedMode === quizModes[1]) {
         selectedMode = quizModes[2];
         quizCurrentModeRef.textContent="Expert";
-    } else if (selectedMode == quizModes[2]) {
+    } else if (selectedMode === quizModes[2]) {
         selectedMode = quizModes[0];
         quizCurrentModeRef.textContent="Beginner";
     }
@@ -206,10 +206,10 @@ optionsRef.forEach(option => {
         const selectedAnswer = selectedOption.dataset["number"];
         console.log("user picked" + selectedAnswer + "the correct answer is" + currentAnswer);
         const classToApply = 
-            selectedAnswer == currentAnswer ? "correct-option" : "incorrect-option";
+            selectedAnswer === currentAnswer ? "correct-option" : "incorrect-option";
         selectedOption.parentElement.classList.add(classToApply);
         radioBtnsRef.disabled = true;
-        if (selectedAnswer == currentAnswer) {
+        if (selectedAnswer === currentAnswer) {
             quizScore++;
         }
         //currentQuestionNoRef.textContent = questionCounter;
