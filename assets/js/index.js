@@ -46,16 +46,15 @@ let processedQuestion;
 let currentAnswer;
 let resultMessage;
 let quizScore = 0;
-let questionCounter = 0;
+let questionCounter = 1;
 
 //Functions
 const startQuiz = () => {
-    questionCounter = 0; 
+    questionCounter = 1; 
     quizScore = 0;
     currentQuestionNoRef.textContent = questionCounter;
     totalQuestionNoRef.textContent = QUESTIONS_LIMIT;
     remainingQuestions = [ ...questions]
-    quizNextBtnRef.textContent = "Next";
     getNewQuestion();
     // replace with getQuizAPIData();
 };
@@ -98,10 +97,6 @@ const getQuizAPIData = (difficulty) => {
 const getNewQuestion = () => {
     if (remainingQuestions.length === 0 || questionCounter >= QUESTIONS_LIMIT) {
         endQuiz();
-    }
-
-    if (remainingQuestions.length === 1) {
-        quizNextBtnRef.textContent = "Finish";
     }
 
     questionCounter++;
@@ -201,7 +196,7 @@ closeDialogBtnRef.addEventListener("click", () => {
 
 optionsRef.forEach(option => {
     option.addEventListener("click", e => {
-        //e.preventDefault(); 
+        e.preventDefault(); 
         const selectedOption = e.target;
         const selectedAnswer = selectedOption.dataset["number"];
         console.log("user picked" + selectedAnswer + "the correct answer is" + currentAnswer);
@@ -212,11 +207,11 @@ optionsRef.forEach(option => {
         if (selectedAnswer === currentAnswer) {
             quizScore++;
         }
-        //currentQuestionNoRef.textContent = questionCounter;
+        currentQuestionNoRef.textContent = questionCounter;
         
         //only display finish button on final question
         if (remainingQuestions.length === 0) {
-            quizNextBtnRef.classList.remove("hidden");
+            quizNextBtnRef.parentElement.classList.remove("hidden");
         } else {
             setTimeout(() => {
                 selectedOption.parentElement.classList.remove(classToApply);
@@ -228,14 +223,13 @@ optionsRef.forEach(option => {
 });
 
 quizNextBtnRef.addEventListener ("click", function() {
-    quizNextBtnRef.classList.add("hidden");
+    quizNextBtnRef.parentElement.classList.add("hidden");
     currentQuestionNoRef.textContent = questionCounter;
     getNewQuestion();
     radioBtnsRef.disabled = false;
 })
 
 playAgainBtnRef.addEventListener ("click", function() {
-    quizGameRef.style.display = "block";
     quizGameRef.classList.remove("hidden");
     quizModeRef.classList.add("hidden");
     quizResultRef.classList.add("hidden");
