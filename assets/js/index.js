@@ -222,7 +222,7 @@ optionsRef.forEach(option => {
                 selectedOption.parentElement.classList.remove(classToApply);
                 radioBtnsRef.disabled = false;
                 getNewQuestion();
-            }, 1000);
+            }, 1200);
         }
     });
 });
