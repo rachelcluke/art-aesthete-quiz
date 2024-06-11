@@ -49,14 +49,16 @@ let quizScore = 0;
 let questionCounter = 1;
 
 //Functions
-const startQuiz = () => {
+const startQuiz = (difficulty) => {
     questionCounter = 1; 
     quizScore = 0;
+    //getNewQuestion();
+    // replace with 
+    getQuizAPIData(difficulty);
     currentQuestionNoRef.textContent = questionCounter;
     totalQuestionNoRef.textContent = QUESTIONS_LIMIT;
-    remainingQuestions = [ ...questions]
-    getNewQuestion();
-    // replace with getQuizAPIData();
+    //remainingQuestions = [ ...questions]
+    console.log("startQuiz" + difficulty);
 };
 
 /**
@@ -84,9 +86,10 @@ const getQuizAPIData = (difficulty) => {
                 });
                 return processedQuestion;
             });
-            startQuiz();
-            //replace with getNewQuestion();
-            console.log(difficulty);
+            //startQuiz();
+            //replace with 
+            remainingQuestions = [ ...questions]
+            getNewQuestion();
         })
         .catch(err => {
             console.error(err);
@@ -95,10 +98,9 @@ const getQuizAPIData = (difficulty) => {
     }
 
 const getNewQuestion = () => {
-    if (remainingQuestions.length === 0 || questionCounter >= QUESTIONS_LIMIT) {
-        endQuiz();
-    }
-
+    //if (remainingQuestions.length === 1 || questionCounter >= QUESTIONS_LIMIT) {
+        //endQuiz();
+    //}
     questionCounter++;
     const questionIndex = Math.floor(Math.random()*remainingQuestions.length);
     currentQuestion = remainingQuestions[questionIndex];
@@ -117,7 +119,7 @@ const getNewQuestion = () => {
 const setResultMessage = () => {
     if ((quizScore === 0) || (quizScore === 1)) {
         resultMessage = "Better luck next time!";
-    } else if ((quizScore === 2) || (quizScore === 3)) {
+    } else if ((quizScore === 2) || (quizScore ===  3)) {
         resultMessage = "Woah, not bad at all!";
     } else if ((quizScore === 4) || (quizScore === 5)) {
         resultMessage = "Well done, you clearly know your stuff!";
@@ -136,12 +138,16 @@ const endQuiz = () => {
 const setNextMode = () => {
     if (selectedMode === quizModes[0]) {
         selectedMode = quizModes[1];
+        difficulty="medium";
         quizCurrentModeRef.textContent="Intermediate";
+
     } else if (selectedMode === quizModes[1]) {
         selectedMode = quizModes[2];
+        difficulty="hard";
         quizCurrentModeRef.textContent="Expert";
     } else if (selectedMode === quizModes[2]) {
         selectedMode = quizModes[0];
+        difficulty="easy";
         quizCurrentModeRef.textContent="Beginner";
     }
 }
@@ -165,7 +171,9 @@ beginnerImgRef.addEventListener ("click", function() {
     selectedMode = quizModes[0];
     quizCurrentModeRef.textContent="Beginner";
     quizNextQuizModeRef.textContent ="Intermediate";
-    getQuizAPIData("easy");
+    //getQuizAPIData("easy");
+    difficulty="easy";
+    startQuiz(difficulty);
 }) 
 
 intermediateImgRef.addEventListener ("click", function() {
@@ -174,7 +182,9 @@ intermediateImgRef.addEventListener ("click", function() {
     selectedMode = quizModes[1];
     quizCurrentModeRef.textContent="Intermediate";
     quizNextQuizModeRef.textContent ="Expert";
-    getQuizAPIData("medium");
+    //getQuizAPIData("medium");
+    difficulty="medium";
+    startQuiz(difficulty);
 }) 
 
 expertImgRef.addEventListener ("click", function() {
@@ -183,7 +193,9 @@ expertImgRef.addEventListener ("click", function() {
     selectedMode = quizModes[2];
     quizCurrentModeRef.textContent="Expert";
     quizNextQuizModeRef.textContent ="Beginner";
-    getQuizAPIData("hard");
+    //getQuizAPIData("hard");
+    difficulty="hard";
+    startQuiz(difficulty);
 }) 
 
 showDialogBtnRef.addEventListener("click", () => {
@@ -194,28 +206,33 @@ closeDialogBtnRef.addEventListener("click", () => {
     dialogRef.close();
   });
 
-optionsRef.forEach(option => {
+optionBtnsRef.forEach(option => {
     option.addEventListener("click", e => {
         e.preventDefault(); 
         const selectedOption = e.target;
         const selectedAnswer = selectedOption.dataset["number"];
         console.log("user picked" + selectedAnswer + "the correct answer is" + currentAnswer);
         const classToApply = 
-            selectedAnswer === currentAnswer ? "correct-option" : "incorrect-option";
+            selectedAnswer == currentAnswer ? "correct-option" : "incorrect-option";
         selectedOption.parentElement.classList.add(classToApply);
         radioBtnsRef.disabled = true;
-        if (selectedAnswer === currentAnswer) {
+        if (selectedAnswer == currentAnswer) {
             quizScore++;
         }
-        currentQuestionNoRef.textContent = questionCounter;
         
         //only display finish button on final question
-        if (remainingQuestions.length === 0) {
+        if (remainingQuestions.length === 1) {
+            currentQuestionNoRef.textContent = questionCounter;
             quizNextBtnRef.parentElement.classList.remove("hidden");
+            setTimeout(() => {
+                selectedOption.parentElement.classList.remove(classToApply);
+            }, 2000);
+            
         } else {
             setTimeout(() => {
                 selectedOption.parentElement.classList.remove(classToApply);
                 radioBtnsRef.disabled = false;
+                currentQuestionNoRef.textContent = questionCounter;
                 getNewQuestion();
             }, 1200);
         }
@@ -224,8 +241,9 @@ optionsRef.forEach(option => {
 
 quizNextBtnRef.addEventListener ("click", function() {
     quizNextBtnRef.parentElement.classList.add("hidden");
-    currentQuestionNoRef.textContent = questionCounter;
-    getNewQuestion();
+    //currentQuestionNoRef.textContent = questionCounter;
+    //getNewQuestion();
+    endQuiz();
     radioBtnsRef.disabled = false;
 })
 
@@ -233,8 +251,8 @@ playAgainBtnRef.addEventListener ("click", function() {
     quizGameRef.classList.remove("hidden");
     quizModeRef.classList.add("hidden");
     quizResultRef.classList.add("hidden");
-    startQuiz();
-    console.log(selectedMode);
+    console.log("play again"+difficulty);
+    startQuiz(difficulty);
 }) 
 
 nextQuizBtnRef.addEventListener ("click", function() {
@@ -242,5 +260,5 @@ nextQuizBtnRef.addEventListener ("click", function() {
     quizModeRef.classList.add("hidden");
     quizResultRef.classList.add("hidden");
     setNextMode();
-    startQuiz();
+    startQuiz(difficulty);
 }) 
