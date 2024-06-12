@@ -1,6 +1,6 @@
 # The Art Aesthete Quiz
 
-<!--[Am I responsive - Art Quiz](docs/XXX.png) -->
+[Am I responsive - Art Quiz](docs/am-i-responsive.png "Am I responsive")
 
 # Project Overview
 
@@ -17,7 +17,7 @@ The following are high-level details of this project:
 - Any external code sources used in the project are clearly identified in the code itself and in this README.md file
 - The final version has been deployed via GitHub Pages. 
 
-The last update to this file was: **May 25th, 2024**
+The last update to this file was: **June 12th, 2024**
 
 # Table of Contents
 
@@ -217,7 +217,7 @@ The wireframes are below:
   
 - [Coolers](https://coolors.co/ "coolers")
   
-<!-- - [Am I Responsive](https://ui.dev/amiresponsive "am i responsive") -->
+- [Am I Responsive](https://ui.dev/amiresponsive "Am I Responsive")
 
 - [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML")
   
