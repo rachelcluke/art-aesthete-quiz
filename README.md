@@ -663,6 +663,8 @@ These are the issues that emerged throughout the project development, and how I 
 
 - When the user selects a quiz answer, the other options should be disabled until the next new question is loaded. This is less obvious since there is only a short window to pick another option before the next question is automatically loaded but it is still a bug that needs to be resolved.
 
+- When the user selects a quiz answer, only the text is modified. Ideally, the selected option's radio button should also be modified (e.g., filled in) to reinforce the user's chosen answer for a better UX.
+
 - The image displayed within the 'Next Up' is currently static but should be dynamic based on the next quiz mode as configured in setNextMode(). 
 
 \
