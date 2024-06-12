@@ -49,13 +49,9 @@ let questionCounter = 1;
 const startQuiz = (difficulty) => {
     questionCounter = 1; 
     quizScore = 0;
-    //getNewQuestion();
-    // replace with 
     getQuizAPIData(difficulty);
     currentQuestionNoRef.textContent = questionCounter;
     totalQuestionNoRef.textContent = QUESTIONS_LIMIT;
-    //remainingQuestions = [ ...questions]
-    console.log("startQuiz" + difficulty);
 };
 
 /**
@@ -67,13 +63,11 @@ const getQuizAPIData = (difficulty) => {
             return res.json();
         })
         .then((downloadedQuestions) => {
-            console.log(downloadedQuestions.results);
             questions = downloadedQuestions.results.map((downloadedQuestion) => {
                 const processedQuestion = {
                     question: downloadedQuestion.question,
                 };
                 const answerOptions = [...downloadedQuestion.incorrect_answers];
-                console.log(answerOptions);
                 processedQuestion.answer = Math.floor(Math.random() * 3) + 1;
                 answerOptions.splice(processedQuestion.answer -1, 0, downloadedQuestion.correct_answer
                 );
@@ -83,8 +77,6 @@ const getQuizAPIData = (difficulty) => {
                 });
                 return processedQuestion;
             });
-            //startQuiz();
-            //replace with 
             remainingQuestions = [ ...questions];
             getNewQuestion();
         })
@@ -95,9 +87,6 @@ const getQuizAPIData = (difficulty) => {
     };
 
 const getNewQuestion = () => {
-    //if (remainingQuestions.length === 1 || questionCounter >= QUESTIONS_LIMIT) {
-        //endQuiz();
-    //}
     questionCounter++;
     const questionIndex = Math.floor(Math.random()*remainingQuestions.length);
     currentQuestion = remainingQuestions[questionIndex];
@@ -168,7 +157,6 @@ beginnerImgRef.addEventListener ("click", function() {
     selectedMode = quizModes[0];
     quizCurrentModeRef.textContent="Beginner";
     quizNextQuizModeRef.textContent ="Intermediate";
-    //getQuizAPIData("easy");
     difficulty="easy";
     startQuiz(difficulty);
 }); 
@@ -179,7 +167,6 @@ intermediateImgRef.addEventListener ("click", function() {
     selectedMode = quizModes[1];
     quizCurrentModeRef.textContent="Intermediate";
     quizNextQuizModeRef.textContent ="Expert";
-    //getQuizAPIData("medium");
     difficulty="medium";
     startQuiz(difficulty);
 }); 
@@ -190,7 +177,6 @@ expertImgRef.addEventListener ("click", function() {
     selectedMode = quizModes[2];
     quizCurrentModeRef.textContent="Expert";
     quizNextQuizModeRef.textContent ="Beginner";
-    //getQuizAPIData("hard");
     difficulty="hard";
     startQuiz(difficulty);
 }); 
@@ -208,7 +194,6 @@ optionBtnsRef.forEach(option => {
         e.preventDefault(); 
         const selectedOption = e.target;
         const selectedAnswer = selectedOption.dataset.number;
-        console.log("user picked" + selectedAnswer + "the correct answer is" + currentAnswer);
         const classToApply = 
             selectedAnswer == currentAnswer ? "correct-option" : "incorrect-option";
         selectedOption.parentElement.classList.add(classToApply);
@@ -238,8 +223,6 @@ optionBtnsRef.forEach(option => {
 
 quizNextBtnRef.addEventListener ("click", function() {
     quizNextBtnRef.parentElement.classList.add("hidden");
-    //currentQuestionNoRef.textContent = questionCounter;
-    //getNewQuestion();
     endQuiz();
     radioBtnsRef.disabled = false;
 });
@@ -248,7 +231,6 @@ playAgainBtnRef.addEventListener ("click", function() {
     quizGameRef.classList.remove("hidden");
     quizModeRef.classList.add("hidden");
     quizResultRef.classList.add("hidden");
-    console.log("play again"+difficulty);
     startQuiz(difficulty);
 }); 
 
