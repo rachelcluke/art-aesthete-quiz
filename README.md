@@ -41,6 +41,7 @@ The last update to this file was: **June 12th, 2024**
   - [Existing Features](#existing-features)
     - [Home Section](#home-section)
     - [Quiz Mode Section](#quiz-mode-section)
+    - [Quiz Game Section](#quiz-game-section)
     - [Help Modal Dialog](#help-modal-dialog)
     - [Quiz Result Section](#quiz-result-section)
     - [Footer](#footer)
@@ -254,7 +255,7 @@ The wireframes are below:
 
 ### Quiz Mode Section
 
-- Quiz Modes 
+- Horizontal Divider
   - Throughout the website, including for this section, Horizontal Dividers are used to separate sections. They are set to be thin and subtle to be helpful but still aesthetic.
    \
     &nbsp;
@@ -264,6 +265,7 @@ The wireframes are below:
     \
     &nbsp;
 
+- Responsive Layout
   - Depending on the size of the screen, the arrangement of the modes will alter. 
    \
     &nbsp;
@@ -278,8 +280,9 @@ The wireframes are below:
     \
     &nbsp;
 
-- Each of the three mode images navigate to the subsequent Quiz Game section, with the respective mode selected. To help indicate to the user that they have to click the image, a hover effect of reduced opacity by 50% has been added to the images.
-   \
+- Navigation
+  - Each of the three mode images navigate to the subsequent Quiz Game section, with the respective mode selected. To help indicate to the user that they have to click the image, a hover effect of reduced opacity by 50% has been added to the images.
+  \
     &nbsp;
 
     ![Mode Section - Image Hover](docs/features/mode-section-tablet-mode-hover.png)
