@@ -34,7 +34,7 @@ const QUESTIONS_LIMIT = 5;
 
 
 //Variables
-let remainingQuestions = []; //available questions left out of 4
+let remainingQuestions = []; 
 let questions = [];
 let currentQuestion = {};
 let allowAnswers = false;
