@@ -41,6 +41,7 @@ let allowAnswers = false;
 let difficulty;
 let currentAnswer;
 let resultMessage;
+let selectedMode;
 let quizScore = 0;
 let questionCounter = 1;
 
