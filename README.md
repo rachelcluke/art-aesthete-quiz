@@ -42,7 +42,6 @@ The last update to this file was: **June 12th, 2024**
     - [Home Section](#home-section)
     - [Quiz Mode Section](#quiz-mode-section)
     - [Quiz Game Section](#quiz-game-section)
-    - [Help Modal Dialog](#help-modal-dialog)
     - [Quiz Result Section](#quiz-result-section)
     - [Footer](#footer)
   - [Future actions - Features to be Implemented](#future-actions)
@@ -282,21 +281,105 @@ The wireframes are below:
 
 - Navigation
   - Each of the three mode images navigate to the subsequent Quiz Game section, with the respective mode selected. To help indicate to the user that they have to click the image, a hover effect of reduced opacity by 50% has been added to the images.
-  \
-    &nbsp;
-
-    ![Mode Section - Image Hover](docs/features/mode-section-tablet-mode-hover.png)
-
     \
-    &nbsp;
+      &nbsp;
 
-\
-&nbsp;
+      ![Mode Section - Image Hover](docs/features/mode-section-tablet-mode-hover.png)
+
+      \
+      &nbsp;
+
 [Back to Top](#table-of-contents)
 \
 &nbsp;
 
+### Quiz Game Section
 
+- Dynamic Quiz Header 
+  - At the top of the quiz section, the quiz mode (i.e., beginner, intermediate, expert) and current quiz question counter (i.e., current question number out of 5) are both dynamic. This will help the user keep track of their progress and how far they are in the quiz or in other words, how many questions they have left.
+   \
+    &nbsp;
+
+    ![Game Section - Dynamic Header](docs/features/game-section-tablet-header.png)
+
+    \
+    &nbsp;
+
+- Help Modal Dialog
+  - In lieu of the initial plan of having a separate section for quiz instructions, a modal dialog has been included at the top of the quiz game section. The button has been customised to make it self-explanatory for the user to click on it, if further support is needed. This is confirmed by the same hover effect used throughout the websites for buttons.
+   \
+    &nbsp;
+
+    ![Game Section - Modal Dialog Button Hover](docs/features/game-section-laptop-modal-hover.png)
+
+    \
+    &nbsp;
+
+  - When the modal dialog is clicked, the following appears. It displays guidelines using the same fonts and colour scheme as the rest of the website for consistency. Also a backdrop is utilised to help contrast the dialog against the rest of the website, using the housestyle colours. 
+   \
+    &nbsp;
+
+    ![Game Section - Modal Dialog](docs/features/game-section-mobile-modal-dialog.png)
+
+    \
+    &nbsp;
+
+  - The close button is strategically positioned at the top-right corner of the dialog for ease of use.
+
+- Dynamic and Responsive Quiz Questions & Answers
+  - The quiz questions and answers, dependent on the quiz mode, are fetched from the OpenTrivia Database API and displayed in this manner.
+   \
+    &nbsp;
+
+    ![Game Section - Mobile Quiz](docs/features/game-section-mobile-quiz.png)
+
+    \
+    &nbsp;
+
+  - Depending on the size of the user's screen, the layout of the quiz answer options will be configured to optimise space and be easier to use compared to if it were to stay the same.
+   \
+    &nbsp;
+
+    ![Game Section - Laptop Quiz](docs/features/game-section-laptop-quiz.png)
+
+    \
+    &nbsp;
+
+- Quiz Answer Hover
+  - Similar to the Quiz Mode selection, when the user hovers over the quiz answers, they have a hover effect of reduced opacity by 50%. This is to improve the UI.
+   \
+    &nbsp;
+
+    ![Game Section - Quiz Option Hover](docs/features/game-section-laptop-option-hover.png)
+
+    \
+    &nbsp;
+
+- Quiz Response Feedback
+  - For an enhanced UX, immediate response feedback is provided to the user once they have selected their answer. If correct, the option text turns to Jungle Green, and if incorrect, to Salmon Red. Both colours that are a part of the housestyle scheme.
+  \
+    &nbsp;
+
+    ![Game Section - Correct Answer Feedback](docs/features/game-section-laptop-option-correct.png)
+
+   \
+    &nbsp;
+
+    ![Game Section - Incorrect Answer Feedback](docs/features/game-section-laptop-option-incorrect.png)
+
+    \
+    &nbsp;
+
+- Quiz Navigation 
+  - Once the user has answered a question, a new question is automatically loaded (on a short delay for the user to be able to acknowledge the answer response feedback).
+  - Only on the final question, will the 'Finish' button be displayed, which when clicked, will navigate to the End Screen, which includes the Result and Next Up Quiz Sections. This button shares the same design as the other buttons used throughout the website and also has the same hover effect.
+  \
+    &nbsp;
+
+    ![Game Section - Finish Button](docs/features/game-section-mobile-finish.png)
+
+   \
+    &nbsp;
 
 \
 &nbsp;
