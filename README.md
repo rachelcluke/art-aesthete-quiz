@@ -43,6 +43,9 @@ The last update to this file was: **May 25th, 2024**
   - [Libraries & Framework](#libraries-framework)
   - [Tools](#tools)
 - [Validating](#validating)
+  - [HTML Validation](#html-validation)
+  - [CSS Validation](#css-validation)
+  - [JS Validation](#js-validation)
 - [Testing](#testing)
 - [Deployment](#deployment)
 
@@ -191,6 +194,8 @@ The wireframes are below:
 
 - [Codeanywhere](https://codeanywhere.com/ "Codeanywhere")
 
+- [GitPod](https://www.gitpod.io/ "GitPod")
+
 ## Libraries & Framework
 
 - [Google Fonts](https://fonts.google.com/ "Google Fonts")
@@ -213,7 +218,7 @@ The wireframes are below:
   
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS")
 
-- [W3C JS Validation Service](https://codebeautify.org/jsvalidate "JS Validate") 
+- [W3C JS Validation Service](https://jshint.com "JSHint JS") 
 
 \
 &nbsp;
@@ -223,12 +228,18 @@ The wireframes are below:
 
 # Validating
 
-- There were no errors in both of the HTML files. Initially for the CSS, there was one error which was due to the use of incorrect units for 'letter-spacing'. Once this was changed from percentage to rem and re-validated, there were no errors for the CSS file.
-The results of my validation for HTML and CSS are below:
+## HTML Validation
+- There were no errors in both of the HTML files. 
   - HTML (index.html) validator [results](docs/validator/html-validator-index-results.png "W3C HTML")
   - HTML (subscribed.html) validator [results](docs/validator/html-validator-subscribed-results.png "W3C HTML")
+
+## CS Validation
+- Initially for the CSS, there was one error which was due to the use of incorrect units for 'letter-spacing'. Once this was changed from percentage to rem and re-validated, there were no errors for the CSS file.
   - CSS (style.css) validator [results](docs/validator/css-validator-results.png "W3C CSS")
-  - JS (index.js) validator [results]()
+
+## JS Validation
+- The first round of validation, there were 14 warnings of missing semi-colons and preference of dot notations, 1 undeclared variable and 4 unused variables. After resolving these items, no errors/ warnings were shown through the second round of validation.
+  - JS (index.js) validator [results](docs/validator/js-validator-results.png "JSHint JS")
 
 \
 &nbsp;
@@ -252,3 +263,37 @@ This project was deployed using GitHub Pages through the following steps:
 [Back to Top](#table-of-contents)
 \
 &nbsp;
+
+# Credits
+
+For mentoring, code advising and project reviewing:
+
+- [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin")
+
+For technical support and guidance:
+
+- [Tutors at Code Institute](https://codeinstitute.net/blog/meet-our-support-teams/ "Code Institute Support")
+  
+- [James Q Quick via YouTube](https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&ab_channel=JamesQQuick "James Q Quick YouTube")
+
+For quiz questions and answers:
+
+- [Open Trivia Database API](https://opentdb.com/api_config.php "Open Trivia Database")
+
+For content and design inspiration:
+
+- [Obelisk](https://www.arthistoryproject.com/quizzes/ "Obelisk Quizzes")
+
+For social media reference:
+
+- [The Art Club Facebook](https://www.facebook.com/groups/paintalongwithskyeartclub/ "The Art Club Facbook")
+
+- [UK Art Club Instagram](https://www.instagram.com/ukartclub/?hl=en-gb "UK Art Club Instagram")
+
+---
+
+Thank you, from Rachel Luke.
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
