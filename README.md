@@ -17,7 +17,7 @@ The following are high-level details of this project:
 - Any external code sources used in the project are clearly identified in the code itself and in this README.md file
 - The final version has been deployed via GitHub Pages. 
 
-The last update to this file was: **June 12th, 2024**
+The last update to this file was: **June 13th, 2024**
 
 # Table of Contents
 
@@ -441,7 +441,7 @@ The wireframes are below:
     &nbsp;
 
 - Social Media Icons
-  - Within the 'Contact' section, there are two social media icons that allow the users to easily navigate directly to the website's social medias accounts. The icons have a hover effect similar to the buttons, where it turns goldenfizz yellow.
+  - Within the 'Contact' section, there are two social media icons that allow the users to easily navigate directly to the website's social medias accounts. The icons have a hover effect similar to the buttons, where it turns goldenfizz yellow. Additionally, the icons have HTML attributes 'noopener' for security reasons.
    \
     &nbsp;
 
