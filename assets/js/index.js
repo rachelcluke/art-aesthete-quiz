@@ -10,7 +10,6 @@ const quizNextBtnRef = document.querySelector('#next-question-btn');
 const optionsRef = Array.from(document.querySelectorAll('.option-text'));
 const optionBtnsRef = Array.from(document.querySelectorAll('.radio-button'));
 const radioBtnsRef = document.querySelectorAll('.radio-button');
-const scoreTextRef = document.querySelector('#quiz-result-score');
 const startBtnRef = document.querySelector("#launch-start-btn");
 const beginnerImgRef = document.querySelector("#beginner-img");
 const intermediateImgRef = document.querySelector("#intermediate-img");
@@ -31,18 +30,15 @@ const quizNextQuizModeRef = document.querySelector('#quiz-next-mode-label');
 
 //CONSTANTS
 const quizModes = ["beginner", "intermediate", "expert"];
-const CORRECT_POINTS = 1;
 const QUESTIONS_LIMIT = 5;
 
 
 //Variables
-let quizMode = quizModes[0];
 let remainingQuestions = []; //available questions left out of 4
 let questions = [];
 let currentQuestion = {};
 let allowAnswers = false;
 let difficulty;
-let processedQuestion;
 let currentAnswer;
 let resultMessage;
 let quizScore = 0;
@@ -88,14 +84,14 @@ const getQuizAPIData = (difficulty) => {
             });
             //startQuiz();
             //replace with 
-            remainingQuestions = [ ...questions]
+            remainingQuestions = [ ...questions];
             getNewQuestion();
         })
         .catch(err => {
             console.error(err);
         });
     
-    }
+    };
 
 const getNewQuestion = () => {
     //if (remainingQuestions.length === 1 || questionCounter >= QUESTIONS_LIMIT) {
@@ -108,7 +104,7 @@ const getNewQuestion = () => {
     currentAnswer = currentQuestion.answer;
 
     optionsRef.forEach(option => {
-        const number = option.dataset["number"];
+        const number = option.dataset.number;
         option.innerHTML = currentQuestion["option" + number];
     });
 
@@ -125,7 +121,7 @@ const setResultMessage = () => {
         resultMessage = "Well done, you clearly know your stuff!";
     }
     quizResultMessageRef.textContent = resultMessage;
-}
+};
 
 const endQuiz = () => {
     quizResultScoreRef.textContent = quizScore;
@@ -133,7 +129,7 @@ const endQuiz = () => {
     setResultMessage();
     quizGameRef.classList.add("hidden");
     quizResultRef.classList.remove("hidden");
-}
+};
 
 const setNextMode = () => {
     if (selectedMode === quizModes[0]) {
@@ -150,7 +146,7 @@ const setNextMode = () => {
         difficulty="easy";
         quizCurrentModeRef.textContent="Beginner";
     }
-}
+};
 
 //Event Click
 websiteTitleRef.addEventListener ("click", function() {
@@ -158,7 +154,7 @@ websiteTitleRef.addEventListener ("click", function() {
     quizGameRef.classList.add("hidden");
     quizModeRef.classList.add("hidden");
     quizResultRef.classList.add("hidden");
-}) 
+}); 
 
 startBtnRef.addEventListener ("click", function() {
     quizModeRef.classList.remove("hidden");
@@ -174,7 +170,7 @@ beginnerImgRef.addEventListener ("click", function() {
     //getQuizAPIData("easy");
     difficulty="easy";
     startQuiz(difficulty);
-}) 
+}); 
 
 intermediateImgRef.addEventListener ("click", function() {
     quizGameRef.classList.remove("hidden");
@@ -185,7 +181,7 @@ intermediateImgRef.addEventListener ("click", function() {
     //getQuizAPIData("medium");
     difficulty="medium";
     startQuiz(difficulty);
-}) 
+}); 
 
 expertImgRef.addEventListener ("click", function() {
     quizGameRef.classList.remove("hidden");
@@ -196,7 +192,7 @@ expertImgRef.addEventListener ("click", function() {
     //getQuizAPIData("hard");
     difficulty="hard";
     startQuiz(difficulty);
-}) 
+}); 
 
 showDialogBtnRef.addEventListener("click", () => {
     dialogRef.showModal();
@@ -210,7 +206,7 @@ optionBtnsRef.forEach(option => {
     option.addEventListener("click", e => {
         e.preventDefault(); 
         const selectedOption = e.target;
-        const selectedAnswer = selectedOption.dataset["number"];
+        const selectedAnswer = selectedOption.dataset.number;
         console.log("user picked" + selectedAnswer + "the correct answer is" + currentAnswer);
         const classToApply = 
             selectedAnswer == currentAnswer ? "correct-option" : "incorrect-option";
@@ -245,7 +241,7 @@ quizNextBtnRef.addEventListener ("click", function() {
     //getNewQuestion();
     endQuiz();
     radioBtnsRef.disabled = false;
-})
+});
 
 playAgainBtnRef.addEventListener ("click", function() {
     quizGameRef.classList.remove("hidden");
@@ -253,7 +249,7 @@ playAgainBtnRef.addEventListener ("click", function() {
     quizResultRef.classList.add("hidden");
     console.log("play again"+difficulty);
     startQuiz(difficulty);
-}) 
+}); 
 
 nextQuizBtnRef.addEventListener ("click", function() {
     quizGameRef.classList.remove("hidden");
@@ -261,4 +257,4 @@ nextQuizBtnRef.addEventListener ("click", function() {
     quizResultRef.classList.add("hidden");
     setNextMode();
     startQuiz(difficulty);
-}) 
+}); 
