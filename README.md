@@ -220,6 +220,8 @@ The wireframes are below:
     &nbsp;
 
   - As sections will be hidden/ displayed and the 'single-page' website is relatively short in length, the header position does not have to be fixed.
+  \
+    &nbsp;
 
 - Title
   - The title 'Hello.' has a text-fill background of a vibrant inage to contrast against the minimalist background. 
@@ -246,6 +248,41 @@ The wireframes are below:
     &nbsp;
 
     ![Home - Start Button Hover](docs/features/home-section-laptop-button-hover.png)
+
+    \
+    &nbsp;
+
+### Quiz Mode Section
+
+- Quiz Modes 
+  - Throughout the website, including for this section, Horizontal Dividers are used to separate sections. They are set to be thin and subtle to be helpful but still aesthetic.
+   \
+    &nbsp;
+
+    ![Mode Section - Horizontal Divider](docs/features/mode-section-tablet-divider.png)
+
+    \
+    &nbsp;
+
+  - Depending on the size of the screen, the arrangement of the modes will alter. 
+   \
+    &nbsp;
+
+    ![Mode Section - Mobile](docs/features/mode-section-mobile.png)
+
+    \
+    &nbsp;
+
+    ![Mode Section - Laptop](docs/features/mode-section-laptop.png)
+
+    \
+    &nbsp;
+
+- Each of the three mode images navigate to the subsequent Quiz Game section, with the respective mode selected. To help indicate to the user that they have to click the image, a hover effect of reduced opacity by 50% has been added to the images.
+   \
+    &nbsp;
+
+    ![Mode Section - Image Hover](docs/features/mode-section-tablet-mode-hover.png)
 
     \
     &nbsp;
