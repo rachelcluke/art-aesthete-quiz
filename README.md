@@ -40,8 +40,11 @@ The last update to this file was: **May 25th, 2024**
 - [Technologies used](#technologies-used)
   - [Languages](#languages)
   - [IDE](#ide)
-  - [Libraries \& Framework](#libraries--framework)
+  - [Libraries & Framework](#libraries-framework)
   - [Tools](#tools)
+- [Validating](#validating)
+- [Testing](#testing)
+- [Deployment](#deployment)
 
 # UX
 
@@ -206,12 +209,26 @@ The wireframes are below:
   
 <!-- - [Am I Responsive](https://ui.dev/amiresponsive "am i responsive") -->
 
-<!-- 
 - [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML")
   
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS")
 
-TODO Add Java validation Service -->
+- [W3C JS Validation Service](https://codebeautify.org/jsvalidate "JS Validate") 
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Validating
+
+- There were no errors in both of the HTML files. Initially for the CSS, there was one error which was due to the use of incorrect units for 'letter-spacing'. Once this was changed from percentage to rem and re-validated, there were no errors for the CSS file.
+The results of my validation for HTML and CSS are below:
+  - HTML (index.html) validator [results](docs/validator/html-validator-index-results.png "W3C HTML")
+  - HTML (subscribed.html) validator [results](docs/validator/html-validator-subscribed-results.png "W3C HTML")
+  - CSS (style.css) validator [results](docs/validator/css-validator-results.png "W3C CSS")
+  - JS (index.js) validator [results]()
 
 \
 &nbsp;
