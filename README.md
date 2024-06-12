@@ -47,6 +47,9 @@ The last update to this file was: **June 12th, 2024**
   - [CSS Validation](#css-validation)
   - [JS Validation](#js-validation)
 - [Testing](#testing)
+  - [Testing User Stories](#testing-user-stories)
+  - [Debugging](#debugging)
+  - [Unfixed Bugs](#unfixed-bugs)
 - [Deployment](#deployment)
 - [Credits](#credits)
 
@@ -66,7 +69,7 @@ The last update to this file was: **June 12th, 2024**
 2. As a user, I want to be able to choose the difficulty of the quiz.
 3. As a user, I want to be able to easily navigate through the website.
 4. As a user, I want to be able to know if my chosen quiz answers are correct.
-5. As a user, I want to know what my current and final quiz scores are.
+5. As a user, I want to know what my final quiz score is.
 
 ## Site Owners Goals
 
@@ -238,13 +241,109 @@ The wireframes are below:
   - HTML (index.html) validator [results](docs/validator/html-validator-index-results.png "W3C HTML")
   - HTML (subscribed.html) validator [results](docs/validator/html-validator-subscribed-results.png "W3C HTML")
 
-## CS Validation
+## CSS Validation
 - Initially for the CSS, there was one error which was due to the use of incorrect units for 'letter-spacing'. Once this was changed from percentage to rem and re-validated, there were no errors for the CSS file.
   - CSS (style.css) validator [results](docs/validator/css-validator-results.png "W3C CSS")
 
 ## JS Validation
 - The first round of validation, there were 14 warnings of missing semi-colons and preference of dot notations, 1 undeclared variable and 4 unused variables. After resolving these items, no errors/ warnings were shown through the second round of validation.
   - JS (index.js) validator [results](docs/validator/js-validator-results.png "JSHint JS")
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Testing
+
+<!-- TODO - UPDATE -->
+## Testing User Stories
+
+The initial phase of testing consisted of checking through the stories. Below, I have listed the user stories along with their respective screenshots and descriptions, evincing how they have each been met.
+\
+&nbsp;
+
+1. As a user, I want to find this art quiz website aesthetic and appealing. 
+    <!--[Home Section](docs/XXX.png)-->
+\
+&nbsp;
+    The aesthetic of the website typically depicts an establishment's officiality. I belive that the cohesive font and colour scheme, along with credible social links all cater towards this story.
+\
+&nbsp;
+2. As a user, I want to be able to choose the difficulty of the quiz.
+    <!--[Mode Section](docs/XXX.png)-->
+\
+&nbsp;
+    <!-- TODO -->
+\
+&nbsp;
+3. As a user, I want to be able to easily navigate through the website.
+    <!--![Header](docs/XXX.png)-->
+\
+&nbsp;
+    <!-- TODO -->
+    I have added three various social media links in the footer for the viewer to be able to easily navigate to the society's other social media accounts.
+\
+&nbsp;
+4. As a user, I want to be able to know if my chosen quiz answers are correct.
+    <!--![Option Handling Event](docs/XXX.png)-->
+\
+&nbsp;
+    The navigation bar has a clear, minamilistic layout and formatting for the viewer to easily navigate back to Home. 
+\
+&nbsp;
+5. As a user, I want to know what my final quiz score is.
+    <!--![XXX Section](docs/XXX.png)-->
+\
+&nbsp;
+    <!-- TODO -->
+\
+&nbsp;
+
+## Debugging
+
+These are the issues that emerged throughout the project development, and how I resolved them:
+
+- index.html
+  - The console indicated that an icon from Favicon was required as the 'logo' symbol for the browser tab. As a fitting icon, I downloaded and included the paintbrush icon from [Favicon](https://favicon.io/ "Favicon") at the top of index.html. This eradicated the error.
+
+  - Data attributes had to be included for the mode images and quiz answer options, as this made the logic configuration in the js file easier.
+
+
+- style.css
+  - The import font url was changed from all the possible font settings (i.e., weights, sizes) to only the required font settings for each of the imported fonts. This sped up the import time.
+
+  - The class selector '.hidden' was not being read, so '!important' was added to it, to override and ensure that the sections/ elements are hidden/ displayed as configured in the index.js file.
+
+  - For media query (min 768px), the start button was being cut off at the bottom of the screen when launched. This was resolved by reducing the .art-home top padding from 40% to 15%.
+
+- index.js
+  - Housekeeping wise, all the HTML references, constants, variables and functions were organised at the top of the file to help me keep track and also made it easier to navigate.
+
+  - Issue with dynamically setting the OpenAPI url depending on the quiz mode the user selected. To resolve this, I created a function called getQuizAPIData() which parses the variable 'difficulty'. This variable is used within the url in single, backwards quotes which enabled me to modify the url in real time.
+
+  - Style displayed properties were replaced by classList properties, as this helped streamline the index.js file by adding the default class 'hidden' to the specific HTML sections.
+
+  - 'onClick's were replaced by 'addEventListener's since an 'addEventListener' can have multiple events whereas an 'onClick' cannot. 
+
+  - Targetted query selectors were not being modified when 'innerText' was used, but this was resolved when replaced with 'innerHTML'.
+
+  - When the question counter was incrementing, the space between 'questionCounter' and '++' was removed to resolve the issue.
+
+  - When configuring the handling events for optionBtnsRef, only one of the elements was getting impacted. This was resolved by changing 'querySelector' to 'querySelectorAll'.
+
+  - JSParams have been added to avoid confusion between the API (easy, beginner, hard) vs the website quiz mode names (beginner, intermediate, expert), as this has consequenced in errors, in the past . 
+  
+
+\
+&nbsp;
+
+## Unfixed Bugs 
+
+- When the user selects a quiz answer, the other options should be disabled until the next new question is loaded. This is less obvious since there is only a short window to pick another option before the next question is automatically loaded but it is still a bug that needs to be resolved.
+
+- The image displayed within the 'Next Up' is currently static but should be dynamic based on the next quiz mode as configured in setNextMode(). 
 
 \
 &nbsp;
