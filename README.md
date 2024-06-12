@@ -37,6 +37,14 @@ The last update to this file was: **June 12th, 2024**
   - [Colours](#colours)
   - [Media Queries](#media-queries)
   - [Wireframes](#wireframes)
+- [Features](#features)
+  - [Existing Features](#existing-features)
+    - [Home Section](#home-section)
+    - [Quiz Mode Section](#quiz-mode-section)
+    - [Help Modal Dialog](#help-modal-dialog)
+    - [Quiz Result Section](#quiz-result-section)
+    - [Footer](#footer)
+  - [Future actions - Features to be Implemented](#future-actions)
 - [Technologies used](#technologies-used)
   - [Languages](#languages)
   - [IDE](#ide)
@@ -179,6 +187,76 @@ The wireframes are below:
 [Footer - Desktop Wireframe](docs/wireframes/footer-desktop.png "footer desktop wireframe")
 
 [Footer - Phone Wireframe](docs/wireframes/footer-mobile.png "footer phone wireframe")
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Features 
+
+## Existing Features 
+
+### Home Section
+
+- Header
+  - The header has the name of the website's organisation and also acts as a navigation point for the users to return back to the home page when they progress through the quiz.
+   \
+    &nbsp;
+
+    ![Home Section - Mobile](docs/features/home-section-small.png)
+
+    \
+    &nbsp;
+
+  - The title has a hover effect of changing colours from Midnight to Cornblue (fitting the colour scheme), to improve UI.
+  \
+    &nbsp;
+
+    ![Header Hover - Mobile](docs/features/home-section-small-header-hover.png)
+
+    \
+    &nbsp;
+
+  - As sections will be hidden/ displayed and the 'single-page' website is relatively short in length, the header position does not have to be fixed.
+
+- Title
+  - The title 'Hello.' has a text-fill background of a vibrant inage to contrast against the minimalist background. 
+  \
+    &nbsp;
+
+    ![Home - Title](docs/features/home-section-tablet-title.png)
+
+    \
+    &nbsp;
+
+- Start Button
+  - The start button being featured at the very start indicates to the user the flow of the website.
+  \
+    &nbsp;
+
+    ![Home - Start Button](docs/features/home-section-laptop-button.png)
+
+    \
+    &nbsp;
+
+  - When hovered, the button has a goldenfizz yellow background and midnight black text for improved UI.
+  \
+    &nbsp;
+
+    ![Home - Start Button Hover](docs/features/home-section-laptop-button-hover.png)
+
+    \
+    &nbsp;
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+
 
 \
 &nbsp;
