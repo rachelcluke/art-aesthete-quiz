@@ -43,11 +43,11 @@ let currentAnswer;
 let resultMessage;
 let selectedMode;
 let quizScore = 0;
-let questionCounter = 1;
+let questionCounter = 0;
 
 //Functions
 const startQuiz = (difficulty) => {
-    questionCounter = 1; 
+    questionCounter = 0; 
     quizScore = 0;
     getQuizAPIData(difficulty);
     currentQuestionNoRef.textContent = questionCounter;
@@ -203,7 +203,7 @@ optionBtnsRef.forEach(option => {
         }
         
         //only display finish button on final question
-        if (remainingQuestions.length === 1) {
+        if (remainingQuestions.length === 0) {
             currentQuestionNoRef.textContent = questionCounter;
             quizNextBtnRef.parentElement.classList.remove("hidden");
             setTimeout(() => {

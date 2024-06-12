@@ -378,8 +378,50 @@ The wireframes are below:
 
     ![Game Section - Finish Button](docs/features/game-section-mobile-finish.png)
 
-   \
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+### Quiz Results Section
+- At the end of the quiz, the end screen will display two sections side by side. On the left, the 'Results' section, and on the right, the 'Next Up' Quiz. 
+- Both buttons in each column have the default hover effect and navigate to their respective quiz modes. The 'Retry' button loads a quiz with the same, previous mode and the 'Start' button loads a quiz of a different mode to the most recent game.
+  \
     &nbsp;
+
+    ![Results Section - Mobile](docs/features/result-section-mobile.png)
+
+    \
+    &nbsp;
+
+- Dynamic Score and Outcome Message
+  - Within the Results column, the user's final quiz score is revealed. The outcome message is conditional on the user's quiz score. 
+
+  - For scores 0-1, the viewers will receive the following message:
+
+    ![Results Section - Score 0 or 1 Outcome Message](docs/features/result-section-tablet-0-1-outcome.png)
+
+    \
+    &nbsp;
+
+  - For scores 2-3, the viewers will receive the following message:
+
+    ![Results Section - Score 2 or 3 Outcome Message](docs/features/result-section-tablet-2-3-outcome.png)
+
+    \
+    &nbsp;
+
+  - For scores 4-5, the viewers will receive the following message:
+
+    ![Results Section - Score 4 or 5 Outcome Message](docs/features/result-section-mobile-4-5-outcome.png)
+
+    \
+    &nbsp;
+
+- Dynamic Next Quiz Mode
+  - As previously mentioned, the 'Next Up' column will display a direct navigation link to a quiz of a different mode. This encourages the user to spend more time on the website.
+
 
 \
 &nbsp;
