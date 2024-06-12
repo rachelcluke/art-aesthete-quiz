@@ -321,9 +321,6 @@ The wireframes are below:
 
     ![Game Section - Modal Dialog](docs/features/game-section-mobile-modal-dialog.png)
 
-    \
-    &nbsp;
-
   - The close button is strategically positioned at the top-right corner of the dialog for ease of use.
 
 - Dynamic and Responsive Quiz Questions & Answers
@@ -332,9 +329,6 @@ The wireframes are below:
     &nbsp;
 
     ![Game Section - Mobile Quiz](docs/features/game-section-mobile-quiz.png)
-
-    \
-    &nbsp;
 
   - Depending on the size of the user's screen, the layout of the quiz answer options will be configured to optimise space and be easier to use compared to if it were to stay the same.
    \
@@ -492,6 +486,18 @@ The wireframes are below:
 
     ![Footer Section - subscribed.html](docs/features/footer-section-laptop-subscribed.png)
 
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+## Future actions - Features to be Implemented
+
+- The Quiz Game section could have a timer mode, when the users have the option to race against the clock when doing the quiz.
+- The current quiz score could be displayed during the game, in addition to the question counter.
+- Unsplash API could be fetched to retrieve images for each quiz question to make it look more appealing to the user. This would also be used to make the 'Next Up' Quiz image in the end screen, which is currently static, dynamic.
 
 \
 &nbsp;
