@@ -584,15 +584,17 @@ The initial phase of testing consisted of checking through the stories. Below, I
 &nbsp;
 
 1. As a user, I want to find this art quiz website aesthetic and appealing. 
-    [Home Section](docs/features/home-section-small.png)
+  \
+    &nbsp;
+    ![Home Section](docs/features/home-section-small.png)
 
-    [Mode Section](docs/features/mode-section-mobile.png)
+    ![Mode Section](docs/features/mode-section-mobile.png)
 
-    [Game Section](docs/features/game-section-laptop-quiz.png)
+    ![Game Section](docs/features/game-section-laptop-quiz.png)
 
-    [Results Section](docs/features/result-section-mobile.png)
+    ![Results Section](docs/features/result-section-mobile.png)
 
-    [Footer Section](docs/features/footer-section-tablet.png)
+    ![Footer Section](docs/features/footer-section-tablet.png)
   \
   &nbsp;
     The consistent aesthetic of the website fits the contemporary art theme. The UI elements (i.e., font style, images, colours) are all intentionally configured to match the desired motif.
@@ -600,38 +602,46 @@ The initial phase of testing consisted of checking through the stories. Below, I
     &nbsp;
 
 2. As a user, I want to be able to choose the difficulty of the quiz.
-    [Mode Section](docs/features/mode-section-mobile.png)
   \
-  &nbsp;
+    &nbsp;
+    ![Mode Section](docs/features/mode-section-mobile.png)
+    \
+    &nbsp;
     There is a preceding section prior to the quiz game, where users choose between 3 quiz modes: Beginner, Intermediate or Expert.
     \
     &nbsp;
 
 3. As a user, I want to be able to easily navigate through the website.
-    [Header](docs/features/home-section-small.png)
   \
-  &nbsp;
-    The website is a single page, with automatically sections hidden/ displayed for ease of navigation for the user. When the website is first launched, it has a clear design that alludes the user to press the 'Start' button. Also the header title at the top-left corner, directly navigates the user back to the start (i.e., Home Section).
+    &nbsp;
+    ![Header](docs/features/home-section-small.png)
     \
     &nbsp;
+      The website is a single page, with automatically sections hidden/ displayed for ease of navigation for the user. When the website is first launched, it has a clear design that alludes the user to press the 'Start' button. Also the header title at the top-left corner, directly navigates the user back to the start (i.e., Home Section).
+      \
+      &nbsp;
 
 4. As a user, I want to be able to know if my chosen quiz answers are correct.
-    [Option Handling Event - Correct](docs/features/game-section-laptop-option-correct.png)
-
-    [Option Handling Event - Incorrect](docs/features/game-section-laptop-option-incorrect.png)
   \
-  &nbsp;
-    There is response feedback for the user to acknowledge whether the answer they have chosen was correct or incorrect. If the selected option text turns green, it indicates that the answer is correct and vice versa when it turns red. 
+    &nbsp;
+    ![Option Handling Event - Correct](docs/features/game-section-laptop-option-correct.png)
+
+    ![Option Handling Event - Incorrect](docs/features/game-section-laptop-option-incorrect.png)
     \
     &nbsp;
+      There is response feedback for the user to acknowledge whether the answer they have chosen was correct or incorrect. If the selected option text turns green, it indicates that the answer is correct and vice versa when it turns red. 
+      \
+      &nbsp;
 
 5. As a user, I want to know what my final quiz score is.
-    [Result Section](docs/features/result-section-mobile.png)
   \
-  &nbsp;
-    Once the user has completed the quiz questions, the end screen is displayed with the user's final quiz score and a dynamic outcome messaged based on the score.
+    &nbsp;
+    ![Result Section](docs/features/result-section-mobile.png)
     \
     &nbsp;
+      Once the user has completed the quiz questions, the end screen is displayed with the user's final quiz score and a dynamic outcome messaged based on the score.
+      \
+      &nbsp;
 
 ## Debugging
 
