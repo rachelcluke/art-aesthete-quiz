@@ -48,6 +48,7 @@ The last update to this file was: **May 25th, 2024**
   - [JS Validation](#js-validation)
 - [Testing](#testing)
 - [Deployment](#deployment)
+- [Credits](#credits)
 
 # UX
 
@@ -119,6 +120,8 @@ Additional Notes:
 ## Icons
 
 I have incorporated icons for my website from the [Font Awesome library](https://fontawesome.com/ "Font Awesome"). These icons are used as the social media links in the footer and also in the subscribed.html file. All icons used are styled within the overall website theme.
+
+During testing, the console indicated that an icon from Favicon was required as the 'logo' symbol for the browser tab. As a fitting icon, I downloaded and included the paintbrush icon from [Favicon](https://favicon.io/ "Favicon") at the top of index.html 
 
 ## Colours
 
@@ -201,6 +204,8 @@ The wireframes are below:
 - [Google Fonts](https://fonts.google.com/ "Google Fonts")
   
 - [Font Awesome library](https://fontawesome.com/ "Font Awesome")
+
+- [Favicon](https://favicon.io/ "Favicon")
 
 ## Tools
 
