@@ -422,12 +422,83 @@ The wireframes are below:
 - Dynamic Next Quiz Mode
   - As previously mentioned, the 'Next Up' column will display a direct navigation link to a quiz of a different mode. This encourages the user to spend more time on the website.
 
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+### Footer
+- At the bottom the website, the footer is located with two main components: Contact and Subscribe.
+
+- Responsive Layout
+  - Based on the media queries, most devices will have the footer componenets as a row, but by default the layout is a column for smaller devices like mobiles so the content won't be too compressed and difficult for the users to view.
+   \
+    &nbsp;
+
+    ![Footer Section - Tablet](docs/features/footer-section-tablet.png)
+
+    \
+    &nbsp;
+
+    ![Footer Section - Mobile](docs/features/footer-section-mobile.png)
+
+    \
+    &nbsp;
+
+- Social Media Icons
+  - Within the 'Contact' section, there are two social media icons that allow the users to easily navigate directly to the website's social medias accounts. The icons have a hover effect similar to the buttons, where it turns goldenfizz yellow.
+   \
+    &nbsp;
+
+    ![Footer Section - Social Media Icon Hover](docs/features/footer-section-laptop-social-hover.png)
+
+    \
+    &nbsp;
+
+- Subscribe Form
+  - Within the 'Subscribe' section, there is a form input for the users to submit their email address. The input text box has a default value of 'Enter Email Address' to guide the user.
+   \
+    &nbsp;
+
+    ![Footer Section - Subscribe](docs/features/footer-section-laptop-subscribe.png)
+
+    \
+    &nbsp;
+
+  - There is an input validation to reduce the chance of human error. The following screenshot displays the event if the user inputs text without an @ symbol:
+   \
+    &nbsp;
+
+    ![Footer Section - Subscribe Validation](docs/features/footer-section-laptop-subscribe-validation.png)
+
+    \
+    &nbsp;
+
+  - The 'Submit' button has the same hover effect has the other buttons in the website:
+   \
+    &nbsp;
+
+    ![Footer Section - Subscribe Hover](docs/features/footer-section-laptop-subscribe-hover.png)
+
+    \
+    &nbsp;
+
+- Subscribe Form Response 
+  - Once the user hits 'Submit' with a valid email adddress, the user is temporarily directed to subscribed.html
+  - The page indicates to the user that it will automatically refresh after 5 seconds or they can click on the Font Awesome backwards icon, which has a colour hover effect, to return to the home page.
+   \
+    &nbsp;
+
+    ![Footer Section - subscribed.html](docs/features/footer-section-laptop-subscribed.png)
+
 
 \
 &nbsp;
 [Back to Top](#table-of-contents)
 \
 &nbsp;
+
 
 # Technologies used
 
